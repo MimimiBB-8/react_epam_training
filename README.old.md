@@ -1,1 +1,0 @@
-# react_epam_training
