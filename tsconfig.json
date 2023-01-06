@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "allowJs": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "module": "es6",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node"
+  },
+}
