@@ -1,4 +1,3 @@
-import React from 'react';
 import { createElement } from 'react';
 
 function FirstMethod() {
