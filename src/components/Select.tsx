@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 
-const Selection: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<String>();
+const styles: { [name: string]: React.CSSProperties } = {
+  container: {
+    marginTop: 50,
+  },
+  select: {
+    padding: 5,
+    width: 200,
+  },
+  result: {
+    marginTop: 30,
+  },
+};
 
-  const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value;
+const Selection: React.FC = () => {
+  const [selectedOption, setSelectedOption] = useState<string>();
+
+  const handelSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
     setSelectedOption(value);
   };
 
   return (
     <div style={styles.container}>
-      <select onChange={selectChange} style={styles.select}>
+      <select onChange={handelSelectChange} style={styles.select}>
         <option selected disabled>
           Choose one
         </option>
@@ -24,16 +37,3 @@ const Selection: React.FC = () => {
 };
 
 export default Selection;
-
-const styles: { [name: string]: React.CSSProperties } = {
-  container: {
-    marginTop: 50,
-  },
-  select: {
-    padding: 5,
-    width: 200,
-  },
-  result: {
-    marginTop: 30,
-  },
-};

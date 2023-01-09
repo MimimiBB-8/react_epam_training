@@ -1,5 +1,21 @@
 import React, { useState } from "react";
 
+const styles: { [name: string]: React.CSSProperties } = {
+  container: {
+    marginTop: 50,
+    marginLeft: 50,
+  },
+  h1: {
+    textAlign: "center",
+  },
+  button: {
+    backgroundColor: "white",
+    padding: 5,
+    margin: 5,
+    border: "solid 1px",
+  },
+};
+
 const Count: React.FC = () => {
   const [count, setCount] = useState(0);
   function handleIncrement() {
@@ -22,19 +38,3 @@ const Count: React.FC = () => {
 };
 
 export default Count;
-
-const styles: { [name: string]: React.CSSProperties } = {
-  container: {
-    marginTop: 50,
-    marginLeft: 50,
-  },
-  h1: {
-    textAlign: "center",
-  },
-  button: {
-    backgroundColor: "white",
-    padding: 5,
-    margin: 5,
-    border: "solid 1px",
-  },
-};

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "removeComments": true,
     "allowJs": true,
     "preserveConstEnums": true,
@@ -10,6 +10,7 @@
     "outDir": "./dist/",
     "module": "es6",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
   },
+  "include": ["."],
 }

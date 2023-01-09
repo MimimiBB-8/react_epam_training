@@ -1,25 +1,9 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { merge } = require('webpack-merge');
 
-module.exports = {
-  entry: "./src/index.tsx",
-  output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "index_bundle.js",
-  },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"],
-},
-  module: {
-    rules: [
-      {
-        test: /\.ts$|tsx/,
-        exclude: /node_modules/,
-          loader: "ts-loader",   
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ template: "./src/index.html" }),
-  ],
+const commonConfig = require('./config/webpack.common');
+
+module.exports = (env) => {
+  // eslint-disable-next-line global-require
+  const config = require(`./config/webpack.${env.env}`);// eslint-disable-line import/no-dynamic-require
+  return merge(commonConfig, config);
 };
