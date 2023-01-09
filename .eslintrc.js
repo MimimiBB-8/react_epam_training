@@ -20,7 +20,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ["./tsconfig.json"],
   },
-  ignorePatterns: ["babel.config.json", "dist/", ".eslintrc.js"],
+  ignorePatterns: ["babel.config.json", "dist/", "node_modules/", ".eslintrc.js"],
   plugins: ["react", "@typescript-eslint", "prettier"],
   overrides: [
     {
