@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button/Button";
-import "../style/main.sass";
+import "../style/main.css";
 
 const App: React.FC = () => (
   <div>
