@@ -1,9 +1,11 @@
 import React from "react";
-import SearchForm from "./Header/Search/SearchForm";
+import Button from "./Button/Button";
+import "../style/main.sass";
 
 const App: React.FC = () => (
   <div>
-    <SearchForm />
+    <p className="jjjj">dgfhjklkhgj</p>
+    <Button />
   </div>
 );
 

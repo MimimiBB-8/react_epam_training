@@ -14,10 +14,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.s(a|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.ts$|tsx/,
         exclude: /node_modules/,
         loader: 'ts-loader',
       },
+
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
