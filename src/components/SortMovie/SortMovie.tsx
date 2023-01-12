@@ -1,18 +1,23 @@
 import React from "react";
+import '../../style/SortMovie/sortmovie.css'
 
 const SortMovie: React.FC = () => (
     <div className={'sort'}>
-        <div className={'sort_genre'}>
-            <p>ALL</p>
-            <p>DOCUMENTARY</p>
-            <p>COMEDY</p>
-            <p>HORROR</p>
-            <p>CRIME</p>
-        </div>
-        <div className={'sort_param'}>
-            <p>SORT BY</p>
-            <p>RELEASE DATE</p>
-        </div>
+        <nav>
+            <ul className={'sort_genre'}>
+                <li>ALL</li>
+                <li>DOCUMENTARY</li>
+                <li>COMEDY</li>
+                <li>HORROR</li>
+                <li>CRIME</li>
+            </ul>
+        </nav>
+        <nav>
+            <ul className={'sort_param'}>
+                <li>SORT BY</li>
+                <li>RELEASE DATE</li>
+            </ul>
+        </nav>
     </div>
 );
 

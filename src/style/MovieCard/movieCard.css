@@ -1,0 +1,22 @@
+.movie_card {
+  margin-bottom: 50px;
+}
+
+.poster {
+  height: 455px;
+  width: 322px;
+}
+
+.movie_name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie_year {
+  border: 1px solid #555555;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 4px 16px;
+}
+
+/*# sourceMappingURL=movieCard.css.map */
