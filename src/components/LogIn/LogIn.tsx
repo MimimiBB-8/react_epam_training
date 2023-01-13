@@ -1,20 +1,24 @@
 import React from "react";
+import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
-
-const LogIn: React.FC = () => (
-    <div>
-        <h2>LOG IN</h2>
-        <form>
-            <label>
-                <input type={"email"} />
-            </label>
-            <label>
-                <input type={"password"} />
-            </label>
-            {/*<Button />*/}
-            {/*<Button />*/}
-        </form>
+import '../../style/LogIn/login.css'
+const LogIn = () => (
+    <div className={'background_wrapper'}>
+        <div className={'wrapper_log'}>
+            <h2>LOG IN</h2>
+            <form>
+                <FormItem title={'User Id *'} type={'email'} placeholder={'enter user id'}/>
+                <FormItem title={'PASSWORD *'} type={'password'} placeholder={'enter password'}/>
+                <div className={'group_button'}>
+                    <Button classname={'reset_button'} title={'reset'}/>
+                    <Button title={'log in'}/>
+                </div>
+            </form>
+            <p className={'note'}>*Mandatory</p>
+        </div>
+        <h1><span>netflix</span>roulette</h1>
     </div>
+
 );
 
 export default LogIn;

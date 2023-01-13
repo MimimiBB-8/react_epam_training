@@ -1,0 +1,48 @@
+.description_wrapper {
+  display: flex;
+}
+
+h2 {
+  margin: 0;
+}
+
+.description_movie {
+  margin-left: 60px;
+}
+
+.circle_paragraph {
+  border: solid 2px #FFFFFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.description_genre {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 0.5;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.description_year, .description_time {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F65261;
+  margin-right: 50px;
+}
+
+.description {
+  word-wrap: break-word;
+  font-weight: 300;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=moviedescription.css.map */

@@ -24,3 +24,10 @@ h1, h2, h3, h4, h5, p{
   margin: 0;
 }
 
+h2{
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 38px;
+}
+

@@ -1,10 +1,9 @@
 import React from "react";
-import '../../style/MovieCard/movieCard.css'
-const logo = require('../../img/pulp_fiction.jpg');
-
-const MovieCart: React.FC = () => (
+import '../../style/MovieCard/movieCard.css';
+import ImgSource from "../ImgSource/ImgSource";
+const MovieCart = () => (
     <div className={'movie_card'}>
-        <img className={'poster'} src={logo}/>
+        <ImgSource/>
         <div className={'movie_name'}>
             <h4>Name</h4>
             <p className={'movie_year'}>1999</p>
