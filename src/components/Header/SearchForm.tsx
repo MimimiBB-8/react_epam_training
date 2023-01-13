@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 const SearchForm: React.FC = () => (
     <form>
         <input type={'text'} placeholder={'What do you want to watch?'}/>
-        <Button title={'search'}/>
+        <Button title={'search'} classname={''}/>
     </form>
 );
 

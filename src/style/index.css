@@ -2,21 +2,25 @@
 *{
   color:  #FFFFFF
 }
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat';
   font-style: normal;
   font-size: 16px;
   font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #FFFFFF;
   background-color: #555555;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  border-style: none;
 }
 
+h1, h2, h3, h4, h5, p{
+  margin: 0;
+}
 

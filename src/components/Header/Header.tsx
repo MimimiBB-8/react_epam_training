@@ -1,7 +1,6 @@
 import React from "react";
 import '../../style/Header/header.css'
 import SearchForm from "./SearchForm";
-import Button from "../Button/Button";
 
 const Header: React.FC = () => (
     <div className={'header'}>

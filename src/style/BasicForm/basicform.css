@@ -1,0 +1,19 @@
+.first_colon, .second_colon {
+  display: flex;
+  flex-direction: column;
+}
+
+.first_colon input {
+  width: 524px;
+}
+
+.second_colon input {
+  width: 301px;
+}
+
+.group_button {
+  display: flex;
+  justify-content: right;
+}
+
+/*# sourceMappingURL=basicform.css.map */
