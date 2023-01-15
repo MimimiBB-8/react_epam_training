@@ -1,0 +1,33 @@
+.close_button {
+  position: absolute;
+  top: 15px;
+  right: 28px;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+}
+
+.close_button:before, .close_button:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  width: 21px;
+  height: 1px;
+  border: 1px solid #FFFFFF;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.close_button:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close_button:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/*# sourceMappingURL=closebutton.css.map */

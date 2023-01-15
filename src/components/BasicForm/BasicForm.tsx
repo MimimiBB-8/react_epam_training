@@ -1,16 +1,17 @@
-import React from "react";
+import { useState } from "react";
+import Select, { components } from "react-select";
 import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
 import '../../style/BasicForm/basicform.css'
 
-const BasicForm: React.FC = () => (
+const BasicForm = () => (
     <>
         <form >
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <div style={{display: 'flex'}}>
                 <div className={'first_colon'}>
                     <FormItem title={'Title'} type={'text'} placeholder={'name'}/>
-                    <FormItem title={'Movie URl'} type={'text'} placeholder={'https://'}/>
-                    <label>
+                    <FormItem title={'Movie URl'} type={'url'} placeholder={'https://'}/>
+                    <label className={''}>
                         Genre
                         <select>
                             <option selected disabled>
@@ -26,7 +27,7 @@ const BasicForm: React.FC = () => (
                     </div>
                 </div>
                 <div className={'second_colon'}>
-                    <FormItem title={'RELEASE DATE'} type={'text'} placeholder={'Select Date'}/>
+                    <FormItem title={'RELEASE DATE'} type={'date'} placeholder={'Select Date'}/>
                     <FormItem title={'RATING'} type={'text'} placeholder={'7.8'}/>
                     <FormItem title={'RUNTIME'} type={'text'} placeholder={'minutes'}/>
                 </div>

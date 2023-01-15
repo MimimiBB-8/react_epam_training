@@ -3,12 +3,32 @@
 }
 
 .header {
-  height: 610px;
   width: 1200px;
+  position: relative;
   border: solid 2px #555555;
-  padding: 20px 60px;
-  background-color: #232323;
+  background: url("../../img/header_background.png") 0px 0px no-repeat;
+  background-size: cover;
   margin-bottom: 5px;
+  z-index: 1;
+}
+
+.header:before {
+  content: "";
+  display: block;
+  height: 101%;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: -1px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.content {
+  width: 100%;
+  padding: 20px 60px;
+  z-index: 3;
 }
 
 .first_line {
@@ -21,9 +41,13 @@
 .logo {
   width: 152px;
   height: 24px;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  color: #F65261;
+}
+.logo span {
+  font-weight: 900;
   color: #F65261;
 }
 

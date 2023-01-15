@@ -1,6 +1,6 @@
 button {
   height: 57px;
-  width: 233px;
+  width: 180px;
   border-radius: 4px;
   font-weight: 500;
   font-size: 20px;
@@ -20,6 +20,11 @@ button {
   color: #F65261;
   background-color: transparent;
   margin-right: 13px;
+}
+
+.search_button {
+  width: 233px;
+  background-color: #F65261;
 }
 
 /*# sourceMappingURL=button.css.map */

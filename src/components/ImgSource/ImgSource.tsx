@@ -1,10 +1,15 @@
 import React from "react";
 import '../../style/ImgSource/imgsource.css'
-const logo = require('../../img/pulp_fiction.jpg');
+interface ImgProps{
+    alt?: string,
+    urlProp?: string,
+}
 
-const ImgSource = () => (
+const ImgSource = ({alt, urlProp}:ImgProps) => (
+
     <>
-        <img className={'poster'} src={logo}/>
+
+        <img className={'poster'} src={urlProp} alt={alt}/>
     </>
 );
 

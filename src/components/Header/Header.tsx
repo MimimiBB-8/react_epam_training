@@ -1,20 +1,18 @@
 import React from "react";
 import '../../style/Header/header.css'
-// import SearchForm from "./SearchForm";
-import MovieDescription from "../MovieDescription/MovieDescription";
-const Header: React.FC = () => (
+import SearchForm from "./SearchForm";
+const Header = () => (
+
     <div className={'header'}>
-        {/*<div className={'backgroundImg'}></div>*/}
         <div className={'content'}>
             <div className={'first_line'}>
-                <label className={'logo'}>netflixroulette</label>
+                <label className={'logo'}><span>netflix</span>roulette</label>
                 <a className={'add_movie'}>+ ADD MOVIE</a>
             </div>
-            {/*<div className={'search_content'}>*/}
-            {/*    <h2>FIND YOUR MOVIE</h2>*/}
-            {/*    <SearchForm/>*/}
-            {/*</div>*/}
-            <MovieDescription/>
+            <div className={'search_content'}>
+                <h2>FIND YOUR MOVIE</h2>
+                <SearchForm/>
+            </div>
         </div>
     </div>
 );

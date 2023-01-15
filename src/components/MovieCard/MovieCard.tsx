@@ -1,14 +1,20 @@
 import React from "react";
 import '../../style/MovieCard/movieCard.css';
 import ImgSource from "../ImgSource/ImgSource";
-const MovieCart = () => (
+interface MovieProps{
+    title: string,
+    year: string,
+    genre: string,
+    urlImg: string
+}
+const MovieCart = ({title, year, genre, urlImg}:MovieProps) => (
     <div className={'movie_card'}>
-        <ImgSource/>
+        <ImgSource alt={title} urlProp={urlImg}/>
         <div className={'movie_name'}>
-            <h4>Name</h4>
-            <p className={'movie_year'}>1999</p>
+            <h4>{title}</h4>
+            <p className={'movie_year'}>{year}</p>
         </div>
-        <p>Genre</p>
+        <p className={'movie_genre'}>{genre}</p>
     </div>
 );
 
