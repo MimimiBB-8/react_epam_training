@@ -7,14 +7,14 @@ const MovieDescription = () => (
     <div className={'description_wrapper'}>
         <ImgSource/>
         <div className={'description_movie'}>
-            <div style={{display:'flex', alignItems:'center'}}>
+            <div className={'group_name_rating'}>
                 <h2>Pulp Fiction</h2>
                 <div className={'circle_paragraph'}>
-                    <p className={'rar'}>8.9</p>
+                    <p className={'rating'}>8.9</p>
                 </div>
             </div>
             <p className={'description_genre '}>Genre</p>
-            <div style={{display:'flex', marginBottom:'29px'}}>
+            <div className={'group_year_time'}>
                 <h5 className={'description_year'}>Year</h5>
                 <h5 className={'description_time'}>Time</h5>
             </div>

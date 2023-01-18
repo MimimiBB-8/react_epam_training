@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Select, { components } from "react-select";
 import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
 import './basicform.css'
@@ -7,11 +5,11 @@ import './basicform.css'
 const BasicForm = () => (
     <>
         <form >
-            <div style={{display: 'flex'}}>
+            <div className={'colon_wrapper'}>
                 <div className={'first_colon'}>
                     <FormItem title={'Title'} type={'text'} placeholder={'name'}/>
                     <FormItem title={'Movie URl'} type={'url'} placeholder={'https://'}/>
-                    <label className={''}>
+                    <label className={'input_title'}>
                         Genre
                         <select>
                             <option selected disabled>
