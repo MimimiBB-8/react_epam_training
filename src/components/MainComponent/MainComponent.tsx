@@ -1,7 +1,7 @@
 import React from "react";
 import MovieGallery from "../MovieCard/MovieGallery";
 import SortMovie from "../SortMovie/SortMovie";
-import './maincomponent.css'
+import './Maincomponent.css'
 
 
 const MainComponent = () => (

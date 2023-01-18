@@ -1,7 +1,7 @@
 import React from "react";
 import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
-import './login.css'
+import './Login.css'
 const LogIn = () => (
     <div className={'background_wrapper'}>
         <div className={'wrapper_log'}>

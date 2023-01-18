@@ -1,6 +1,6 @@
 import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
-import './basicform.css'
+import './Basicform.css'
 
 const BasicForm = () => (
     <>

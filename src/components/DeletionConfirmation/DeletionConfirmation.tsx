@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import CloseButton from "../CloseButton/CloseButton";
-import  './deletionconfirmation.css'
+import  './Deletionconfirmation.css'
 
 const DeletionConfirmation = () => (
     <div className={'deletion_confirmation'}>

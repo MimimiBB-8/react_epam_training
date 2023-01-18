@@ -1,5 +1,5 @@
 import React from "react";
-import './movieCard.css';
+import './MovieCard.css';
 import ImgSource from "../ImgSource/ImgSource";
 interface MovieProps{
     title: string,

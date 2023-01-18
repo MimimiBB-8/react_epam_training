@@ -1,0 +1,30 @@
+button {
+  height: 57px;
+  width: 180px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: 1.5px solid #F65261;
+}
+
+.base_button {
+  background-color: #F65261;
+  right: 0;
+}
+
+.reset_button {
+  color: #F65261;
+  background-color: transparent;
+  margin-right: 13px;
+}
+
+.search_button {
+  width: 233px;
+  background-color: #F65261;
+}
+
+/*# sourceMappingURL=Button.css.map */

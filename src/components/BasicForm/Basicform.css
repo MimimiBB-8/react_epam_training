@@ -1,0 +1,23 @@
+.colon_wrapper {
+  display: flex;
+}
+
+.first_colon {
+  margin-right: 30px;
+}
+.first_colon input {
+  width: 489px;
+  height: 25px;
+}
+
+.second_colon input {
+  width: 265px;
+  height: 25px;
+}
+
+.group_button {
+  display: flex;
+  justify-content: right;
+}
+
+/*# sourceMappingURL=Basicform.css.map */

@@ -1,5 +1,5 @@
 import React from "react";
-import './formitem.css'
+import './Formitem.css'
 
 const FormItem: React.FC<{ title: string, type: string, placeholder: string }> = ({title, type, placeholder}) => (
     <>

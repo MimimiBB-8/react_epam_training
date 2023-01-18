@@ -1,5 +1,5 @@
 import React from "react";
-import './imgsource.css'
+import './Imgsource.css'
 interface ImgProps{
     alt?: string,
     urlProp?: string,

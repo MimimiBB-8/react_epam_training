@@ -1,7 +1,7 @@
 import React from "react";
 import BasicForm from "../BasicForm/BasicForm";
 import CloseButton from "../CloseButton/CloseButton";
-import './addmovie.css'
+import './Addmovie.css'
 const AddMovie = () => (
     <div className={'add_movie'}>
         <CloseButton/>
