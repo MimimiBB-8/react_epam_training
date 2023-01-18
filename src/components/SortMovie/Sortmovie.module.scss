@@ -1,14 +1,16 @@
 .sort {
   display: flex;
   justify-content: space-between;
-}
-.sort ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-}
-.sort ul li:not(:last-child) {
-  margin-right: 30px;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    li:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
 .sort_identifier {
@@ -26,5 +28,3 @@
   height: 4px;
   background: #F65261;
 }
-
-/*# sourceMappingURL=Sortmovie.css.map */

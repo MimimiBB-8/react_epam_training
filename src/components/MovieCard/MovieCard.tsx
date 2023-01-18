@@ -1,5 +1,5 @@
 import React from "react";
-import './MovieCard.css';
+import style from './MovieCard.module.scss';
 import ImgSource from "../ImgSource/ImgSource";
 interface MovieProps{
     title: string,
@@ -8,13 +8,13 @@ interface MovieProps{
     urlImg: string
 }
 const MovieCart = ({title, year, genre, urlImg}:MovieProps) => (
-    <div className={'movie_card'}>
+    <div className={style.movie_card}>
         <ImgSource alt={title} urlProp={urlImg}/>
-        <div className={'movie_name'}>
+        <div className={style.movie_name}>
             <h4>{title}</h4>
-            <p className={'movie_year'}>{year}</p>
+            <p className={style.movie_year}>{year}</p>
         </div>
-        <p className={'movie_genre'}>{genre}</p>
+        <p className={style.movie_genre}>{genre}</p>
     </div>
 );
 

@@ -1,11 +1,10 @@
 import React from "react";
 import MovieGallery from "../MovieCard/MovieGallery";
 import SortMovie from "../SortMovie/SortMovie";
-import './Maincomponent.css'
-
+import style from './Maincomponent.module.scss'
 
 const MainComponent = () => (
-    <div className={'wrapper_component'}>
+    <div className={style.wrapper_component}>
         <SortMovie/>
         <MovieGallery/>
     </div>

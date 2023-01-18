@@ -1,9 +1,14 @@
-import React from "react";
-import './Formitem.css'
+import style from './Formitem.module.scss'
 
-const FormItem: React.FC<{ title: string, type: string, placeholder: string }> = ({title, type, placeholder}) => (
+interface ItemProps {
+    title: string,
+    type: string,
+    placeholder: string
+}
+
+const FormItem = ({title, type, placeholder}: ItemProps) => (
     <>
-        <label className={'input_title'}>
+        <label className={style.input_title}>
             {title}
             <input type={type} placeholder={placeholder}/>
         </label>

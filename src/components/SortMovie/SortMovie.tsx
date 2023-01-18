@@ -1,11 +1,10 @@
-import React from "react";
-import './Sortmovie.css'
+import style from './Sortmovie.module.scss'
 
 const SortMovie = () => (
         <>
-            <div className={'sort'}>
+            <div className={style.sort}>
                 <nav>
-                    <ul className={'sort_genre'}>
+                    <ul className={style.sort_genre}>
                         <li>ALL</li>
                         <li>DOCUMENTARY</li>
                         <li>COMEDY</li>
@@ -14,14 +13,14 @@ const SortMovie = () => (
                     </ul>
                 </nav>
                 <nav>
-                    <ul className={'sort_param'}>
+                    <ul className={style.sort_param}>
                         <li>SORT BY</li>
                         <li>RELEASE DATE</li>
                     </ul>
                 </nav>
             </div>
-            <div className={'sort_identifier'}>
-                <div className={'sort_carriage'}></div>
+            <div className={style.sort_identifier}>
+                <div className={style.sort_carriage}></div>
             </div>
         </>
     );

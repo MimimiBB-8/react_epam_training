@@ -1,11 +1,11 @@
-import React from "react";
 import BasicForm from "../BasicForm/BasicForm";
 import CloseButton from "../CloseButton/CloseButton";
-import './Addmovie.css'
+import style from './Addmovie.module.scss'
+
 const AddMovie = () => (
-    <div className={'add_movie'}>
+    <div className={style.add_movie}>
         <CloseButton/>
-        <h2 className={'topic'}>ADD MOVIE</h2>
+        <h2 className={style.topic}>ADD MOVIE</h2>
         <BasicForm/>
     </div>
 );

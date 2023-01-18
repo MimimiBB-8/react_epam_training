@@ -1,13 +1,14 @@
 .colon_wrapper {
-  display: flex;
+  display: flex
 }
 
 .first_colon {
   margin-right: 30px;
-}
-.first_colon input {
-  width: 489px;
-  height: 25px;
+
+  input {
+    width: 489px;
+    height: 25px
+  }
 }
 
 .second_colon input {
@@ -17,7 +18,5 @@
 
 .group_button {
   display: flex;
-  justify-content: right;
+  justify-content: right
 }
-
-/*# sourceMappingURL=Basicform.css.map */

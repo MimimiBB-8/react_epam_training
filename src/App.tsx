@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
 import MainComponent from "./components/MainComponent/MainComponent";
@@ -7,7 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 function App() {
     return (
         <div className="app_wrapper">
-            <ErrorBoundary>
+
+             <ErrorBoundary>
                 <Header/>
                 <MainComponent/>
                 <Footer/>

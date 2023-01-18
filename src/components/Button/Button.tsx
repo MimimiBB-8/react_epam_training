@@ -1,13 +1,13 @@
-import React from "react";
-import './Button.css'
+import style from './Button.module.scss'
 
 interface ButtonProps {
     classname?: string,
     title: string
 }
-const Button = ({classname = 'base_button', title}:ButtonProps) => (
+
+const Button = ({classname = style.base_button, title}: ButtonProps) => (
     <>
-        <button className={classname} >{title}</button>
+        <button className={classname}>{title}</button>
     </>
 );
 

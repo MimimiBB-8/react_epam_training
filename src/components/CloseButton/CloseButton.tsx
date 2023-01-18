@@ -1,9 +1,8 @@
-import React from "react";
-import './Closebutton.css'
+import style from './Closebutton.module.scss'
 
 const CloseButton = () => (
     <>
-        <button className={'close_button'} ></button>
+        <button className={style.close_button}></button>
     </>
 );
 
