@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import MainComponent from "./components/MainComponent/MainComponent";
 import Footer from "./components/Footer/Footer";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import SuccessNotification from "./components/SuccessNotification/SuccessNotification";
 function App() {
     return (
         <div className="app_wrapper">
@@ -12,6 +13,7 @@ function App() {
                 <MainComponent/>
                 <Footer/>
             </ErrorBoundary>
+            <SuccessNotification/>
         </div>
     );
 }
