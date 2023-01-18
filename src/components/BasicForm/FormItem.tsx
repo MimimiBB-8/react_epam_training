@@ -1,11 +1,17 @@
 import React from "react";
 import '../../style/BasicForm/formitem.css'
 
-const FormItem: React.FC<{ title: string, type: string, placeholder: string }> = ({title, type, placeholder}) => (
+interface InputProps{
+    title: string,
+    type: string,
+    placeholder: string,
+    classname?: string
+}
+const FormItem = ({title, type, placeholder, classname}:InputProps) => (
     <>
         <label className={'input_title'}>
             {title}
-            <input type={type} placeholder={placeholder}/>
+            <input type={type} placeholder={placeholder} className={classname}/>
         </label>
     </>
 );
