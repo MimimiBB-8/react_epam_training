@@ -1,5 +1,5 @@
 import React from "react";
-import '../../style/SortMovie/sortmovie.css'
+import './sortmovie.css'
 
 const SortMovie = () => (
         <>

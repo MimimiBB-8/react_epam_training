@@ -2,7 +2,7 @@ import { useState } from "react";
 import Select, { components } from "react-select";
 import FormItem from "../BasicForm/FormItem";
 import Button from "../Button/Button";
-import '../../style/BasicForm/basicform.css'
+import './basicform.css'
 
 const BasicForm = () => (
     <>

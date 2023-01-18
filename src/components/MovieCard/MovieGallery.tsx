@@ -1,5 +1,5 @@
 import React from "react";
-import '../../style/MovieCard/moviegallery.css'
+import './moviegallery.css'
 import MovieCart from "./MovieCard";
 import {information} from "../../data/data.js";
 

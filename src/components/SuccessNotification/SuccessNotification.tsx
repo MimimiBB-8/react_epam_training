@@ -1,5 +1,5 @@
 import React from "react";
-import  '../../style/SuccessNotification/notification.css'
+import  './notification.css'
 import CloseButton from "../CloseButton/CloseButton";
 const SuccessNotification = () => (
     <div className={'success_notification'}>

@@ -1,6 +1,6 @@
-import '../../style/MovieDescription/moviedescription.css'
+import './moviedescription.css'
 import React from "react";
-import '../../style/MovieDescription/moviedescription.css'
+import './moviedescription.css'
 import ImgSource from "../ImgSource/ImgSource";
 
 const MovieDescription = () => (

@@ -1,5 +1,5 @@
 import React from "react";
-import '../../style/Header/searchform.css'
+import './searchform.css'
 import Button from "../Button/Button";
 
 const SearchForm: React.FC = () => (
