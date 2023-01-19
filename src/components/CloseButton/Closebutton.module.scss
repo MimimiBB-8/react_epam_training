@@ -8,15 +8,16 @@
   border: none;
 }
 
-.close_button:before, .close_button:after {
-  content: "";
+.close_button:before,
+.close_button:after {
+  content: '';
   position: absolute;
   top: 21px;
   left: 10px;
   width: 21px;
   height: 1px;
-  border: 1px solid #FFFFFF;
-  background: #FFFFFF;
+  border: 1px solid #ffffff;
+  background: #ffffff;
   border-radius: 20px;
 }
 
@@ -29,4 +30,3 @@
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-

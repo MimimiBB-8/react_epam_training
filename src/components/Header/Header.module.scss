@@ -6,13 +6,13 @@
   width: 1200px;
   position: relative;
   border: solid 2px #555555;
-  background: url("../../img/header_background.png") 0px 0px no-repeat;
+  background: url('../../img/header_background.png') 0px 0px no-repeat;
   background-size: cover;
   margin-bottom: 5px;
   z-index: 1;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     height: 101%;
     position: absolute;
@@ -44,11 +44,11 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #F65261;
+  color: #f65261;
 
   span {
     font-weight: 900;
-    color: #F65261;
+    color: #f65261;
   }
 }
 
@@ -57,7 +57,7 @@
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
-  color: #F65261;
+  color: #f65261;
   padding: 11px 18px;
   height: 46px;
   width: 177px;
@@ -75,4 +75,3 @@ h2 {
 .search_content {
   margin-left: 60px;
 }
-
