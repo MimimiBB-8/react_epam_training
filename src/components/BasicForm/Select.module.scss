@@ -1,0 +1,84 @@
+.container {
+  position: relative;
+  background: rgba(50, 50, 50, 0.948044);
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin-top: 13px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  outline: none;
+
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.caret {
+  translate: 0 25%;
+  border: .25em solid transparent;
+  border-top-color: #777;
+  margin-right: 10px;
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  max-height: 15em;
+  width: 100%;
+  top: calc(100% + .25em);
+  z-index: 100;
+  background: rgba(35, 35, 35);
+  border-radius: 4px;
+  left: 0;
+}
+
+.options.show {
+  display: block;
+}
+
+.option {
+  padding: .25em .5em;
+  cursor: pointer;
+}
+
+.option.selected {
+  background-color: #f65261;
+}
+
+.option.highlighted {
+  background-color: #323232;
+}
+
+.option-badge {
+  border: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
+
+.option-badge:hover > .remove-btn,
+.option-badge:focus > .remove-btn{
+  color: #f65261;
+}
+
+.option-badge > .remove-btn {
+  font-size: 1.25em;
+  color: #777;
+}

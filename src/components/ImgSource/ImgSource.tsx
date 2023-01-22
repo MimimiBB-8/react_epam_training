@@ -1,16 +1,14 @@
-import React from "react";
-import '../../style/ImgSource/imgsource.css'
-interface ImgProps{
-    alt?: string,
-    urlProp?: string,
+import style from './Imgsource.module.scss'
+import styles from '../MovieCard/MovieCard.module.scss'
+interface ImgProps {
+  alt?: string
+  urlProp?: string
 }
 
-const ImgSource = ({alt, urlProp}:ImgProps) => (
+const ImgSource = ({ alt, urlProp }: ImgProps) => (
+  <>
+    <img className={`${style.poster} ${styles.poster}`} src={urlProp} alt={alt} />
+  </>
+)
 
-    <>
-
-        <img className={'poster'} src={urlProp} alt={alt}/>
-    </>
-);
-
-export default ImgSource;
+export default ImgSource

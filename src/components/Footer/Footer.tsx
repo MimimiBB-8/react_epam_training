@@ -1,10 +1,11 @@
-import React from "react";
-import '../../style/Footer/footer.css';
+import style from './Footer.module.scss'
 
-const Header: React.FC = () => (
-    <div className={'footer'}>
-        <p><span>netflix</span>roulette</p>
-    </div>
-);
+const Header = () => (
+  <div className={style.footer}>
+    <p>
+      <span>netflix</span>roulette
+    </p>
+  </div>
+)
 
-export default Header;
+export default Header

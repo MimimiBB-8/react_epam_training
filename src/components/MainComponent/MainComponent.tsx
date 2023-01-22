@@ -1,14 +1,12 @@
-import React from "react";
-import MovieGallery from "../MovieCard/MovieGallery";
-import SortMovie from "../SortMovie/SortMovie";
-import '../../style/maincomponent/maincomponent.css'
-
+import MovieGallery from '../MovieGallery/MovieGallery'
+import SortMovie from '../SortMovie/SortMovie'
+import style from './Maincomponent.module.scss'
 
 const MainComponent = () => (
-    <div className={'wrapper_component'}>
-        <SortMovie/>
-        <MovieGallery/>
-    </div>
-);
+  <div className={style.wrapper_component}>
+    <SortMovie />
+    <MovieGallery />
+  </div>
+)
 
-export default MainComponent;
+export default MainComponent

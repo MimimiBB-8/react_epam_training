@@ -1,14 +1,17 @@
-import React from "react";
-import '../../style/Button/button.css'
-
+import style from './Button.module.scss'
+import React from 'react'
 interface ButtonProps {
-    classname?: string,
-    title: string
+  classname?: string
+  title?: string
 }
-const Button = ({classname = 'base_button', title}:ButtonProps) => (
-    <>
-        <button className={classname} >{title}</button>
-    </>
-);
 
-export default Button;
+function Button ({classname = 'base_button', title}:ButtonProps) {
+  return (
+    <>
+      <button className={`${style[classname]}`}>{title}</button>
+    </>
+    )
+
+}
+
+export default Button

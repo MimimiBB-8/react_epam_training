@@ -1,0 +1,31 @@
+.movie_card {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.movie_name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.movie_year {
+  border: 1px solid #555555;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 4px 16px;
+}
+
+.movie_genre {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.movie_card .poster:hover + div .additions_menu{
+  display: flex;
+}
+
+.additions_menu:hover{
+  display: flex;
+}
