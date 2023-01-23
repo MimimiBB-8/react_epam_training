@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .point{
   width: 4px;
   height: 4px;
@@ -36,9 +37,8 @@
   border-radius: 4px;
   text-transform: none;
   list-style: none;
-  display: none;
-  p{
-    height: 22px;
+  .additions_choose_item{
+    height: 36px;
     padding: 6px 23px;
     &:not(:first-child):hover{
       background-color: #f65261;
