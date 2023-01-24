@@ -11,7 +11,7 @@ const FormItem = ({ title, type, placeholder, value }: ItemProps) => (
   <>
     <label className={style.input_title}>
       {title}
-      <input type={type} placeholder={placeholder} value={value}/>
+      <input  type={type} placeholder={placeholder} value={value}/>
     </label>
   </>
 )

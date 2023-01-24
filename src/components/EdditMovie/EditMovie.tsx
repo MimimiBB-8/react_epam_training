@@ -1,3 +1,4 @@
+import style from './EditMovie.module.scss'
 import BasicForm from '../BasicForm/BasicForm'
 
 const EditMovie = () => (
