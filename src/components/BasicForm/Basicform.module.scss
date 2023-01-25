@@ -4,16 +4,13 @@
 
 .first_colon {
   margin-right: 30px;
-
-  input {
-    width: 489px;
-    height: 25px;
+  input{
+    width: 525px;
   }
 }
 
 .second_colon input {
-  width: 265px;
-  height: 25px;
+  width: 301px;
 }
 
 .group_button {
@@ -26,6 +23,7 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.888889px;
+  height: 57px;
   text-transform: uppercase;
   color: #f65261;
   display: flex;
