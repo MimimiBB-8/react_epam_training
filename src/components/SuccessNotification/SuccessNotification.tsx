@@ -1,9 +1,9 @@
 import style from './Notification.module.scss'
-import CloseButton from '../CloseButton/CloseButton'
+import Button from '../Button/Button'
 const tick: string = require('../../img/svg/done.svg').default
 const SuccessNotification = () => (
   <div className={style.success_notification}>
-    <CloseButton />
+    <Button classname={'close'}/>
     <div className={style.done}>
       <img src={tick} alt={'done'} className={style.tick}/>
     </div>

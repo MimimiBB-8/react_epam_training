@@ -12,9 +12,7 @@ button {
   border: 1.5px solid variables.$addedButton;
 }
 
-
-
-.base_button {
+.base_button, .confirm {
   background-color: variables.$addedButton;
   right: 0;
 }
@@ -29,8 +27,6 @@ button {
   width: 233px;
   background-color: variables.$addedButton;
 }
-
-
 .add_movie {
   background: rgba(96, 96, 96, 0.68);
   font-weight: 600;
