@@ -1,9 +1,13 @@
 import style from './Notification.module.scss'
 import Button from '../Button/Button'
 const tick: string = require('../../img/svg/done.svg').default
-const SuccessNotification = () => (
+
+interface addMovieProps {
+  onClick: () => void
+}
+const SuccessNotification = ({onClick}:addMovieProps) => (
   <div className={style.success_notification}>
-    <Button classname={'close'}/>
+    <Button classname={'close'} onClick={onClick}/>
     <div className={style.done}>
       <img src={tick} alt={'done'} className={style.tick}/>
     </div>

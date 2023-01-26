@@ -11,7 +11,7 @@ const DeletionConfirmation = ({onClick}:deleteMovieProps) => (
     <h2>Delete MOVIE</h2>
     <p>Are you sure you want to delete this movie? </p>
     <div className={style.div_button}>
-      <Button title={'confirm'} classname={'confirm'} />
+      <Button title={'confirm'} classname={'confirm'} onClick={onClick}/>
     </div>
   </div>
 )

@@ -40,7 +40,8 @@ button {
   border: none;
 }
 
-.close_button {
+
+.close_button, .close_button_small {
   position: absolute;
   top: 15px;
   right: 28px;
@@ -50,8 +51,15 @@ button {
   border: none;
 }
 
+.close_button_small{
+  width: 11px;
+  height: 11px;
+}
+
 .close_button:before,
-.close_button:after {
+.close_button:after,
+.close_button_small:before,
+.close_button_small:after,{
   content: '';
   position: absolute;
   width: 21px;
@@ -60,13 +68,18 @@ button {
   background: #ffffff;
   border-radius: 20px;
 }
-
-.close_button:before {
+.close_button_small:before,
+.close_button_small:after, {
+  width: 11px;
+}
+.close_button:before,
+.close_button_small:before{
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.close_button:after {
+.close_button:after,
+.close_button_small:after{
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }

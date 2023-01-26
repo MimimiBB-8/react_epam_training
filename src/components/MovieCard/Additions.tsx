@@ -24,7 +24,7 @@ function Additions() {
         </div>
         <div className={style.additions_choose} style={{display: visible ? 'block' : 'none'}}>
           <p className={style.additions_choose_item}>
-            <Button classname={'close_button'} onClick={handleClickClose} />
+            <Button classname={'close_button_small'} onClick={handleClickClose} />
           </p>
           <p className={style.additions_choose_item} onClick={() => setShowModal(true)} >Edit</p>
           <p className={style.additions_choose_item} onClick={() => setShowModalDelete(true)}>Delete</p>
