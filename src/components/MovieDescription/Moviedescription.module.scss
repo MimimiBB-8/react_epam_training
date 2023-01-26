@@ -1,6 +1,9 @@
 .description_wrapper {
+  width: 1200px;
   display: flex;
-  position: relative;
+  display: none;
+  background-color: #232323;
+  padding: 37px 60px 13px;
 }
 
 h2 {
@@ -9,6 +12,7 @@ h2 {
 
 .description_movie {
   margin-left: 60px;
+  width: 698px;
 }
 
 .circle_paragraph {

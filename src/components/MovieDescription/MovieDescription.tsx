@@ -12,7 +12,7 @@ interface MovieProps {
 
 const MovieDescription = ({ title, year, genre, urlImg }: MovieProps) => (
   <div className={style.description_wrapper}>
-    <ImgSource />
+    <ImgSource urlProp={information[0].url} />
     <div className={style.description_movie}>
       <div className={style.group_name_rating}>
         <h2>{information[0].title}</h2>
