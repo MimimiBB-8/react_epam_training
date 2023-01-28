@@ -7,8 +7,6 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import {ThemeProvider} from './components/Context/Context'
 
 function App() {
-  const [title, setDark] = useState(false);
-
   return (
    <ThemeProvider>
     <div className={style.app_wrapper}>

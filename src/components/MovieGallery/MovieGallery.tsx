@@ -7,6 +7,7 @@ function MovieGallery() {
   const movieItems = information.map((item) => (
     <MovieCard
       key={item.id}
+      keyID={item.id}
       title={item.title}
       year={item.year}
       genre={item.genre}

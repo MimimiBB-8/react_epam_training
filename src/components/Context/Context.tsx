@@ -1,12 +1,15 @@
 import { createContext, ReactNode, useState } from 'react'
 
 interface IThemeContext {
-  dark: boolean,
-  toggleDark?: () => void,
+  visible: boolean,
+  toggleVisible?: (param: any) => void,
+  itemID: number,
+  toggleItemID?: (parametr: any) => void,
 }
 
 const defaultState = {
-  dark: false
+  visible: false,
+  itemID: 0
 }
 
 export const Context = createContext<IThemeContext>(defaultState)
@@ -15,12 +18,22 @@ type Props = {
   children: ReactNode;
 };
 export const ThemeProvider = ({ children }: Props) => {
-  const [dark, setDark] = useState(defaultState.dark)
-  const toggleDark=()=>{
-    setDark(!dark)
+  const [visible, setVisible] = useState(defaultState.visible)
+  const [itemID, setItemID] = useState(defaultState.itemID)
+  const toggleVisible = (param : any)=>{
+    setVisible(param)
+  }
+  const toggleItemID = (parametr : any)=>{
+    setItemID(parametr)
+  }
+  const value = {
+    visible,
+    toggleVisible,
+    itemID,
+    toggleItemID,
   }
   return (
-    <Context.Provider value={{dark, toggleDark}}>
+    <Context.Provider value={value}>
       {children}
     </Context.Provider>
   )
