@@ -23,8 +23,8 @@ const MovieCard = ({keyID, title, year, genre, urlImg }: MovieProps) => {
     if (value.toggleVisible) {
       value.toggleVisible(true)
     }
-
   }
+
   return (
     <div className={style.movie_card} id={keyID} onClick={handleOnClick}>
       <ImgSource alt={title} urlProp={urlImg} />

@@ -1,8 +1,32 @@
-.description_wrapper {
+.header_description{
   width: 1200px;
-  display: flex;
   background-color: #232323;
   padding: 37px 60px 13px;
+}
+
+.logo_line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 152px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f65261;
+
+  span {
+    font-weight: 900;
+    color: #f65261;
+  }
+}
+
+.description_wrapper {
+  display: flex;
 }
 
 h2 {

@@ -25,7 +25,7 @@ export const information = [
     year: '2004',
     rating: '8',
     time: '137',
-    genre: 'Oscar winning Movie',
+    genre: 'Oscar winning Movie, Action, Crime, Thriller',
     description: 'The Bride continues her quest of vengeance against her former boss and lover Bill, the reclusive bouncer Budd, and the treacherous, one-eyed Elle.',
     url: require('../img/kill_bill.jpg'),
   },
