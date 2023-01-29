@@ -15,7 +15,12 @@ interface MovieProps {
 const MovieCard = ({keyID, title, year, genre, urlImg }: MovieProps) => {
 
   const value = useContext(Context)
-  const handleOnClick = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
     e.preventDefault()
     if(value.toggleItemID){
       value.toggleItemID(keyID)

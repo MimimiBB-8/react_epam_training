@@ -6,7 +6,8 @@
     display: flex;
     list-style-type: none;
     padding: 0;
-
+    cursor: pointer;
+    text-transform: uppercase;
     li:not(:last-child) {
       margin-right: 30px;
     }
