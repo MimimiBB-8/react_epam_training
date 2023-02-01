@@ -8,19 +8,19 @@ import {ThemeProvider} from './components/Context/Context'
 
 function App() {
   return (
-   <ThemeProvider>
     <div className={style.app_wrapper}>
        <div className={style.page_wrapper}>
         <ErrorBoundary>
           <div className={style.main_wrapper}>
+            <ThemeProvider>
             <Header/>
             <MainComponent/>
+            </ThemeProvider>
             <Footer/>
           </div>
         </ErrorBoundary>
        </div>
     </div>
-    </ThemeProvider>
   )
 }
 

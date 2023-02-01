@@ -9,12 +9,14 @@ interface addMovieProps {
   onClick: () => void
 }
 const AddMovie = ({onClick}:addMovieProps) => {
+
   const [showModal, setShowModal] = useState(false)
+
   return (
       <div className={style.add_movie}>
         <Button classname={'close_button'} onClick={onClick}/>
         <h2 className={style.topic}>ADD MOVIE</h2>
-        <BasicForm />
+        <BasicForm/>
         {showModal && (
           <Portal>
             <SuccessNotification onClick={() => setShowModal(false)} />

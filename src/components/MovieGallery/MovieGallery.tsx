@@ -1,42 +1,46 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../Context/Context'
 import style from './Moviegallery.module.scss'
 import MovieCard from '../MovieCard/MovieCard'
-import { information } from '../../data/data.js'
+// import { information } from '../../data/data.js'
+import { ContextMain } from '../Context/ContextMain'
+import { ContextData, DataProvider } from '../Context/ContextData'
 
 
 function MovieGallery() {
-  const value = useContext(Context)
-  let movieItems
+  const valueData = useContext(ContextData)
+  const value = useContext(ContextMain)
+  let movieItems = valueData.movieData
+
   if (value.genreFilter !== 'all') {
-    movieItems = information
+    movieItems = valueData.movieData
       .filter((item) => item.genre.includes(value.genreFilter))
-      .map((item) => (
-        <MovieCard
-          key={item.id}
-          keyID={item.id}
-          title={item.title}
-          year={item.year}
-          genre={item.genre}
-          urlImg={item.url}
-        />
-      ))
-  } else {
-    movieItems = information.map((item) => (
-      <MovieCard
-        key={item.id}
-        keyID={item.id}
-        title={item.title}
-        year={item.year}
-        genre={item.genre}
-        urlImg={item.url}
-      />
-    ))
+
   }
+  if (value.release === 'ascending') {
+    movieItems.sort((a, b) => a.year > b.year ? 1 : -1)
+  }
+  if (value.release === 'descending') {
+    movieItems.sort((a, b) => a.year < b.year ? 1 : -1)
+  }
+
+
+  const newMovieItems = movieItems.map((item) => (
+    <MovieCard
+      key={item.id}
+      keyID={item.id}
+      title={item.title}
+      year={item.year}
+      genre={item.genre}
+      urlImg={item.url}
+    />
+  ))
+
   return (
     <>
       {Object.keys(movieItems).length !== 0 ?
-        <div className={style.movie_gallery}>{movieItems}</div> :
+        <div className={style.movie_gallery}>
+          {newMovieItems} </div> :
         <div><h1>Movie not found</h1></div>}
     </>
   )

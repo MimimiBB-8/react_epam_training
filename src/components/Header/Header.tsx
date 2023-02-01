@@ -1,6 +1,6 @@
 import style from './Header.module.scss'
 import React, { useState, useContext } from 'react'
-import SearchForm from './SearchForm'
+import SearchForm from '../SearcForm/SearchForm'
 import Button from '../Button/Button'
 import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'

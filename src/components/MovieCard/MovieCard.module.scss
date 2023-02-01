@@ -1,6 +1,10 @@
 .movie_card {
   margin-bottom: 50px;
   position: relative;
+  margin-right: 55px;
+}
+.movie_card:nth-child(3n){
+  margin-right: 0;
 }
 
 .movie_name {
@@ -20,6 +24,7 @@
   font-weight: 500;
   font-size: 14px;
   opacity: 0.5;
+  text-transform: capitalize;
 }
 
 .movie_card .poster:hover + div .additions_menu{

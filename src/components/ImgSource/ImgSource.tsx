@@ -7,7 +7,7 @@ interface ImgProps {
 
 const ImgSource = ({ alt, urlProp }: ImgProps) => (
   <>
-    <img className={`${style.poster} ${styles.poster}`} src={urlProp} alt={alt} />
+    <img className={`${style.poster} ${styles.poster} img_source`} src={urlProp} alt={alt} />
   </>
 )
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { DataHTMLAttributes, useContext} from 'react'
 import style from './Moviedescription.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
 import { information } from '../../data/data'
@@ -8,7 +8,7 @@ import Button from '../Button/Button'
 type Movie = {
   id?: number,
   title?: string,
-  year?: number,
+  year?: string,
   rating?: number,
   time: number,
   genre?: string,
@@ -57,7 +57,7 @@ const MovieDescription = () => {
           </div>
           <p className={style.description_genre}>{movie.genre}</p>
           <div className={style.group_year_time}>
-            <h5 className={style.description_year}>{movie.year}</h5>
+            <h5 className={style.description_year}>{movie.year?.split('').slice(0,4)}</h5>
             <h5 className={style.description_time}>{getTimeFromMins(movie.time)}</h5>
           </div>
           <p className={style.description}>
