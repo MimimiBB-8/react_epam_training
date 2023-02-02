@@ -7,13 +7,14 @@
   border-radius: 50px;
   margin: 0 auto 30px;
   display: flex;
-}
-.done svg {
-  margin: auto;
+
+  .tick {
+    margin: auto;
+  }
 }
 
 .success_notification {
-  position: absolute;
+  position: relative;
   margin: auto;
   padding: 42px 0 57px 0;
   text-align: center;

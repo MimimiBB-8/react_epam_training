@@ -10,8 +10,8 @@ const LogIn = () => (
         <FormItem title={'User Id *'} type={'email'} placeholder={'enter user id'} />
         <FormItem title={'PASSWORD *'} type={'password'} placeholder={'enter password'} />
         <div className={style.group_button}>
-          <Button classname={style.reset_button} title={'reset'} />
-          <Button title={'log in'} />
+          <Button classname={'reset_button'} title={'reset'} />
+          <Button title={'log in'} classname={'delete_button'}/>
         </div>
       </form>
       <p className={style.note}>*Mandatory</p>

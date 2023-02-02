@@ -1,5 +1,5 @@
 import style from './Imgsource.module.scss'
-
+import styles from '../MovieCard/MovieCard.module.scss'
 interface ImgProps {
   alt?: string
   urlProp?: string
@@ -7,7 +7,7 @@ interface ImgProps {
 
 const ImgSource = ({ alt, urlProp }: ImgProps) => (
   <>
-    <img className={style.poster} src={urlProp} alt={alt} />
+    <img className={`${style.poster} ${styles.poster}`} src={urlProp} alt={alt} />
   </>
 )
 

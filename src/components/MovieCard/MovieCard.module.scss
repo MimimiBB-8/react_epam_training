@@ -1,5 +1,6 @@
 .movie_card {
   margin-bottom: 50px;
+  position: relative;
 }
 
 .movie_name {
@@ -19,4 +20,12 @@
   font-weight: 500;
   font-size: 14px;
   opacity: 0.5;
+}
+
+.movie_card .poster:hover + div .additions_menu{
+  display: flex;
+}
+
+.additions_menu:hover{
+  display: flex;
 }

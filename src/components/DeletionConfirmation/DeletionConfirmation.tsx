@@ -1,13 +1,18 @@
 import Button from '../Button/Button'
-import CloseButton from '../CloseButton/CloseButton'
 import style from './Deletionconfirmation.module.scss'
 
-const DeletionConfirmation = () => (
+interface deleteMovieProps {
+  onClick: () => void
+}
+
+const DeletionConfirmation = ({onClick}:deleteMovieProps) => (
   <div className={style.deletion_confirmation}>
-    <CloseButton />
+    <Button classname={'close_button'} onClick={onClick}/>
     <h2>Delete MOVIE</h2>
     <p>Are you sure you want to delete this movie? </p>
-    <Button title={'confirm'} />
+    <div className={style.div_button}>
+      <Button title={'confirm'} classname={'confirm'} onClick={onClick}/>
+    </div>
   </div>
 )
 

@@ -1,5 +1,6 @@
 import style from './MovieCard.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
+import Additions from './Additions'
 interface MovieProps {
   title: string
   year: string
@@ -9,6 +10,7 @@ interface MovieProps {
 const MovieCard = ({ title, year, genre, urlImg }: MovieProps) => (
   <div className={style.movie_card}>
     <ImgSource alt={title} urlProp={urlImg} />
+    <Additions/>
     <div className={style.movie_name}>
       <h4>{title}</h4>
       <p className={style.movie_year}>{year}</p>

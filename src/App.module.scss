@@ -1,5 +1,14 @@
-.app_wrapper {
+.app_wrapper{
+  position: relative;
+  display: flex;
+}
+
+.page_wrapper {
   width: 1200px;
+  min-height: 100vh;
   height: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
+

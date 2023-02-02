@@ -1,6 +1,7 @@
 import style from './Moviegallery.module.scss'
-import MovieCard from './MovieCard'
+import MovieCard from '../MovieCard/MovieCard'
 import { information } from '../../data/data.js'
+
 
 function MovieGallery() {
   const movieItems = information.map((item) => (

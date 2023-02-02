@@ -1,12 +1,21 @@
 import style from './Moviedescription.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
+import {information} from '../../data/data'
 
-const MovieDescription = () => (
+interface MovieProps {
+  title?: string
+  year?: number
+  genre?: number
+  urlImg?: string
+  description?: string
+}
+
+const MovieDescription = ({ title, year, genre, urlImg }: MovieProps) => (
   <div className={style.description_wrapper}>
     <ImgSource />
     <div className={style.description_movie}>
       <div className={style.group_name_rating}>
-        <h2>Pulp Fiction</h2>
+        <h2>{information[0].title}</h2>
         <div className={style.circle_paragraph}>
           <p className={style.rating}>8.9</p>
         </div>

@@ -8,8 +8,9 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-
-  input {
+  z-index: 1;
+  .input_item {
+    height: 57px;
     background: rgba(50, 50, 50, 0.948044);
     mix-blend-mode: normal;
     opacity: 0.8;
@@ -17,9 +18,16 @@
     padding: 16px 18px;
     font-weight: 400;
     font-size: 20px;
-    color: #ffffff;
     text-transform: capitalize;
     margin-top: 13px;
     border: none;
+    z-index: 1;
   }
+  input[type='textarea']{
+    height: 197px;
+    width: 859px;
+    border-radius: 4px;
+
+  }
+
 }
