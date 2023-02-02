@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Context } from '../Context/Context'
 import style from './Moviegallery.module.scss'
 import MovieCard from '../MovieCard/MovieCard'
-// import { information } from '../../data/data.js'
 import { ContextMain } from '../Context/ContextMain'
 import { ContextData, DataProvider } from '../Context/ContextData'
 

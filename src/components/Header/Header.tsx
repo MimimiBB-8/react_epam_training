@@ -6,6 +6,7 @@ import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
 import { Context } from '../Context/Context'
 import MovieDescription from '../MovieDescription/MovieDescription'
+import { ContextData, DataProvider } from '../Context/ContextData'
 
 const Header = () => {
 
@@ -34,7 +35,9 @@ const Header = () => {
       </div>
       {showModal && (
         <Portal>
-          <AddMovie onClick={() => setShowModal(false)} />
+          <DataProvider>
+              <AddMovie onClick={() => setShowModal(false)} />
+          </DataProvider>
         </Portal>
       )}
     </>

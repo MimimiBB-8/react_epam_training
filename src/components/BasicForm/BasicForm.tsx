@@ -17,32 +17,63 @@ const options = [
   { label: 'Sci-Fi', value: 'sci-fi' },
 ]
 
+interface BasicFormProps{
+  position?: boolean
+}
 
-const BasicForm = () => {
+const BasicForm = ({position=false}:BasicFormProps) => {
 
   const valueContext = useContext(Context)
   const valueData = useContext(ContextData)
 
+  let receivedData = [{
+    id: valueData.movieData.length,
+    title: '',
+    year: '',
+    rating: '',
+    time: '',
+    genre: '',
+    description: '',
+    url: '',
+    urlMovie: '',
+  }]
 
-  const [item, setReset] = useState(valueData.movieData.filter((el) => el.id === valueContext.itemID))
+  if(position !== true){
+    receivedData = valueData.movieData.filter((el) => el.id === valueContext.itemID)
+  }
+
   const [selectValue, setSelectValue] = useState<SelectOption[]>([options[0]])
 
+  const [formValues, setFormValues] = useState(receivedData);
 
-
-  function handleOnReset(e: React.MouseEvent<HTMLButtonElement>){
-    e.preventDefault()
-    setReset([])
+  const values = [...formValues];
+  function addValue(e: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) {
+    const elementID = e.currentTarget.id
+    values[0][elementID] = e.currentTarget.value;
+    setFormValues(values);
   }
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    addValue(e)
+  };
+  const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>)=>{
+    addValue(e)
+  }
+  const handleSubmit = (e: React.ChangeEvent<HTMLElement>) => {
+    e.preventDefault();
+    if(valueData.addNewMovie){
+      valueData.addNewMovie(values)
+    }
+  };
 
 return (
     <>
-      <form>
+      <form >
         <div className={style.colon_wrapper}>
           <div className={style.first_colon}>
-            <FormItem title={'Title'} type={'text'} placeholder={'name'}
-                      value={item.length !== 0 ? item[0].title : ''}/>
-            <FormItem title={'Movie URl'} type={'url'} placeholder={'https://'}
-                      value={item.length !== 0 ? item[0].urlMovie : ''} />
+            <FormItem id={'title'} title={'title'} type={'text'} placeholder={'name'}
+                      value={formValues.length !== 0 ? formValues[0].title : ''} onchange={handleChange}/>
+            <FormItem id={'urlMovie'} title={'movie_url'} type={'url'} placeholder={'https://'}
+                      value={formValues.length !== 0 ? formValues[0].urlMovie : ''} onchange={handleChange}/>
             <label className={style.input_title}>
               Genre
               <Select
@@ -55,24 +86,23 @@ return (
             <br />
           </div>
           <div className={style.second_colon}>
-            <FormItem title={'RELEASE DATE'} type={'date'} placeholder={'Select Date'}
-                      value={item.length !== 0 ? item[0].year : ''} />
-            <FormItem title={'RATING'} type={'text'} placeholder={'7.8'}
-                      value={item.length !== 0 ? item[0].rating : ''} />
-            <FormItem title={'RUNTIME'} type={'text'} placeholder={'minutes'}
-                      value={item.length !== 0 ? item[0].time : ''} />
+            <FormItem id={'year'} title={'RELEASE DATE'} type={'date'} placeholder={'Select Date'}
+                      value={formValues.length !== 0 ? formValues[0].year : ''} onchange={handleChange}/>
+            <FormItem id={'rating'} title={'RATING'} type={'text'} placeholder={'7.8'}
+                      value={formValues.length !== 0 ? formValues[0].rating : ''} onchange={handleChange}/>
+            <FormItem id={'time'} title={'RUNTIME'} type={'text'} placeholder={'minutes'}
+                      value={formValues.length !== 0 ? formValues[0].time : ''} onchange={handleChange}/>
           </div>
         </div>
         <label className={style.input_title}>
           OVERVIEW
-          <textarea className={style.textarea} title={'OVERVIEW'} placeholder={'Movie description'}
-                    defaultValue={item.length !== 0 ? item[0].description : ''}>
-
+          <textarea id='description' className={style.textarea} title={'OVERVIEW'} placeholder={'Movie description'}
+                    defaultValue={formValues.length !== 0 ? formValues[0].description : ''} onChange={handleChangeTextArea}>
           </textarea>
         </label>
         <div className={style.group_button}>
-          <Button title={'reset'} classname={'reset_button'} onClick={handleOnReset}/>
-          <Button title={'submit'} />
+          <Button title={'reset'} classname={'reset_button'} />
+          <Button title={'submit'} onClick={handleSubmit}/>
         </div>
       </form>
     </>
