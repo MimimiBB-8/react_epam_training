@@ -1,16 +1,16 @@
 import { createContext, ReactNode, useState } from 'react'
-import {information} from '../data/data'
+import { information } from '../data/data'
 
 interface changeDataContextInterface {
-  movieData:  Array<any>,
+  movieData: Array<any>,
   movieID: number,
-  deleteMovie?: (param: any) => void,
+  deleteMovie?: (param: number) => void,
   newMovie: object,
   addNewMovie?: (param: any) => void,
 }
 
 const defaultState = {
-  movieData : information,
+  movieData: information,
   movieID: 0,
   newMovie: {},
 }
@@ -23,19 +23,19 @@ type Props = {
 
 export const ChangeDataContextProvider = ({ children }: Props) => {
 
-  const [movieData, setMovieDescription] = useState(defaultState.movieData);
-  const [movieID ,setMovieID ] = useState(defaultState.movieID);
-  const [newMovie ,setNewMovie] = useState(defaultState.newMovie);
+  const [movieData, setMovieDescription] = useState(defaultState.movieData)
+  const [movieID, setMovieID] = useState(defaultState.movieID)
+  const [newMovie, setNewMovie] = useState(defaultState.newMovie)
 
-  const deleteMovie = (param : any)=>{
+  const deleteMovie = (param: number) => {
     setMovieID(param)
-    movieData.splice(param,1)
-    setMovieDescription(movieData)
+    const changeData = movieData.filter((item) => item.id !== param)
+    setMovieDescription(changeData)
   }
 
-  const addNewMovie = (param : any)=>{
-    const  idContent = movieData.some((item)=> item.id === param[0].id)
-    if(!idContent){
+  const addNewMovie = (param: any) => {
+    const idContent = movieData.some((item) => item.id === param[0].id)
+    if (!idContent) {
       movieData.push(param[0])
     }
     setNewMovie(param)
@@ -47,7 +47,7 @@ export const ChangeDataContextProvider = ({ children }: Props) => {
     movieID,
     deleteMovie,
     newMovie,
-    addNewMovie
+    addNewMovie,
   }
 
   return (
