@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from 'react'
-interface ContextInterface {
+interface sortingChangesContextInterface {
   genreFilter:string,
   toggleGenreFilter?: (param: any) => void,
   release?: string,
@@ -10,13 +10,13 @@ const defaultState = {
   genreFilter: 'all'
 }
 
-export const ContextMain = createContext<ContextInterface>(defaultState)
+export const sortingChangesContext = createContext<sortingChangesContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const MainProvider = ({ children }: Props) => {
+export const sortingChangesContextProvider = ({ children }: Props) => {
   const [genreFilter, setGenreFilter] = useState(defaultState.genreFilter)
   const [release, setRelease] = useState('')
 
@@ -35,9 +35,9 @@ export const MainProvider = ({ children }: Props) => {
   }
 
   return (
-    <ContextMain.Provider value={value}>
+    <sortingChangesContext.Provider value={value}>
       {children}
-    </ContextMain.Provider>
+    </sortingChangesContext.Provider>
   )
 }
 

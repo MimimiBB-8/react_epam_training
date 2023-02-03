@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import MainComponent from './components/MainComponent/MainComponent'
 import Footer from './components/Footer/Footer'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
-import {ThemeProvider} from './components/Context/Context'
+import {stateVisibleContextProvider} from './context/StateVisibleContext'
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
        <div className={style.page_wrapper}>
         <ErrorBoundary>
           <div className={style.main_wrapper}>
-            <ThemeProvider>
+            <stateVisibleContextProvider>
             <Header/>
             <MainComponent/>
-            </ThemeProvider>
+            </stateVisibleContextProvider>
             <Footer/>
           </div>
         </ErrorBoundary>

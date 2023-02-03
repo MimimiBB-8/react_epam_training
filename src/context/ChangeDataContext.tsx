@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from 'react'
-import {information} from '../../data/data'
+import {information} from '../data/data'
 
-interface ContextDataInterface {
+interface changeDataContextInterface {
   movieData:  Array<any>,
   movieID: number,
   deleteMovie?: (param: any) => void,
@@ -15,13 +15,13 @@ const defaultState = {
   newMovie: {},
 }
 
-export const ContextData = createContext<ContextDataInterface>(defaultState)
+export const changeDataContext = createContext<changeDataContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const DataProvider = ({ children }: Props) => {
+export const changeDataContextProvider = ({ children }: Props) => {
 
   const [movieData, setMovieDescription] = useState(defaultState.movieData);
   const [movieID ,setMovieID ] = useState(defaultState.movieID);
@@ -51,9 +51,9 @@ export const DataProvider = ({ children }: Props) => {
   }
 
   return (
-    <ContextData.Provider value={value}>
+    <changeDataContext.Provider value={value}>
       {children}
-    </ContextData.Provider>
+    </changeDataContext.Provider>
   )
 }
 

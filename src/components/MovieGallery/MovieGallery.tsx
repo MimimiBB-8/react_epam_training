@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import style from './Moviegallery.module.scss'
 import MovieCard from '../MovieCard/MovieCard'
-import { ContextMain } from '../Context/ContextMain'
-import { ContextData, DataProvider } from '../Context/ContextData'
+import { sortingChangesContext } from '../../context/SortingChangesContext'
+import { changeDataContext, changeDataContextProvider } from '../../context/ChangeDataContext'
 
 
 function MovieGallery() {
-  const valueData = useContext(ContextData)
-  const value = useContext(ContextMain)
+  const valueData = useContext(changeDataContext)
+  const value = useContext(sortingChangesContext)
   let movieItems = valueData.movieData
 
   if (value.genreFilter !== 'all') {

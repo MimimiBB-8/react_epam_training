@@ -1,10 +1,10 @@
 import { createContext, ReactNode, useState } from 'react'
 
-interface IThemeContext {
+interface stateVisibleContextInterface {
   visible: boolean,
-  toggleVisible?: (param: any) => void,
+  toggleVisible?: (param: boolean) => void,
   itemID: number,
-  toggleItemID?: (param: any) => void,
+  toggleItemID?: (param: number) => void,
 }
 
 const defaultState = {
@@ -12,13 +12,13 @@ const defaultState = {
   itemID: 0,
 }
 
-export const Context = createContext<IThemeContext>(defaultState)
+export const stateVisibleContext = createContext<stateVisibleContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const ThemeProvider = ({ children }: Props) => {
+export const stateVisibleContextProvider = ({ children }: Props) => {
   const [visible, setVisible] = useState(defaultState.visible)
   const [itemID, setItemID] = useState(defaultState.itemID)
 
@@ -27,9 +27,7 @@ export const ThemeProvider = ({ children }: Props) => {
   }
   const toggleItemID = (param : any)=>{
     setItemID(param)
-
   }
-
 
   const value = {
     visible,
@@ -39,9 +37,9 @@ export const ThemeProvider = ({ children }: Props) => {
   }
 
   return (
-    <Context.Provider value={value}>
+    <stateVisibleContext.Provider value={value}>
       {children}
-    </Context.Provider>
+    </stateVisibleContext.Provider>
   )
 }
 

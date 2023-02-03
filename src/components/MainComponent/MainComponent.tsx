@@ -1,17 +1,17 @@
 import MovieGallery from '../MovieGallery/MovieGallery'
 import SortMovie from '../SortMovie/SortMovie'
 import style from './Maincomponent.module.scss'
-import { MainProvider } from '../Context/ContextMain'
-import { DataProvider } from '../Context/ContextData'
+import { sortingChangesContextProvider } from '../../context/SortingChangesContext'
+import { changeDataContextProvider } from '../../context/ChangeDataContext'
 
 const MainComponent = () => (
   <div className={style.wrapper_component}>
-    <MainProvider>
+    <sortingChangesContextProvider>
       <SortMovie />
-      <DataProvider>
+      <changeDataContextProvider>
         <MovieGallery />
-      </DataProvider>
-    </MainProvider>
+      </changeDataContextProvider>
+    </sortingChangesContextProvider>
   </div>
 )
 

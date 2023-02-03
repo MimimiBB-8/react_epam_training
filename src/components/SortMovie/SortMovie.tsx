@@ -1,9 +1,9 @@
 import style from './Sortmovie.module.scss'
 import React, { useContext} from 'react'
-import { ContextMain } from '../Context/ContextMain'
+import { sortingChangesContext } from '../../context/SortingChangesContext'
 
 const SortMovie = () => {
-  const value = useContext(ContextMain)
+  const value = useContext(sortingChangesContext)
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();

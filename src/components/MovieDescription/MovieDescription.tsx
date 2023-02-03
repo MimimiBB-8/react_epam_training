@@ -2,7 +2,7 @@ import React, { DataHTMLAttributes, useContext} from 'react'
 import style from './Moviedescription.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
 import { information } from '../../data/data'
-import { Context } from '../Context/Context'
+import { stateVisibleContext } from '../../context/StateVisibleContext'
 import Button from '../Button/Button'
 
 type Movie = {
@@ -17,7 +17,7 @@ type Movie = {
 };
 const MovieDescription = () => {
 
-  const value = useContext(Context)
+  const value = useContext(stateVisibleContext)
   const movie: Movie = { time: 0 }
 
   information.map((item) => {

@@ -4,14 +4,14 @@ import SearchForm from '../SearcForm/SearchForm'
 import Button from '../Button/Button'
 import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
-import { Context } from '../Context/Context'
+import { stateVisibleContext } from '../../context/StateVisibleContext'
 import MovieDescription from '../MovieDescription/MovieDescription'
-import { ContextData, DataProvider } from '../Context/ContextData'
+import { changeDataContext, changeDataContextProvider } from '../../context/ChangeDataContext'
 
 const Header = () => {
 
   const [showModal, setShowModal] = useState(false)
-  const value = useContext(Context)
+  const value = useContext(stateVisibleContext)
 
 
   return (
@@ -35,9 +35,9 @@ const Header = () => {
       </div>
       {showModal && (
         <Portal>
-          <DataProvider>
+          <changeDataContextProvider>
               <AddMovie onClick={() => setShowModal(false)} />
-          </DataProvider>
+          </changeDataContextProvider>
         </Portal>
       )}
     </>
