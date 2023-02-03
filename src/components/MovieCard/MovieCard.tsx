@@ -2,7 +2,7 @@ import style from './MovieCard.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
 import Additions from './Additions'
 import React, { useContext } from 'react'
-import { stateVisibleContext } from '../../context/StateVisibleContext'
+import { StateVisibleContext } from '../../context/StateVisibleContext'
 
 interface MovieProps {
   keyID: any
@@ -14,7 +14,7 @@ interface MovieProps {
 
 const MovieCard = ({keyID, title, year, genre, urlImg }: MovieProps) => {
 
-  const value = useContext(stateVisibleContext)
+  const value = useContext(StateVisibleContext)
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()

@@ -3,8 +3,8 @@ import Button from '../Button/Button'
 import style from './Basicform.module.scss'
 import React, { useState, useContext } from 'react'
 import { Select, SelectOption } from './Select'
-import { stateVisibleContext } from '../../context/StateVisibleContext'
-import { changeDataContext } from '../../context/ChangeDataContext'
+import { StateVisibleContext } from '../../context/StateVisibleContext'
+import { ChangeDataContext } from '../../context/ChangeDataContext'
 
 const options = [
   { label: 'Crime', value: 'crime' },
@@ -23,8 +23,8 @@ interface BasicFormProps{
 
 const BasicForm = ({position=false}:BasicFormProps) => {
 
-  const valueContext = useContext(stateVisibleContext)
-  const valueData = useContext(changeDataContext)
+  const valueContext = useContext(StateVisibleContext)
+  const valueData = useContext(ChangeDataContext)
 
   let receivedData = [{
     id: valueData.movieData.length,

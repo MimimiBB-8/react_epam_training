@@ -1,18 +1,18 @@
 import style from './Header.module.scss'
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import SearchForm from '../SearcForm/SearchForm'
 import Button from '../Button/Button'
 import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
-import { stateVisibleContext } from '../../context/StateVisibleContext'
 import MovieDescription from '../MovieDescription/MovieDescription'
-import { changeDataContext, changeDataContextProvider } from '../../context/ChangeDataContext'
+
+import { StateVisibleContext } from '../../context/StateVisibleContext'
+import {ChangeDataContextProvider } from '../../context/ChangeDataContext'
 
 const Header = () => {
 
   const [showModal, setShowModal] = useState(false)
-  const value = useContext(stateVisibleContext)
-
+  const value = useContext(StateVisibleContext)
 
   return (
     <>
@@ -31,13 +31,12 @@ const Header = () => {
             </div>
           </div>}
 
-
       </div>
       {showModal && (
         <Portal>
-          <changeDataContextProvider>
+          <ChangeDataContextProvider>
               <AddMovie onClick={() => setShowModal(false)} />
-          </changeDataContextProvider>
+          </ChangeDataContextProvider>
         </Portal>
       )}
     </>

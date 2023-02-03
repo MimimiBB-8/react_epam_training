@@ -12,13 +12,13 @@ const defaultState = {
   itemID: 0,
 }
 
-export const stateVisibleContext = createContext<stateVisibleContextInterface>(defaultState)
+export const StateVisibleContext = createContext<stateVisibleContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const stateVisibleContextProvider = ({ children }: Props) => {
+export const StateVisibleContextProvider = ({ children }: Props) => {
   const [visible, setVisible] = useState(defaultState.visible)
   const [itemID, setItemID] = useState(defaultState.itemID)
 
@@ -37,9 +37,9 @@ export const stateVisibleContextProvider = ({ children }: Props) => {
   }
 
   return (
-    <stateVisibleContext.Provider value={value}>
+    <StateVisibleContext.Provider value={value}>
       {children}
-    </stateVisibleContext.Provider>
+    </StateVisibleContext.Provider>
   )
 }
 

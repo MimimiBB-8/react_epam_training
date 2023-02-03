@@ -10,13 +10,13 @@ const defaultState = {
   genreFilter: 'all'
 }
 
-export const sortingChangesContext = createContext<sortingChangesContextInterface>(defaultState)
+export const SortingChangesContext = createContext<sortingChangesContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const sortingChangesContextProvider = ({ children }: Props) => {
+export const SortingChangesContextProvider = ({ children }: Props) => {
   const [genreFilter, setGenreFilter] = useState(defaultState.genreFilter)
   const [release, setRelease] = useState('')
 
@@ -35,9 +35,9 @@ export const sortingChangesContextProvider = ({ children }: Props) => {
   }
 
   return (
-    <sortingChangesContext.Provider value={value}>
+    <SortingChangesContext.Provider value={value}>
       {children}
-    </sortingChangesContext.Provider>
+    </SortingChangesContext.Provider>
   )
 }
 

@@ -1,9 +1,10 @@
-import React, { DataHTMLAttributes, useContext} from 'react'
+import React, {useContext} from 'react'
 import style from './Moviedescription.module.scss'
+import Button from '../Button/Button'
 import ImgSource from '../ImgSource/ImgSource'
 import { information } from '../../data/data'
-import { stateVisibleContext } from '../../context/StateVisibleContext'
-import Button from '../Button/Button'
+import { StateVisibleContext } from '../../context/StateVisibleContext'
+
 
 type Movie = {
   id?: number,
@@ -17,7 +18,7 @@ type Movie = {
 };
 const MovieDescription = () => {
 
-  const value = useContext(stateVisibleContext)
+  const value = useContext(StateVisibleContext)
   const movie: Movie = { time: 0 }
 
   information.map((item) => {

@@ -1,8 +1,8 @@
-import BasicForm from '../BasicForm/BasicForm'
 import style from './Addmovie.module.scss'
+import { useState } from 'react'
+import BasicForm from '../BasicForm/BasicForm'
 import Button from '../Button/Button'
 import SuccessNotification from '../SuccessNotification/SuccessNotification'
-import { useState } from 'react'
 import Portal from '../Portal/Portal'
 
 interface addMovieProps {

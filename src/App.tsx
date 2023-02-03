@@ -1,10 +1,9 @@
-import {useState} from 'react'
 import style from './App.module.scss'
 import Header from './components/Header/Header'
 import MainComponent from './components/MainComponent/MainComponent'
 import Footer from './components/Footer/Footer'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
-import {stateVisibleContextProvider} from './context/StateVisibleContext'
+import {StateVisibleContextProvider} from './context/StateVisibleContext'
 
 function App() {
   return (
@@ -12,10 +11,10 @@ function App() {
        <div className={style.page_wrapper}>
         <ErrorBoundary>
           <div className={style.main_wrapper}>
-            <stateVisibleContextProvider>
+            <StateVisibleContextProvider>
             <Header/>
             <MainComponent/>
-            </stateVisibleContextProvider>
+            </StateVisibleContextProvider>
             <Footer/>
           </div>
         </ErrorBoundary>

@@ -15,13 +15,13 @@ const defaultState = {
   newMovie: {},
 }
 
-export const changeDataContext = createContext<changeDataContextInterface>(defaultState)
+export const ChangeDataContext = createContext<changeDataContextInterface>(defaultState)
 
 type Props = {
   children: ReactNode;
 };
 
-export const changeDataContextProvider = ({ children }: Props) => {
+export const ChangeDataContextProvider = ({ children }: Props) => {
 
   const [movieData, setMovieDescription] = useState(defaultState.movieData);
   const [movieID ,setMovieID ] = useState(defaultState.movieID);
@@ -51,9 +51,9 @@ export const changeDataContextProvider = ({ children }: Props) => {
   }
 
   return (
-    <changeDataContext.Provider value={value}>
+    <ChangeDataContext.Provider value={value}>
       {children}
-    </changeDataContext.Provider>
+    </ChangeDataContext.Provider>
   )
 }
 

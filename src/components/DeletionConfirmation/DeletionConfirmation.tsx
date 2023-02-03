@@ -1,8 +1,8 @@
 import Button from '../Button/Button'
 import style from './Deletionconfirmation.module.scss'
 import { useContext } from 'react'
-import { stateVisibleContext } from '../../context/StateVisibleContext'
-import { changeDataContext } from '../../context/ChangeDataContext'
+import { StateVisibleContext } from '../../context/StateVisibleContext'
+import { ChangeDataContext } from '../../context/ChangeDataContext'
 
 interface deleteMovieProps {
   onClick: () => void
@@ -10,8 +10,8 @@ interface deleteMovieProps {
 
 
 const DeletionConfirmation = ({ onClick }: deleteMovieProps) => {
-  const value = useContext(stateVisibleContext)
-  const valueData = useContext(changeDataContext)
+  const value = useContext(StateVisibleContext)
+  const valueData = useContext(ChangeDataContext)
 
   function handlerDeleteMovie(){
     if(valueData.deleteMovie){
