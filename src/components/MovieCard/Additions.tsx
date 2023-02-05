@@ -15,34 +15,46 @@ function Additions() {
   }
 
   return (
-    <div className= {`${style.additions_wrapper} additions_wrapper`}>
-      <div className={`${style.additions_menu} ${styles.additions_menu} additions_menu`}
-           onClick={handleClickClose} >
+    <div className={`${style.additions_wrapper} additions_wrapper`}>
+      <div
+        className={`${style.additions_menu} ${styles.additions_menu} additions_menu`}
+        onClick={handleClickClose}
+      >
         <p className={style.point}></p>
         <p className={style.point}></p>
         <p className={style.point}></p>
       </div>
-      {visible? <div className={style.additions_choose} >
-        <p className={style.additions_choose_item}>
-          <Button classname={'close_button_small'} onClick={handleClickClose} />
-        </p>
-        <p className={`${style.additions_choose_item} additions_choose_item`} onClick={() => setShowModal(true)} >Edit</p>
-        <p className={`${style.additions_choose_item} additions_choose_item`} onClick={() => setShowModalDelete(true)}>Delete</p>
-        {showModal && (
-          <Portal>
-            <EditMovie onClick={() => setShowModal(false)} />
-          </Portal>
-        )}
-        {showModalDelete && (
-          <Portal>
-            <DeletionConfirmation onClick={() => setShowModalDelete(false)} />
-          </Portal>
-        )}
-      </div> : null}
-
+      {visible ? (
+        <div className={style.additions_choose}>
+          <p className={style.additions_choose_item}>
+            <Button classname={'close_button_small'} onClick={handleClickClose} />
+          </p>
+          <p
+            className={`${style.additions_choose_item} additions_choose_item`}
+            onClick={() => setShowModal(true)}
+          >
+            Edit
+          </p>
+          <p
+            className={`${style.additions_choose_item} additions_choose_item`}
+            onClick={() => setShowModalDelete(true)}
+          >
+            Delete
+          </p>
+          {showModal && (
+            <Portal>
+              <EditMovie onClick={() => setShowModal(false)} />
+            </Portal>
+          )}
+          {showModalDelete && (
+            <Portal>
+              <DeletionConfirmation onClick={() => setShowModalDelete(false)} />
+            </Portal>
+          )}
+        </div>
+      ) : null}
     </div>
   )
-
 }
 
 export default Additions

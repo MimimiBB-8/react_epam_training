@@ -8,15 +8,14 @@ interface deleteMovieProps {
   onClick: () => void
 }
 
-
 const DeletionConfirmation = ({ onClick }: deleteMovieProps) => {
-  const value = useContext(StateVisibleContext)
-  const valueData = useContext(ChangeDataContext)
+  const stateVisibleValue = useContext(StateVisibleContext)
+  const dataMovieValue = useContext(ChangeDataContext)
 
-  function handlerDeleteMovie(){
-    if(valueData.deleteMovie){
-      const movieIndex = valueData.movieData.findIndex((item)=>item.id === value.itemID)
-      valueData.deleteMovie(movieIndex)
+  function handlerDeleteMovie() {
+    if (dataMovieValue.deleteMovie) {
+      const movieIndex = stateVisibleValue.itemID
+      dataMovieValue.deleteMovie(movieIndex)
     }
   }
 

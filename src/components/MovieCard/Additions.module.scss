@@ -1,6 +1,6 @@
 @use '_variables.scss';
 
-.additions_wrapper{
+.additions_wrapper {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -9,7 +9,7 @@
   align-items: end;
 }
 
-.additions_menu{
+.additions_menu {
   display: none;
   width: 36px;
   height: 36px;
@@ -21,7 +21,7 @@
   justify-content: center;
 }
 
-.point{
+.point {
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -29,7 +29,7 @@
   margin-bottom: 3.5px;
 }
 
-.additions_choose{
+.additions_choose {
   position: relative;
   height: 111px;
   width: 190px;
@@ -37,10 +37,10 @@
   border-radius: 4px;
   text-transform: none;
   list-style: none;
-  .additions_choose_item{
+  .additions_choose_item {
     height: 36px;
     padding: 6px 23px;
-    &:not(:first-child):hover{
+    &:not(:first-child):hover {
       background-color: #f65261;
     }
   }

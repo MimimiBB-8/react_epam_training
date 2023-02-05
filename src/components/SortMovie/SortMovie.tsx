@@ -1,19 +1,19 @@
 import style from './Sortmovie.module.scss'
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import { SortingChangesContext } from '../../context/SortingChangesContext'
 
 const SortMovie = () => {
-  const value = useContext(SortingChangesContext)
+  const sortingValue = useContext(SortingChangesContext)
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    if (value.toggleGenreFilter) {
-      value.toggleGenreFilter((e.target as Element).id)
+    e.preventDefault()
+    if (sortingValue.toggleGenreFilter) {
+      sortingValue.toggleGenreFilter((e.target as Element).id)
     }
   }
   const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (value.toggleRelease) {
-      value.toggleRelease(e.target.value)
+    if (sortingValue.toggleRelease) {
+      sortingValue.toggleRelease(e.target.value)
     }
   }
 
@@ -34,9 +34,15 @@ const SortMovie = () => {
             <li className={style.sort_by}>SORT BY</li>
             <li>
               <select className={style.select_date_release} onChange={handleOnChange}>
-                <option defaultValue="release_date" id={'release_date'}>release date</option>
-                <option value="ascending" id={'ascending'}>Ascending</option>
-                <option value="descending" id={'descending'}>descending</option>
+                <option defaultValue='release_date' id={'release_date'}>
+                  release date
+                </option>
+                <option value='ascending' id={'ascending'}>
+                  Ascending
+                </option>
+                <option value='descending' id={'descending'}>
+                  descending
+                </option>
               </select>
             </li>
           </ul>

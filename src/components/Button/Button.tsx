@@ -9,7 +9,9 @@ interface ButtonProps {
 function Button({ classname = 'base_button', title, onClick }: ButtonProps) {
   return (
     <>
-      <button className={`${style[classname]}`} onClick={onClick}>{title}</button>
+      <button className={`${style[classname]}`} onClick={onClick}>
+        {title}
+      </button>
     </>
   )
 }

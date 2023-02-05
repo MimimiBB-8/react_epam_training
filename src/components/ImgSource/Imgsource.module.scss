@@ -1,5 +1,7 @@
 .poster {
-  height: 455px;
-  width: 322px;
+  min-height: 455px;
+  min-width: 322px;
+  max-height: 455px;
+  max-width: 322px;
   margin-bottom: 22px;
 }

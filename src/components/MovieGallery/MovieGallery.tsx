@@ -1,27 +1,25 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import style from './Moviegallery.module.scss'
 import MovieCard from '../MovieCard/MovieCard'
 import { SortingChangesContext } from '../../context/SortingChangesContext'
-import { ChangeDataContext} from '../../context/ChangeDataContext'
-
+import { ChangeDataContext } from '../../context/ChangeDataContext'
 
 function MovieGallery() {
-  const valueData = useContext(ChangeDataContext)
-  const value = useContext(SortingChangesContext)
-  let movieItems = valueData.movieData
+  const dataMovieValue = useContext(ChangeDataContext)
+  const sortingValue = useContext(SortingChangesContext)
+  let movieItems = dataMovieValue.movieData
 
-  if (value.genreFilter !== 'all') {
-    movieItems = valueData.movieData
-      .filter((item) => item.genre.includes(value.genreFilter))
-
+  if (sortingValue.genreFilter !== 'all') {
+    movieItems = dataMovieValue.movieData.filter((item) =>
+      item.genre.includes(sortingValue.genreFilter),
+    )
   }
-  if (value.release === 'ascending') {
-    movieItems.sort((a, b) => a.year > b.year ? 1 : -1)
+  if (sortingValue.release === 'ascending') {
+    movieItems.sort((a, b) => (a.year > b.year ? 1 : -1))
   }
-  if (value.release === 'descending') {
-    movieItems.sort((a, b) => a.year < b.year ? 1 : -1)
+  if (sortingValue.release === 'descending') {
+    movieItems.sort((a, b) => (a.year < b.year ? 1 : -1))
   }
-
 
   const newMovieItems = movieItems.map((item) => (
     <MovieCard
@@ -36,13 +34,15 @@ function MovieGallery() {
 
   return (
     <>
-      {Object.keys(movieItems).length !== 0 ?
-        <div className={style.movie_gallery}>
-          {newMovieItems} </div> :
-        <div><h1>Movie not found</h1></div>}
+      {Object.keys(movieItems).length !== 0 ? (
+        <div className={style.movie_gallery}>{newMovieItems} </div>
+      ) : (
+        <div>
+          <h1>Movie not found</h1>
+        </div>
+      )}
     </>
   )
-
 }
 
 export default MovieGallery

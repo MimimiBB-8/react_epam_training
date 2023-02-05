@@ -12,24 +12,23 @@ interface MovieProps {
   urlImg: string
 }
 
-const MovieCard = ({keyID, title, year, genre, urlImg }: MovieProps) => {
-
-  const value = useContext(StateVisibleContext)
+const MovieCard = ({ keyID, title, year, genre, urlImg }: MovieProps) => {
+  const stateVisibleValue = useContext(StateVisibleContext)
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    if((e.target as Element).classList.contains('img_source')){
+    if ((e.target as Element).classList.contains('img_source')) {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'smooth'
-      });
-      if (value.toggleVisible) {
-        value.toggleVisible(true)
+        behavior: 'smooth',
+      })
+      if (stateVisibleValue.toggleVisible) {
+        stateVisibleValue.toggleVisible(true)
       }
     }
-    if(value.toggleItemID){
-      value.toggleItemID(keyID)
+    if (stateVisibleValue.toggleItemID) {
+      stateVisibleValue.toggleItemID(keyID)
     }
   }
 
@@ -39,7 +38,7 @@ const MovieCard = ({keyID, title, year, genre, urlImg }: MovieProps) => {
       <Additions />
       <div className={style.movie_name}>
         <h4>{title}</h4>
-        <p className={style.movie_year}>{year.slice(0,4)}</p>
+        <p className={style.movie_year}>{year.slice(0, 4)}</p>
       </div>
       <p className={style.movie_genre}>{genre}</p>
     </div>

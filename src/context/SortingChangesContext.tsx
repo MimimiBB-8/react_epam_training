@@ -1,29 +1,29 @@
 import { createContext, ReactNode, useState } from 'react'
 interface sortingChangesContextInterface {
-  genreFilter:string,
-  toggleGenreFilter?: (param: any) => void,
-  release?: string,
-  toggleRelease?: (param: any) => void,
+  genreFilter: string
+  toggleGenreFilter?: (param: any) => void
+  release?: string
+  toggleRelease?: (param: any) => void
 }
 
 const defaultState = {
-  genreFilter: 'all'
+  genreFilter: 'all',
 }
 
 export const SortingChangesContext = createContext<sortingChangesContextInterface>(defaultState)
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export const SortingChangesContextProvider = ({ children }: Props) => {
   const [genreFilter, setGenreFilter] = useState(defaultState.genreFilter)
   const [release, setRelease] = useState('')
 
-  const toggleGenreFilter = (param : any)=>{
+  const toggleGenreFilter = (param: any) => {
     setGenreFilter(param)
   }
-  const toggleRelease = (param : any)=>{
+  const toggleRelease = (param: any) => {
     setRelease(param)
   }
 
@@ -34,10 +34,5 @@ export const SortingChangesContextProvider = ({ children }: Props) => {
     toggleRelease,
   }
 
-  return (
-    <SortingChangesContext.Provider value={value}>
-      {children}
-    </SortingChangesContext.Provider>
-  )
+  return <SortingChangesContext.Provider value={value}>{children}</SortingChangesContext.Provider>
 }
-

@@ -9,9 +9,8 @@
   border: none;
   display: flex;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
   outline: none;
-
 }
 
 .value {
@@ -22,7 +21,7 @@
 
 .caret {
   translate: 0 25%;
-  border: .25em solid transparent;
+  border: 0.25em solid transparent;
   border-top-color: #777;
   margin-right: 10px;
 }
@@ -35,7 +34,7 @@
   display: none;
   max-height: 15em;
   width: 100%;
-  top: calc(100% + .25em);
+  top: calc(100% + 0.25em);
   z-index: 100;
   background: rgba(35, 35, 35);
   border-radius: 4px;
@@ -47,7 +46,7 @@
 }
 
 .option {
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   cursor: pointer;
 }
 
@@ -64,7 +63,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   mix-blend-mode: normal;
   opacity: 0.3;
   text-transform: capitalize;
@@ -74,7 +73,7 @@
 }
 
 .option-badge:hover > .remove-btn,
-.option-badge:focus > .remove-btn{
+.option-badge:focus > .remove-btn {
   color: #f65261;
 }
 

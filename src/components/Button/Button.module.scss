@@ -1,4 +1,4 @@
-@use "variables";
+@use 'variables';
 button {
   height: 57px;
   width: 180px;
@@ -12,7 +12,8 @@ button {
   border: 1.5px solid variables.$addedButton;
 }
 
-.base_button, .confirm {
+.base_button,
+.confirm {
   background-color: variables.$addedButton;
   right: 0;
 }
@@ -40,8 +41,8 @@ button {
   border: none;
 }
 
-
-.close_button, .close_button_small {
+.close_button,
+.close_button_small {
   position: absolute;
   top: 15px;
   right: 28px;
@@ -51,7 +52,7 @@ button {
   border: none;
 }
 
-.close_button_small{
+.close_button_small {
   width: 11px;
   height: 11px;
 }
@@ -59,7 +60,7 @@ button {
 .close_button:before,
 .close_button:after,
 .close_button_small:before,
-.close_button_small:after,{
+.close_button_small:after {
   content: '';
   position: absolute;
   width: 21px;
@@ -69,22 +70,22 @@ button {
   border-radius: 20px;
 }
 .close_button_small:before,
-.close_button_small:after, {
+.close_button_small:after {
   width: 11px;
 }
 .close_button:before,
-.close_button_small:before{
+.close_button_small:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 .close_button:after,
-.close_button_small:after{
+.close_button_small:after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.return_search{
+.return_search {
   height: 29px;
   width: 29px;
   border: none;

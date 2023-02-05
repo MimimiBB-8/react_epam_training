@@ -1,31 +1,14 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import style from './Moviedescription.module.scss'
 import Button from '../Button/Button'
 import ImgSource from '../ImgSource/ImgSource'
-import { information } from '../../data/data'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
+import { ChangeDataContext } from '../../context/ChangeDataContext'
 
-
-type Movie = {
-  id?: number,
-  title?: string,
-  year?: string,
-  rating?: number,
-  time: number,
-  genre?: string,
-  description?: string
-  url?: any
-};
 const MovieDescription = () => {
-
-  const value = useContext(StateVisibleContext)
-  const movie: Movie = { time: 0 }
-
-  information.map((item) => {
-    if (item.id == value.itemID) {
-      Object.assign(movie, item)
-    }
-  })
+  const stateVisibleValue = useContext(StateVisibleContext)
+  const dataMovieValue = useContext(ChangeDataContext)
+  const movie = dataMovieValue.movieData.filter((item) => item.id === stateVisibleValue.itemID)[0]
 
   function getTimeFromMins(mins: number) {
     const hours = Math.trunc(mins / 60)
@@ -34,8 +17,8 @@ const MovieDescription = () => {
   }
 
   const handleOnClick = () => {
-    if (value.toggleVisible) {
-      value.toggleVisible(false)
+    if (stateVisibleValue.toggleVisible) {
+      stateVisibleValue.toggleVisible(false)
     }
   }
 
@@ -45,7 +28,7 @@ const MovieDescription = () => {
         <label className={style.logo}>
           <span>netflix</span>roulette
         </label>
-        <Button classname={'return_search'} onClick={handleOnClick}/>
+        <Button classname={'return_search'} onClick={handleOnClick} />
       </div>
       <div className={style.description_wrapper}>
         <ImgSource urlProp={movie.url} />
@@ -58,15 +41,12 @@ const MovieDescription = () => {
           </div>
           <p className={style.description_genre}>{movie.genre}</p>
           <div className={style.group_year_time}>
-            <h5 className={style.description_year}>{movie.year?.split('').slice(0,4)}</h5>
+            <h5 className={style.description_year}>{movie.year?.split('').slice(0, 4)}</h5>
             <h5 className={style.description_time}>{getTimeFromMins(movie.time)}</h5>
           </div>
-          <p className={style.description}>
-            {movie.description}
-          </p>
+          <p className={style.description}>{movie.description}</p>
         </div>
       </div>
-
     </div>
   )
 }
