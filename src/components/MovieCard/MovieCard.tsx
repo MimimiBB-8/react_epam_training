@@ -15,25 +15,25 @@ interface MovieProps {
 const MovieCard = ({ keyID, title, year, genre, urlImg }: MovieProps) => {
   const stateVisibleValue = useContext(StateVisibleContext)
 
-  const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
-    if ((e.target as Element).classList.contains('img_source')) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-      })
-      if (stateVisibleValue.toggleVisible) {
-        stateVisibleValue.toggleVisible(true)
-      }
-    }
-    if (stateVisibleValue.toggleItemID) {
-      stateVisibleValue.toggleItemID(keyID)
-    }
-  }
+  // const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
+  //   e.preventDefault()
+  //   if ((e.target as Element).classList.contains('img_source')) {
+  //     window.scrollTo({
+  //       top: 0,
+  //       left: 0,
+  //       behavior: 'smooth',
+  //     })
+  //     if (stateVisibleValue.toggleVisible) {
+  //       stateVisibleValue.toggleVisible(true)
+  //     }
+  //   }
+  //   if (stateVisibleValue.toggleItemID) {
+  //     stateVisibleValue.toggleItemID(keyID)
+  //   }
+  // }
 
   return (
-    <div className={`${style.movie_card} movie_card`} id={keyID} onClick={handleOnClick}>
+    <div className={`${style.movie_card} movie_card`} id={keyID}  >
       <ImgSource alt={title} urlProp={urlImg} />
       <Additions />
       <div className={style.movie_name}>

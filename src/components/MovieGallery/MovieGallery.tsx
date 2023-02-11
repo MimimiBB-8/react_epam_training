@@ -1,40 +1,46 @@
-import React, { useContext } from 'react'
+import { useEffect } from 'react'
 import style from './Moviegallery.module.scss'
 import MovieCard from '../MovieCard/MovieCard'
-import { SortingChangesContext } from '../../context/SortingChangesContext'
-import { ChangeDataContext } from '../../context/ChangeDataContext'
+import { useAppSelector } from '../../hooks/useTypeRedux'
+import { useDispatch } from 'react-redux'
+import { fetchData } from '../../store/actions/data'
 
 function MovieGallery() {
-  const dataMovieValue = useContext(ChangeDataContext)
-  const sortingValue = useContext(SortingChangesContext)
-  let movieItems = dataMovieValue.movieData
 
-  if (sortingValue.genreFilter !== 'all') {
-    movieItems = dataMovieValue.movieData.filter((item) =>
-      item.genre.includes(sortingValue.genreFilter),
-    )
+  const { data, loading, error } = useAppSelector(state => state.data)
+
+  const sort = useAppSelector(state => state.sort)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    dispatch(fetchData(sort))
+  }, [sort])
+
+  if (loading) {
+    return <h1>Loading...</h1>
   }
-  if (sortingValue.release === 'ascending') {
-    movieItems.sort((a, b) => (a.year > b.year ? 1 : -1))
-  }
-  if (sortingValue.release === 'descending') {
-    movieItems.sort((a, b) => (a.year < b.year ? 1 : -1))
+  if (error) {
+    return <h1>{error}</h1>
   }
 
-  const newMovieItems = movieItems.map((item) => (
+
+  const newMovieItems = data.map((item: any) => (
     <MovieCard
       key={item.id}
       keyID={item.id}
       title={item.title}
-      year={item.year}
-      genre={item.genre}
-      urlImg={item.url}
+      year={item.release_date}
+      genre={item.genres.join(', ')}
+      urlImg={item.poster_path}
     />
   ))
 
   return (
     <>
-      {Object.keys(movieItems).length !== 0 ? (
+      {Object.keys(newMovieItems).length !== 0 ? (
         <div className={style.movie_gallery}>{newMovieItems} </div>
       ) : (
         <div>
@@ -45,4 +51,4 @@ function MovieGallery() {
   )
 }
 
-export default MovieGallery
+export default MovieGallery;

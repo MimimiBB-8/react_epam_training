@@ -1,27 +1,33 @@
 import style from './Sortmovie.module.scss'
-import React, { useContext } from 'react'
-import { SortingChangesContext } from '../../context/SortingChangesContext'
+import { useDispatch } from 'react-redux'
+import { changeFilterParam, changeSortParam } from '../../store/actions/sort'
+
 
 const SortMovie = () => {
-  const sortingValue = useContext(SortingChangesContext)
 
-  const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
-    if (sortingValue.toggleGenreFilter) {
-      sortingValue.toggleGenreFilter((e.target as Element).id)
+  const dispatch = useDispatch()
+
+  const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {  
+    if((e.target as Element).id !== ''){
+      dispatch(changeFilterParam(`&filter=${(e.target as Element).id}`))
     }
   }
-  const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (sortingValue.toggleRelease) {
-      sortingValue.toggleRelease(e.target.value)
+
+  const handleOnClickSort = (e:React.ChangeEvent<HTMLSelectElement>) => {   
+    const sortParam = e.target.value.split('_')
+    const sortBy = sortParam.slice(0,2).join('_')
+    const sortOrder = sortParam.slice(-1).join()
+    if(sortParam .length !== 0){
+      dispatch(changeSortParam(`&sortBy=${sortBy}&sortOrder=${sortOrder}`))
     }
+    
   }
 
   return (
     <>
       <div className={style.sort}>
         <nav>
-          <ul className={style.sort_genre} onClick={handleOnClick}>
+          <ul className={style.sort_genre} onClick={handleOnClickFilter}>
             <li id={'all'}>ALL</li>
             <li id={'action'}>Action</li>
             <li id={'comedy'}>COMEDY</li>
@@ -33,15 +39,21 @@ const SortMovie = () => {
           <ul className={style.sort_param}>
             <li className={style.sort_by}>SORT BY</li>
             <li>
-              <select className={style.select_date_release} onChange={handleOnChange}>
+              <select className={style.select_date_release} onChange={handleOnClickSort}>
                 <option defaultValue='release_date' id={'release_date'}>
-                  release date
+                  Choose...
                 </option>
-                <option value='ascending' id={'ascending'}>
-                  Ascending
+                <option value='release_date_asc' id={'release_date_asc'}>
+                release Ascending
                 </option>
-                <option value='descending' id={'descending'}>
-                  descending
+                <option value='release_date_des' id={'release_date_des'}>
+                release descending
+                </option>
+                <option value='vote_average_asc' id={'vote_average_asc'}>
+                rating Ascending
+                </option>
+                <option value='vote_average_desc' id={'vote_average_desc'}>
+                rating descending
                 </option>
               </select>
             </li>
@@ -54,4 +66,7 @@ const SortMovie = () => {
     </>
   )
 }
+
+
+
 export default SortMovie
