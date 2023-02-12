@@ -5,6 +5,8 @@ import React, { useState, useContext } from 'react'
 import { Select, SelectOption } from './Select'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
 import { ChangeDataContext } from '../../context/ChangeDataContext'
+import { Formik } from 'formik';
+
 
 const options = [
   { label: 'Crime', value: 'crime' },
@@ -90,6 +92,9 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
 
   return (
     <>
+    <Formik>
+
+    </Formik>
       <form>
         <div className={style.colon_wrapper}>
           <div className={style.first_colon}>
