@@ -48,3 +48,46 @@ interface SortByAction {
 
 export type SortAction = FilterAction | SortByAction;
 
+export interface DescriptionState {
+  data: any[], 
+  loading: boolean,
+  error: null | string
+}
+
+export enum DescriptionActionTypes {
+  FETCH_DESCRIPTION = 'FETCH_DESCRIPTION',
+  FETCH_DESCRIPTION_SUCCESS = 'FETCH_DESCRIPTION_SUCCESS',
+  FETCH_DESCRIPTION_ERROR = 'FETCH_DESCRIPTION_ERROR'
+}
+
+interface FetchDescriptionAction {
+  type: typeof DescriptionActionTypes.FETCH_DESCRIPTION,
+}
+
+interface FetchDescriptionSuccessAction {
+  type: typeof DescriptionActionTypes.FETCH_DESCRIPTION_SUCCESS,
+  payload: any[]
+}
+
+interface FetchDescriptionErrorAction {
+  type: typeof DescriptionActionTypes.FETCH_DESCRIPTION_ERROR,
+  payload: string
+}
+
+export type DescriptionAction = FetchDescriptionAction | FetchDescriptionSuccessAction | FetchDescriptionErrorAction;
+
+export interface ReservingIdState {
+  itemId: number
+}
+
+export enum ReservingIdActionTypes {
+  RESERVING_ID = 'RESERVING_ID',
+}
+
+interface ReservingAction {
+  type: typeof ReservingIdActionTypes.RESERVING_ID,
+  payload: number
+}
+
+
+export type ReservingIdAction = ReservingAction;

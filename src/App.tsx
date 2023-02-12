@@ -5,8 +5,6 @@ import MainComponent from './components/MainComponent/MainComponent'
 import Footer from './components/Footer/Footer'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import { StateVisibleContextProvider } from './context/StateVisibleContext'
-import { ChangeDataContextProvider } from './context/ChangeDataContext'
-
 
 function App() {
   return (
@@ -15,10 +13,8 @@ function App() {
         <ErrorBoundary>
           <div className={style.main_wrapper}>
             <StateVisibleContextProvider>
-              <ChangeDataContextProvider>
                 <Header />
                 <MainComponent />
-              </ChangeDataContextProvider>
             </StateVisibleContextProvider>
             <Footer />
           </div>

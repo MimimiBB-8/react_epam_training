@@ -33,7 +33,7 @@ function MovieGallery() {
       keyID={item.id}
       title={item.title}
       year={item.release_date}
-      genre={item.genres.join(', ')}
+      genres={item.genres.join(', ')}
       urlImg={item.poster_path}
     />
   ))
