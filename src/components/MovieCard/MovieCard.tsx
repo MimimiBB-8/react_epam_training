@@ -15,6 +15,7 @@ interface MovieProps {
 }
 
 const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
+  
   const stateVisibleValue = useContext(StateVisibleContext)
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -29,21 +30,18 @@ const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
         stateVisibleValue.toggleVisible(true)
       }
     }
-    if (stateVisibleValue.toggleItemID) {
-      stateVisibleValue.toggleItemID(keyID)
-    }
   }
 
   const dispatch = useDispatch()
 
-  const setItemId = ()=>{
+  const setItemId = () => {
     dispatch(receivingId(keyID))
   }
 
   return (
-    <div className={`${style.movie_card} movie_card`} id={keyID} onClick={handleOnClick} >
-      <ImgSource alt={title} urlProp={urlImg} onclick={setItemId}/>
-      <Additions />
+    <div className={`${style.movie_card} movie_card`} id={keyID} onClick={handleOnClick}>
+      <ImgSource alt={title} urlProp={urlImg} onclick={setItemId} />
+      <Additions onClick={setItemId}/>
       <div className={style.movie_name}>
         <h4>{title}</h4>
         <p className={style.movie_year}>{year.slice(0, 4)}</p>

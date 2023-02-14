@@ -6,10 +6,9 @@ import { useDispatch } from 'react-redux'
 import { fetchData } from '../../store/actions/data'
 
 function MovieGallery() {
+  const { data, loading, error } = useAppSelector((state) => state.data)
 
-  const { data, loading, error } = useAppSelector(state => state.data)
-
-  const sort = useAppSelector(state => state.sort)
+  const sort = useAppSelector((state) => state.sort)
 
   const dispatch = useDispatch()
 
@@ -25,7 +24,6 @@ function MovieGallery() {
   if (error) {
     return <h1>{error}</h1>
   }
-
 
   const newMovieItems = data.map((item: any) => (
     <MovieCard
@@ -51,4 +49,4 @@ function MovieGallery() {
   )
 }
 
-export default MovieGallery;
+export default MovieGallery

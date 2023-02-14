@@ -6,8 +6,9 @@ export const fetchData = (param: any) => {
     try {
       dispatch({ type: DataActionTypes.FETCH_DATA })
       const url = `http://localhost:4000/movies?limit=9?limit=9${param.parametr}`
-      const apiResponse = await fetch(url);
-      const json = await apiResponse.json();
+      const apiResponse = await fetch(url)
+      const json = await apiResponse.json()
+      console.log(json)
       dispatch({ type: DataActionTypes.FETCH_DATA_SUCCESS, payload: json.data })
     } catch (e) {
       dispatch({ type: DataActionTypes.FETCH_DATA_ERROR, payload: 'ERROR' })

@@ -6,16 +6,20 @@ import Portal from '../Portal/Portal'
 import EditMovie from '../EdditMovie/EditMovie'
 import DeletionConfirmation from '../DeletionConfirmation/DeletionConfirmation'
 
-function Additions() {
+interface AdditionsProps{
+  onClick?: ()=>void
+}
+function Additions({onClick}:AdditionsProps) {
   const [visible, setVisible] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [showModalDelete, setShowModalDelete] = useState(false)
+
   const handleClickClose = () => {
     setVisible(!visible)
   }
-
+  
   return (
-    <div className={`${style.additions_wrapper} additions_wrapper`}>
+    <div className={`${style.additions_wrapper} additions_wrapper` } onClick={onClick} >
       <div
         className={`${style.additions_menu} ${styles.additions_menu} additions_menu`}
         onClick={handleClickClose}

@@ -5,11 +5,12 @@ interface ItemProps {
   title: string
   type: string
   placeholder: string
+  name?: string
   value?: any
   onchange?: (param: any) => void
 }
 
-const FormItem = ({ title, type, placeholder, value = '', onchange, id }: ItemProps) => {
+const FormItem = ({ title, type, placeholder, value = '', onchange, id, name }: ItemProps) => {
   return (
     <>
       <label className={style.input_title}>
@@ -21,6 +22,7 @@ const FormItem = ({ title, type, placeholder, value = '', onchange, id }: ItemPr
           placeholder={placeholder}
           defaultValue={value}
           onChange={onchange}
+          name={name}
         />
       </label>
     </>
