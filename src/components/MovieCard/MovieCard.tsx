@@ -1,10 +1,11 @@
 import style from './MovieCard.module.scss'
 import ImgSource from '../ImgSource/ImgSource'
 import Additions from './Additions'
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
 import { useDispatch } from 'react-redux'
 import { receivingId } from '../../store/actions/reservingId'
+import styles from '../MovieCard/MovieCard.module.scss'
 
 interface MovieProps {
   keyID: any
@@ -34,13 +35,19 @@ const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
 
   const dispatch = useDispatch()
 
-  const setItemId = () => {
-    dispatch(receivingId(keyID))
-  }
+  const setItemId = useCallback(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    () =>  dispatch(receivingId(keyID)),
+    [dispatch]
+  )
 
   return (
-    <div className={`${style.movie_card} movie_card`} id={keyID} onClick={handleOnClick}>
+
+    <div className={`${style.movie_card} movie_card`} id={keyID} >
+      <div  onClick={handleOnClick} className={`${styles.poster}`}>
       <ImgSource alt={title} urlProp={urlImg} onclick={setItemId} />
+      </div>
       <Additions onClick={setItemId}/>
       <div className={style.movie_name}>
         <h4>{title}</h4>

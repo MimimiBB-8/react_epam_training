@@ -2,12 +2,16 @@ export interface DataState {
   data: any[]
   loading: boolean
   error: null | string
+  editing:false,
 }
 
 export enum DataActionTypes {
   FETCH_DATA = 'FETCH_DATA',
   FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS',
   FETCH_DATA_ERROR = 'FETCH_DATA_ERROR',
+  FETCH_DELETE_SUCCESS = 'FETCH_DELETE_SUCCESS',
+  FETCH_UPDATE_SUCCESS = 'FETCH_UPDATE_SUCCESS',
+  FETCH_ADD_SUCCESS = 'FETCH_ADD_SUCCESS'
 }
 
 interface FetchDataAction {
@@ -24,7 +28,22 @@ interface FetchDataErrorAction {
   payload: string
 }
 
-export type DataAction = FetchDataAction | FetchDataSuccessAction | FetchDataErrorAction
+interface FetchDeleteSuccessAction {
+  type: typeof DataActionTypes.FETCH_DELETE_SUCCESS
+  payload: string
+}
+
+interface FetchUpdateSuccessAction {
+  type: typeof DataActionTypes.FETCH_UPDATE_SUCCESS
+  payload: string
+}
+
+interface FetchAddSuccessAction {
+  type: typeof DataActionTypes.FETCH_ADD_SUCCESS
+  payload: any[]
+}
+
+export type DataAction = FetchDataAction | FetchDataSuccessAction | FetchDataErrorAction | FetchDeleteSuccessAction | FetchUpdateSuccessAction | FetchAddSuccessAction
 
 export interface SortState {
   parametr: string
@@ -92,3 +111,6 @@ interface ReservingAction {
 }
 
 export type ReservingIdAction = ReservingAction
+
+
+

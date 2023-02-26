@@ -7,7 +7,7 @@ import EditMovie from '../EdditMovie/EditMovie'
 import DeletionConfirmation from '../DeletionConfirmation/DeletionConfirmation'
 
 interface AdditionsProps{
-  onClick?: ()=>void
+  onClick: ()=>void
 }
 function Additions({onClick}:AdditionsProps) {
   const [visible, setVisible] = useState(false)
@@ -15,11 +15,12 @@ function Additions({onClick}:AdditionsProps) {
   const [showModalDelete, setShowModalDelete] = useState(false)
 
   const handleClickClose = () => {
+    onClick()
     setVisible(!visible)
   }
   
   return (
-    <div className={`${style.additions_wrapper} additions_wrapper` } onClick={onClick} >
+    <div className={`${style.additions_wrapper} additions_wrapper` }  >
       <div
         className={`${style.additions_menu} ${styles.additions_menu} additions_menu`}
         onClick={handleClickClose}

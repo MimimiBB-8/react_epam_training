@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import FormItem from '../BasicForm/FormItem'
 import Button from '../Button/Button'
 import style from './Basicform.module.scss'
@@ -7,6 +7,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useAppSelector } from '../../hooks/useTypeRedux'
 import { useDispatch } from 'react-redux'
+import { updateData, addData } from '../../store/actions/data'
+import { title } from 'process'
 
 const options = [
   { label: 'Crime', value: 'crime' },
@@ -20,57 +22,101 @@ const options = [
 ]
 
 interface BasicFormProps {
-  position?: boolean
+  edidForm?: boolean
   onClick?: () => void
   showModalWindow?: any
 }
 
-type MovieDitales = {
+interface LLL{
   id?: number
-  title: string
-  poster_path: string
-  vote_average: number
+  title: string,
+  // eslint-disable-next-line camelcase
+  poster_path: string,
+  // eslint-disable-next-line camelcase
+  release_date: string,
+  // eslint-disable-next-line camelcase
+  vote_average: number,
+  runtime: number,
+  overview: string,
   genres: []
-  release_date: string
-  runtime: number
-  overview: string
 }
 
-const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProps) => {
+const BasicForm = ({ edidForm = false }: BasicFormProps) => {
+  
+
+ 
+
   const [selectValue, setSelectValue] = useState<SelectOption[]>([options[0]])
 
+  const idItem = useAppSelector((state) => state.recervingId)
+
+  const { data, loading, error } = useAppSelector((state) => state.data)
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
-    url: Yup.string().required('Url is required'),
-    year: Yup.date().required('Date is required'),
-    rating: Yup.number()
+     // eslint-disable-next-line camelcase
+    poster_path: Yup.string().required('Url is required'),
+      // eslint-disable-next-line camelcase
+    release_date: Yup.date().required('Date is required'),
+      // eslint-disable-next-line camelcase
+    vote_average: Yup.number()
       .positive('Rating must be greater than zero')
       .max(10)
       .required('Rating is required'),
-    runtime: Yup.number()
+    runtime: Yup.number().
+      integer()
       .positive('Runtime must be greater than zero')
       .required('Runtime is required'),
   })
 
+  let movieDescription: string | any[] = []
 
-  
+  if (edidForm !== false) {
+    movieDescription = data.filter(item => item.id === idItem.itemId);
+  }
+
+  const dispatch = useDispatch();
+
+  const fillValue = (elem: any) => {
+    return movieDescription.length === 0 ? '' : movieDescription[0][elem]
+   }
+
+   
+
   const formik = useFormik({
-    initialValues: {
-      title: '',
-      url: '',
-      year: '',
-      rating: '',
-      runtime: '',
-      description: '',
-      genre: selectValue,
+    initialValues:{
+      id: movieDescription.length === 0 ? null :  idItem.itemId,
+      title:  `${fillValue('title')}`,
+      // eslint-disable-next-line camelcase
+      poster_path: `${fillValue('poster_path')}`,
+      // eslint-disable-next-line camelcase
+      release_date: `${fillValue('release_date')}`,
+      // eslint-disable-next-line camelcase
+      vote_average: Number(`${fillValue('vote_average')}`),
+      runtime: `${parseInt(fillValue('runtime'))}`,
+      overview: `${fillValue('overview')}`,
+      genres: selectValue
     },
+
     validationSchema,
     validateOnChange: true,
-    // validateOnBlur: false,
     onSubmit: (data) => {
+      console.log(data)
       addSelectOption(data)
-      console.log(JSON.stringify(data))
+      if (edidForm === true) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        dispatch(updateData(data))
+      }
+      else {
+        const {id, ...newData} = data;
+        
+      console.log('new >>>', newData)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        dispatch(addData(newData))
+        // console.log( typeof (new Date()).getTime())
+      }
     },
   })
 
@@ -79,7 +125,7 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
     selectValue.map((item: any) => {
       elem.push(item.label)
     })
-    data.genre = elem
+    data.genres = elem
   }
 
   const handlerChangeSelect = (elem: any) => {
@@ -90,6 +136,8 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
     })
     formik.handleChange
   }
+
+
 
   return (
     <>
@@ -110,15 +158,15 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
             </div>
             <FormItem
               id={'urlMovie'}
-              name={'url'}
+              name={'poster_path'}
               title={'movie_url'}
               type={'url'}
               placeholder={'https://'}
               onchange={formik.handleChange}
-              value={formik.values.url}
+              value={formik.values.poster_path}
             />
             <div className='invalid-feedback'>
-              {formik.errors.url && formik.touched.url ? formik.errors.url : null}
+              {formik.errors.poster_path && formik.touched.poster_path ? formik.errors.poster_path : null}
             </div>
             <label className={style.input_title}>
               Genre
@@ -137,24 +185,24 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
               title={'RELEASE DATE'}
               type={'date'}
               placeholder={'Select Date'}
-              value={formik.values.year}
+              value={formik.values.release_date}
               onchange={formik.handleChange}
-              name='year'
+              name='release_date'
             />
             <div className='invalid-feedback'>
-              {formik.errors.year && formik.touched.year ? formik.errors.year : null}
+              {formik.errors.release_date && formik.touched.release_date ? formik.errors.release_date : null}
             </div>
             <FormItem
               id={'rating'}
               title={'RATING'}
               type={'number'}
-              placeholder={'7.8'}
-              value={formik.values.rating}
+              placeholder={'Enter rating'}
+              value={formik.values.vote_average}
               onchange={formik.handleChange}
-              name={'rating'}
+              name={'vote_average'}
             />
-            <div className='invalid-feedback'>
-              {formik.errors.rating && formik.touched.rating ? formik.errors.rating : null}
+            <div className='invalid-feedzback'>
+              {formik.errors.vote_average && formik.touched.vote_average ? formik.errors.vote_average : null}
             </div>
             <FormItem
               id={'time'}
@@ -177,9 +225,9 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
             className={style.textarea}
             title={'OVERVIEW'}
             placeholder={'Movie description'}
-            defaultValue={formik.values.description}
+            defaultValue={formik.values.overview}
             onChange={formik.handleChange}
-            name='description'
+            name='overview'
           ></textarea>
         </label>
         <div className={style.group_button}>
@@ -192,3 +240,7 @@ const BasicForm = ({ position = false, onClick, showModalWindow }: BasicFormProp
 }
 
 export default BasicForm
+function dispatch(arg0: any) {
+  throw new Error('Function not implemented.')
+}
+
