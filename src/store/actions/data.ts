@@ -1,5 +1,4 @@
 import { DataActionTypes } from '../redusers/types'
-import { Dispatch } from 'redux'
 
 import axios from 'axios';
 
@@ -30,15 +29,13 @@ export const removeData = (id: string) => {
   };
 };
 
-export const editData = (id: string) => {
-  console.log(id)
+export const editData = (data: any) => {
   return {
     type: DataActionTypes.FETCH_UPDATE_SUCCESS,
-    payload: id
+    payload: data
   };
 };
 export const addNewData = (data: any) => {
-  console.log(data)
   return {
     type: DataActionTypes.FETCH_UPDATE_SUCCESS,
     payload: data
@@ -52,8 +49,8 @@ export const fetchData = (param: any) => {
     axios
       .get(`http://localhost:4000/movies?limit=9?${param.parametr}`)
       .then((response) => {
-        const users = response.data;
-        dispatch(fetchDataSucess(users.data));
+        const data = response.data;
+        dispatch(fetchDataSucess(data.data));
       })
       .catch((error) => {
         const errorMsg = error.message;
@@ -64,7 +61,6 @@ export const fetchData = (param: any) => {
 
 export const deleteData = (id: string) => {
   return (dispatch:any) => {
-    dispatch(fetchDataRequest);
     axios
       .delete(`http://localhost:4000/movies/${id}`)
       .then((response) => {
@@ -79,7 +75,6 @@ export const deleteData = (id: string) => {
 };
 
 export const updateData = (param: any) => {
-  console.log(param.id)
   return (dispatch: any) => {
     dispatch(fetchDataRequest);
     axios
@@ -91,6 +86,7 @@ export const updateData = (param: any) => {
       },)
       .then((response) => {
         dispatch(editData(param.id))
+        
       })
       .catch((error) => {
         const errorMsg = error.message;
@@ -109,11 +105,12 @@ export const addData = (data: any) => {
         },
       },)
           .then(response => {
-              console.log(response);
               dispatch(addNewData(response.data))
           })
-          .catch(error => {
-              console.log('eror', error);
+          .catch((error) => {
+            const errorMsg = error.message;
+            console.log(errorMsg);  
+            dispatch(fetchDataFailure(errorMsg));
           });
   }
 }

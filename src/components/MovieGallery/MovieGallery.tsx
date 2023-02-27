@@ -8,17 +8,13 @@ import { fetchData} from '../../store/actions/data'
 function MovieGallery() {
   const { data, loading, error } = useAppSelector((state) => state.data)
   const sort = useAppSelector((state) => state.sort)
-  
   const dispatch = useDispatch()
-
-  
-  const idDelete = useAppSelector((state) => state.recervingId)
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     dispatch(fetchData(sort))
-  }, [sort, idDelete])
+  }, [sort])
 
   if (loading) {
     return <h1>Loading...</h1>

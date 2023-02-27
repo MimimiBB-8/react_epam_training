@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import FormItem from '../BasicForm/FormItem'
 import Button from '../Button/Button'
 import style from './Basicform.module.scss'
@@ -8,7 +8,6 @@ import * as Yup from 'yup'
 import { useAppSelector } from '../../hooks/useTypeRedux'
 import { useDispatch } from 'react-redux'
 import { updateData, addData } from '../../store/actions/data'
-import { title } from 'process'
 
 const options = [
   { label: 'Crime', value: 'crime' },
@@ -23,11 +22,11 @@ const options = [
 
 interface BasicFormProps {
   edidForm?: boolean
-  onClick?: () => void
+  onClick: () => void
   showModalWindow?: any
 }
 
-interface LLL{
+interface LLL {
   id?: number
   title: string,
   // eslint-disable-next-line camelcase
@@ -41,10 +40,7 @@ interface LLL{
   genres: []
 }
 
-const BasicForm = ({ edidForm = false }: BasicFormProps) => {
-  
-
- 
+const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
 
   const [selectValue, setSelectValue] = useState<SelectOption[]>([options[0]])
 
@@ -54,11 +50,11 @@ const BasicForm = ({ edidForm = false }: BasicFormProps) => {
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
-     // eslint-disable-next-line camelcase
+    // eslint-disable-next-line camelcase
     poster_path: Yup.string().required('Url is required'),
-      // eslint-disable-next-line camelcase
+    // eslint-disable-next-line camelcase
     release_date: Yup.date().required('Date is required'),
-      // eslint-disable-next-line camelcase
+    // eslint-disable-next-line camelcase
     vote_average: Yup.number()
       .positive('Rating must be greater than zero')
       .max(10)
@@ -79,29 +75,25 @@ const BasicForm = ({ edidForm = false }: BasicFormProps) => {
 
   const fillValue = (elem: any) => {
     return movieDescription.length === 0 ? '' : movieDescription[0][elem]
-   }
-
-   
+  }
 
   const formik = useFormik({
-    initialValues:{
-      id: movieDescription.length === 0 ? null :  idItem.itemId,
-      title:  `${fillValue('title')}`,
+    initialValues: {
+      id: movieDescription.length === 0 ? null : idItem.itemId,
+      title: `${fillValue('title')}`,
       // eslint-disable-next-line camelcase
       poster_path: `${fillValue('poster_path')}`,
       // eslint-disable-next-line camelcase
       release_date: `${fillValue('release_date')}`,
       // eslint-disable-next-line camelcase
       vote_average: Number(`${fillValue('vote_average')}`),
-      runtime: `${parseInt(fillValue('runtime'))}`,
+      runtime: Number(`${parseInt(fillValue('runtime'))}`),
       overview: `${fillValue('overview')}`,
       genres: selectValue
     },
-
     validationSchema,
     validateOnChange: true,
     onSubmit: (data) => {
-      console.log(data)
       addSelectOption(data)
       if (edidForm === true) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -109,16 +101,16 @@ const BasicForm = ({ edidForm = false }: BasicFormProps) => {
         dispatch(updateData(data))
       }
       else {
-        const {id, ...newData} = data;
-        
-      console.log('new >>>', newData)
+        const { id, ...newData } = data;
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         dispatch(addData(newData))
-        // console.log( typeof (new Date()).getTime())
       }
+      onClick()
     },
   })
+
+
 
   const addSelectOption = (data: any) => {
     const elem: any[] = [];
@@ -240,7 +232,4 @@ const BasicForm = ({ edidForm = false }: BasicFormProps) => {
 }
 
 export default BasicForm
-function dispatch(arg0: any) {
-  throw new Error('Function not implemented.')
-}
 

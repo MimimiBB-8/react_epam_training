@@ -17,38 +17,38 @@ export const dataReducer = (state = initialState, action: DataAction): DataState
     case DataActionTypes.FETCH_DATA_SUCCESS:
       return {
         ...state,
-        loading:false,
+        loading: false,
         error: null,
         data: action.payload,
       }
     case DataActionTypes.FETCH_DATA_ERROR:
       return {
         ...state,
-        loading:false,
-        data:[],
-        error:action.payload
+        loading: false,
+        data: [],
+        error: action.payload
       }
-      case DataActionTypes.FETCH_ADD_SUCCESS:
+    case DataActionTypes.FETCH_ADD_SUCCESS:
       return {
         ...state,
-        loading:false,
+        loading: false,
         data: action.payload,
-        error:null
+        error: null
       }
-      case DataActionTypes.FETCH_DELETE_SUCCESS:
-        return {
-          ...state,
-          data: state.data.filter((item) => item.id !== action.payload)
-        };
-        case DataActionTypes.FETCH_UPDATE_SUCCESS:
+    case DataActionTypes.FETCH_DELETE_SUCCESS:
+      return {
+        ...state,
+        data: state.data.filter((item) => item.id !== action.payload)
+      };
+    case DataActionTypes.FETCH_UPDATE_SUCCESS:
       return {
         ...state,
         data: state.data.map((item) =>
           item.id === action.payload
             ? {
-                ...item,
-                editing: !item.editing
-              }
+              ...item,
+              editing: !item.editing
+            }
             : item
         )
       };

@@ -21,7 +21,7 @@ const EditMovie = ({ onClick }: editMovieProps) => {
     <div className={style.edit_movie}>
       <Button classname={'close_button'} onClick={onClick} />
       <h2 className={style.topic}>Edit MOVIE</h2>
-      <BasicForm edidForm={true}/>
+      <BasicForm edidForm={true} onClick={onClick}/>
       {showModal && (
         <Portal>
           <SuccessNotification onClick={handlerCloseAllWindows} />
