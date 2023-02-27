@@ -133,7 +133,7 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit}  onReset={formik.handleReset}>
         <div className={style.colon_wrapper}>
           <div className={style.first_colon}>
             <FormItem
@@ -223,7 +223,7 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
           ></textarea>
         </label>
         <div className={style.group_button}>
-          <Button title={'reset'} classname={'reset_button'} />
+          <Button title={'reset'} classname={'reset_button'} type="reset"/>
           <Button title={'submit'} type={'submit'} />
         </div>
       </form>
