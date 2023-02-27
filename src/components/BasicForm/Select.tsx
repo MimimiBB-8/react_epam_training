@@ -34,7 +34,7 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
   function selectOption(option: SelectOption) {
     if (multiple) {
       if (value.includes(option)) {
-        onChange(value.filter(o => o !== option))
+        onChange(value.filter((o) => o !== option))
       } else {
         onChange([...value, option])
       }
@@ -51,30 +51,29 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
     if (isOpen) setHighlightedIndex(0)
   }, [isOpen])
 
-
   return (
     <div
       ref={containerRef}
       onBlur={() => setIsOpen(false)}
-      onClick={() => setIsOpen(prev => !prev)}
+      onClick={() => setIsOpen((prev) => !prev)}
       tabIndex={0}
       className={styles.container}
     >
       <span className={styles.value}>
         {multiple
-          ? value.map(v => (
-            <a
-              key={v.value}
-              onClick={e => {
-                e.stopPropagation()
-                selectOption(v)
-              }}
-              className={styles['option-badge']}
-            >
-              {v.label}
-              <span className={styles['remove-btn']}>&times;</span>
-            </a>
-          ))
+          ? value.map((v) => (
+              <a
+                key={v.value}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  selectOption(v)
+                }}
+                className={styles['option-badge']}
+              >
+                {v.label}
+                <span className={styles['remove-btn']}>&times;</span>
+              </a>
+            ))
           : value?.label}
       </span>
       <div className={styles.divider}></div>
@@ -83,16 +82,16 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
       <ul className={`${styles.options} ${isOpen ? styles.show : ''}`}>
         {options.map((option, index) => (
           <li
-            onClick={e => {
+            onClick={(e) => {
               e.stopPropagation()
               selectOption(option)
               setIsOpen(false)
             }}
             onMouseEnter={() => setHighlightedIndex(index)}
             key={option.value}
-            className={`${styles.option} ${
-              isOptionSelected(option) ? styles.selected : ''
-            } ${index === highlightedIndex ? styles.highlighted : ''}`}
+            className={`${styles.option} ${isOptionSelected(option) ? styles.selected : ''} ${
+              index === highlightedIndex ? styles.highlighted : ''
+            }`}
           >
             {option.label}
           </li>
@@ -101,4 +100,3 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
     </div>
   )
 }
-

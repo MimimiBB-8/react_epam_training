@@ -1,6 +1,32 @@
+.header_description {
+  width: 1200px;
+  background-color: #232323;
+  padding: 37px 60px 13px;
+}
+
+.logo_line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 152px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f65261;
+
+  span {
+    font-weight: 900;
+    color: #f65261;
+  }
+}
+
 .description_wrapper {
   display: flex;
-  position: relative;
 }
 
 h2 {
@@ -9,6 +35,7 @@ h2 {
 
 .description_movie {
   margin-left: 60px;
+  width: 698px;
 }
 
 .circle_paragraph {
@@ -29,6 +56,7 @@ h2 {
   opacity: 0.5;
   margin-top: 10px;
   margin-bottom: 30px;
+  text-transform: capitalize;
 }
 
 .description_year,
@@ -42,7 +70,6 @@ h2 {
 
 .group_name_rating {
   display: flex;
-  align-items: center;
 }
 
 .group_year_time {

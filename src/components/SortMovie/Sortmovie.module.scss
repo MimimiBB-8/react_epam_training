@@ -6,10 +6,39 @@
     display: flex;
     list-style-type: none;
     padding: 0;
-
+    cursor: pointer;
+    text-transform: uppercase;
     li:not(:last-child) {
       margin-right: 30px;
     }
+  }
+}
+.sort_by {
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+}
+
+.select_date_release {
+  width: 159px;
+  height: 19px;
+  background: transparent;
+  border: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.888889px;
+  text-transform: uppercase;
+  color: #ffffff;
+  option {
+    background: #232323;
+    border: 5px solid #232323;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 

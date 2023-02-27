@@ -6,12 +6,13 @@ interface editMovieProps {
   onClick: () => void
 }
 
-const EditMovie = ({ onClick }: editMovieProps) => (
-  <div className={style.edit_movie}>
-    <Button classname={'close_button'} onClick={onClick} />
-    <h2 className={style.topic}>Edit MOVIE</h2>
-    <BasicForm />
-  </div>
-)
-
+const EditMovie = ({ onClick }: editMovieProps) => {
+  return (
+    <div className={style.edit_movie}>
+      <Button classname={'close_button'} onClick={onClick} />
+      <h2 className={style.topic}>Edit MOVIE</h2>
+      <BasicForm onClick={onClick} />
+    </div>
+  )
+}
 export default EditMovie
