@@ -1,4 +1,5 @@
-import { useCallback, useState } from 'react'
+/* eslint-disable camelcase */
+import { useState } from 'react'
 import FormItem from '../BasicForm/FormItem'
 import Button from '../Button/Button'
 import style from './Basicform.module.scss'
@@ -21,40 +22,23 @@ const options = [
 ]
 
 interface BasicFormProps {
-  edidForm?: boolean
+  editForm?: boolean
   onClick: () => void
   showModalWindow?: any
 }
 
-interface LLL {
-  id?: number
-  title: string,
-  // eslint-disable-next-line camelcase
-  poster_path: string,
-  // eslint-disable-next-line camelcase
-  release_date: string,
-  // eslint-disable-next-line camelcase
-  vote_average: number,
-  runtime: number,
-  overview: string,
-  genres: []
-}
-
-const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
+const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
 
   const [selectValue, setSelectValue] = useState<SelectOption[]>([options[0]])
 
   const idItem = useAppSelector((state) => state.recervingId)
 
-  const { data, loading, error } = useAppSelector((state) => state.data)
+  const { data } = useAppSelector((state) => state.data)
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
-    // eslint-disable-next-line camelcase
     poster_path: Yup.string().required('Url is required'),
-    // eslint-disable-next-line camelcase
     release_date: Yup.date().required('Date is required'),
-    // eslint-disable-next-line camelcase
     vote_average: Yup.number()
       .positive('Rating must be greater than zero')
       .max(10)
@@ -67,7 +51,7 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
 
   let movieDescription: string | any[] = []
 
-  if (edidForm !== false) {
+  if (editForm) {
     movieDescription = data.filter(item => item.id === idItem.itemId);
   }
 
@@ -81,11 +65,8 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
     initialValues: {
       id: movieDescription.length === 0 ? null : idItem.itemId,
       title: `${fillValue('title')}`,
-      // eslint-disable-next-line camelcase
       poster_path: `${fillValue('poster_path')}`,
-      // eslint-disable-next-line camelcase
       release_date: `${fillValue('release_date')}`,
-      // eslint-disable-next-line camelcase
       vote_average: Number(`${fillValue('vote_average')}`),
       runtime: Number(`${parseInt(fillValue('runtime'))}`),
       overview: `${fillValue('overview')}`,
@@ -95,7 +76,7 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
     validateOnChange: true,
     onSubmit: (data) => {
       addSelectOption(data)
-      if (edidForm === true) {
+      if (editForm === true) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         dispatch(updateData(data))
@@ -109,8 +90,6 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
       onClick()
     },
   })
-
-
 
   const addSelectOption = (data: any) => {
     const elem: any[] = [];
@@ -128,7 +107,6 @@ const BasicForm = ({ edidForm = false, onClick }: BasicFormProps) => {
     })
     formik.handleChange
   }
-
 
 
   return (
