@@ -1,5 +1,6 @@
 import style from './Searchform.module.scss'
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 const SearchForm = () => (
   <form className={style.search_form}>
@@ -8,7 +9,8 @@ const SearchForm = () => (
       placeholder={'What do you want to watch?'}
       className={style.search_form_input}
     />
-    <Button title={'search'} classname={'search_button'} />
+    <Link to='/search'><Button title={'search'} classname={'search_button'} /></Link>
+    
   </form>
 )
 
