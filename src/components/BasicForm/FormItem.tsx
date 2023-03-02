@@ -20,7 +20,7 @@ const FormItem = ({ title, type, placeholder, value = '', onchange, id, name }: 
           id={id}
           type={type}
           placeholder={placeholder}
-          defaultValue={value}
+          value={value}
           onChange={onchange}
           name={name}
         />
