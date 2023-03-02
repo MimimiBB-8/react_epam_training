@@ -30,7 +30,6 @@ interface BasicFormProps {
 const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
 
   const [selectValue, setSelectValue] = useState<SelectOption[]>([options[0]])
-
   const idItem = useAppSelector((state) => state.recervingId)
 
   const { data } = useAppSelector((state) => state.data)
@@ -43,10 +42,12 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
       .positive('Rating must be greater than zero')
       .max(10)
       .required('Rating is required'),
-    runtime: Yup.number().
-      integer()
+    runtime: Yup.number()
+      .integer()
       .positive('Runtime must be greater than zero')
       .required('Runtime is required'),
+    overview: Yup.string().required('Overview is required'),
+    genres: Yup.array().min(1)
   })
 
   let movieDescription: string | any[] = []
@@ -70,12 +71,17 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
       vote_average: Number(`${fillValue('vote_average')}`),
       runtime: Number(`${parseInt(fillValue('runtime'))}`),
       overview: `${fillValue('overview')}`,
-      genres: selectValue
+      genres: `${selectValue}`.split(','),
     },
+
     validationSchema,
     validateOnChange: true,
     onSubmit: (data) => {
+      console.log(data)
       addSelectOption(data)
+      // if(data.genres.length !== 0){
+        
+      // }
       if (editForm === true) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -87,10 +93,11 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
         // @ts-ignore
         dispatch(addData(newData))
       }
-      onClick()
+    onClick()
     },
   })
 
+  
   const addSelectOption = (data: any) => {
     const elem: any[] = [];
     selectValue.map((item: any) => {
@@ -105,13 +112,14 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
     elem.map((item: any) => {
       stringSelectValue.push(item.value)
     })
+    formik.values.genres = stringSelectValue;
     formik.handleChange
   }
 
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit}  onReset={formik.handleReset}>
+      <form onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
         <div className={style.colon_wrapper}>
           <div className={style.first_colon}>
             <FormItem
@@ -147,6 +155,9 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
                 onChange={(elem) => handlerChangeSelect(elem)}
               />
             </label>
+            <div className='invalid-feedback'>
+              {formik.errors.genres && formik.touched.genres ? formik.errors.genres : null}
+            </div>
             <br />
           </div>
           <div className={style.second_colon}>
@@ -199,9 +210,13 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
             onChange={formik.handleChange}
             name='overview'
           ></textarea>
+
         </label>
+        <div className='invalid-feedback'>
+          {formik.errors.overview && formik.touched.overview ? formik.errors.overview : null}
+        </div>
         <div className={style.group_button}>
-          <Button title={'reset'} classname={'reset_button'} type="reset"/>
+          <Button title={'reset'} classname={'reset_button'} type="reset" />
           <Button title={'submit'} type={'submit'} />
         </div>
       </form>
