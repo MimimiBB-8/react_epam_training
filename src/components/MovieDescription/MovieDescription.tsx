@@ -8,25 +8,24 @@ import { useDispatch } from 'react-redux'
 import { fetchDescription } from '../../store/actions/description'
 
 type MovieDitales = {
-  id?: number;
-  title: string;
+  id?: number
+  title: string
   poster_path: string
   vote_average: number
   genres: []
   release_date: string
   runtime: number
   overview: string
-};
-
+}
 
 const MovieDescription = () => {
-
   const stateVisibleValue = useContext(StateVisibleContext)
 
-  const { data, loading, error} = useAppSelector(state => state.description)
-  const { itemId } = useAppSelector(state => state.recervingId)
+  const { data, loading, error } = useAppSelector((state) => state.description)
 
-  const obj: MovieDitales = data as unknown as MovieDitales;
+  const { itemId } = useAppSelector((state) => state.recervingId)
+
+  const obj: MovieDitales = data as unknown as MovieDitales
 
   const dispatch = useDispatch()
 
@@ -35,14 +34,14 @@ const MovieDescription = () => {
     // @ts-ignore
     dispatch(fetchDescription(itemId))
   }, [itemId])
-  
+
   if (loading) {
     return <h1>Loading...</h1>
   }
   if (error) {
     return <h1>{error}</h1>
   }
-  
+
   function getTimeFromMins(mins: number) {
     const hours = Math.trunc(mins / 60)
     const minutes = mins % 60
@@ -72,9 +71,13 @@ const MovieDescription = () => {
               <p className={style.rating}>{obj.vote_average}</p>
             </div>
           </div>
-          <p className={style.description_genre}>{obj.genres !== undefined? obj.genres.join(', ') : ''}</p>
+          <p className={style.description_genre}>
+            {obj.genres !== undefined ? obj.genres.join(', ') : ''}
+          </p>
           <div className={style.group_year_time}>
-            <h5 className={style.description_year}>{obj.release_date !== undefined? obj.release_date.slice(0,4) : ''}</h5>
+            <h5 className={style.description_year}>
+              {obj.release_date !== undefined ? obj.release_date.slice(0, 4) : ''}
+            </h5>
             <h5 className={style.description_time}>{getTimeFromMins(obj.runtime)}</h5>
           </div>
           <p className={style.description}>{obj.overview}</p>

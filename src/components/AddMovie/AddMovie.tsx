@@ -15,11 +15,12 @@ const AddMovie = ({ onClick }: addMovieProps) => {
     onClick()
     setShowModal(false)
   }
+  
   return (
     <div className={style.add_movie}>
       <Button classname={'close_button'} onClick={onClick} />
       <h2 className={style.topic}>ADD MOVIE</h2>
-      <BasicForm position={true} onClick={onClick} showModalWindow={setShowModal} />
+      <BasicForm onClick={onClick} showModalWindow={setShowModal} />
       {showModal && (
         <Portal>
           <SuccessNotification onClick={handlerCloseAllWindows} />

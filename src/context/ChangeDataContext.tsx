@@ -15,8 +15,6 @@ const defaultState = {
   newMovie: {},
 }
 
-
-
 export const ChangeDataContext = createContext<changeDataContextInterface>(defaultState)
 
 type Props = {
@@ -24,8 +22,6 @@ type Props = {
 }
 
 export const ChangeDataContextProvider = ({ children }: Props) => {
-
-
   const [movieData, setMovieDescription] = useState(defaultState.movieData)
   const [movieID, setMovieID] = useState(defaultState.movieID)
   const [newMovie, setNewMovie] = useState(defaultState.newMovie)

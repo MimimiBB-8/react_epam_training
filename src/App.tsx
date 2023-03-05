@@ -1,4 +1,3 @@
-
 import style from './App.module.scss'
 import Header from './components/Header/Header'
 import MainComponent from './components/MainComponent/MainComponent'
@@ -13,8 +12,8 @@ function App() {
         <ErrorBoundary>
           <div className={style.main_wrapper}>
             <StateVisibleContextProvider>
-                <Header />
-                <MainComponent />
+              <Header />
+              <MainComponent />
             </StateVisibleContextProvider>
             <Footer />
           </div>
