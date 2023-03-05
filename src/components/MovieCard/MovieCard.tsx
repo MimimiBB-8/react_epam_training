@@ -6,6 +6,7 @@ import { StateVisibleContext } from '../../context/StateVisibleContext'
 import { useDispatch } from 'react-redux'
 import { receivingId } from '../../store/actions/reservingId'
 import styles from '../MovieCard/MovieCard.module.scss'
+import { useSearchParams } from 'react-router-dom'
 
 interface MovieProps {
   keyID: any
@@ -18,6 +19,8 @@ interface MovieProps {
 const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
   
   const stateVisibleValue = useContext(StateVisibleContext)
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
@@ -35,6 +38,11 @@ const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
 
   const dispatch = useDispatch()
 
+  const setMovieIdLocation = () =>{
+    setSearchParams({'movie' : keyID});
+    setItemId()
+  }
+
   const setItemId = useCallback(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -46,7 +54,7 @@ const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) => {
 
     <div className={`${style.movie_card} movie_card`} id={keyID} >
       <div  onClick={handleOnClick} className={`${styles.poster}`}>
-      <ImgSource alt={title} urlProp={urlImg} onclick={setItemId} />
+      <ImgSource alt={title} urlProp={urlImg} onclick={setMovieIdLocation} />
       </div>
       <Additions onClick={setItemId}/>
       <div className={style.movie_name}>

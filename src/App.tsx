@@ -1,25 +1,19 @@
-import style from './App.module.scss'
-import Header from './components/Header/Header'
 import MainComponent from './components/MainComponent/MainComponent'
-import Footer from './components/Footer/Footer'
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
-import { StateVisibleContextProvider } from './context/StateVisibleContext'
+import { Routes, Route } from 'react-router-dom'
+import NotFoundPage from './components/NotFoundPage/NotFoundPage'
+import { Layout } from './components/Layout/Layout'
 
 function App() {
   return (
-    <div className={style.app_wrapper}>
-      <div className={style.page_wrapper}>
-        <ErrorBoundary>
-          <div className={style.main_wrapper}>
-            <StateVisibleContextProvider>
-              <Header />
-              <MainComponent />
-            </StateVisibleContextProvider>
-            <Footer />
-          </div>
-        </ErrorBoundary>
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout />} >
+        <Route path='search' element={<MainComponent />} >
+          
+        </Route>
+        <Route path='search/:title' element={<MainComponent />} ></Route>
+        <Route path='*' element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   )
 }
 

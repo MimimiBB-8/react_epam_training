@@ -4,19 +4,27 @@ import MovieCard from '../MovieCard/MovieCard'
 import { useAppSelector } from '../../hooks/useTypeRedux'
 import { useDispatch } from 'react-redux'
 import { fetchData} from '../../store/actions/data'
+import { useSearchParams } from 'react-router-dom'
+import { useLocation } from 'react-router'
+
 
 function MovieGallery() {
   const { data, loading, error } = useAppSelector((state) => state.data)
-  const sort = useAppSelector((state) => state.sort)
-  
+
   const dispatch = useDispatch()  
   const idDelete = useAppSelector((state) => state.recervingId)
 
+  const [searchParams, setsearchParam] = useSearchParams()
+
+  const {search} = useLocation()
+  const query = searchParams.get('genre');
+  const newSearchParam = search.replace(/\?/gi, '&').replace(/genre/i, 'filter');
+  
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    dispatch(fetchData(sort))
-  }, [sort, idDelete])
+    dispatch(fetchData(newSearchParam))
+  }, [idDelete, searchParams])
 
   if (loading) {
     return <h1>Loading...</h1>

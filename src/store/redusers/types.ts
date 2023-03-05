@@ -59,13 +59,6 @@ interface FilterAction {
   payload: string
 }
 
-interface SortByAction {
-  type: typeof SortActionTypes.SORT_BY
-  payload: string
-}
-
-export type SortAction = FilterAction | SortByAction
-
 export interface DescriptionState {
   data: any[]
   loading: boolean

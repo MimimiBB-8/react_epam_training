@@ -8,11 +8,19 @@
     padding: 0;
     cursor: pointer;
     text-transform: uppercase;
+
     li:not(:last-child) {
       margin-right: 30px;
     }
+    a{
+      &.active{
+        color: #f65261;
+        text-decoration: none;
+      }
+    }
   }
 }
+
 .sort_by {
   color: #ffffff;
   mix-blend-mode: normal;
@@ -32,6 +40,7 @@
   letter-spacing: 0.888889px;
   text-transform: uppercase;
   color: #ffffff;
+
   option {
     background: #232323;
     border: 5px solid #232323;
@@ -56,4 +65,21 @@
   width: 35px;
   height: 4px;
   background: #f65261;
+
+  &.action {
+    margin-left: 60px;
+    width: 63px;
+  }
+  &.comedy {
+    margin-left: 153px;
+    width: 74px;
+  }
+  &.horror {
+    margin-left: 257px;
+    width: 75px;
+  }
+  &.crime {
+    margin-left: 362px;
+    width: 54px;
+  }
 }

@@ -12,7 +12,7 @@ module.exports = {
         }),
     ],
     devServer: {
-        port: 3000, // you can change the port
+        port: 3000/search, 
     },
     resolve: {
         extensions: ['.ts', '.tsx', 'js', 'jsx'],
