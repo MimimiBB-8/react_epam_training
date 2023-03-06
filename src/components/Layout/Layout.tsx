@@ -7,12 +7,11 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const Layout = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-useEffect(() => {
-       navigate('/search');
-   
-},[]);
+  useEffect(() => {
+    navigate('/search');
+  }, []);
 
   return (
     <>

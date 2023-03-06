@@ -1,6 +1,5 @@
-import { useLocation } from 'react-router';
 import style from './Sortmovie.module.scss'
-import { NavLink, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 
 const SortMovie = () => {
   const [searchParams, setSearchParams] = useSearchParams();
