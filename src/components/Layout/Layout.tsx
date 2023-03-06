@@ -3,9 +3,17 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import style from '../../App.module.scss'
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Layout = () => {
+const navigate = useNavigate();
+
+useEffect(() => {
+       navigate('/search');
+   
+},[]);
+
   return (
     <>
       <div className={style.app_wrapper}>

@@ -8,7 +8,6 @@ const SortMovie = () => {
   const elementCarriage = document.querySelector('.sort_carriage')
 
   const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
-    console.log(e.target)
     const filter = (e.target as Element).id
     filter === 'all' ?
       searchParams.delete('genre') :
@@ -31,13 +30,7 @@ const SortMovie = () => {
     setSearchParams(searchParams);
   }
 
-  const activeStyle = {
-    color: 'red',
-    textDecoration: 'none'
-  };
 
-  const k = useLocation()
-  console.log(k)
   return (
     <>
       <div className={style.sort} >

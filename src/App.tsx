@@ -7,10 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Layout />} >
-        <Route path='search' element={<MainComponent />} >
-          
-        </Route>
-        <Route path='search/:title' element={<MainComponent />} ></Route>
+        <Route path='search' element={<MainComponent />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>

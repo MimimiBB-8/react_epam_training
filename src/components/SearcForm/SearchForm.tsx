@@ -6,6 +6,11 @@ const SearchForm = () => {
   const [search, setSearch] = useSearchParams('');
 
   let searchTitle = '';
+
+  const handlerOnChange = (e: React.FormEvent<HTMLInputElement>) => {
+    searchTitle = e.currentTarget.value;
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       const form = event.target;
@@ -21,8 +26,11 @@ const SearchForm = () => {
         name={'search'}
         placeholder={'What do you want to watch?'}
         className={style.search_form_input}
+        onChange={handlerOnChange}
       />
+      <Link to={`/search/${searchTitle}`}>
       <Button title={'search'} classname={'search_button'}type={'submit'} />
+      </Link>
       
     </form>
   )
