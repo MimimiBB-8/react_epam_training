@@ -2,6 +2,7 @@ import style from './Sortmovie.module.scss'
 import { useSearchParams } from 'react-router-dom'
 
 const SortMovie = () => {
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const elementCarriage = document.querySelector('.sort_carriage')
@@ -51,13 +52,13 @@ const SortMovie = () => {
                   Choose...
                 </option>
                 <option value='release_date_asc' id={'release_date_asc'}>
-                  release Ascending
+                  release ascending
                 </option>
                 <option value='release_date_des' id={'release_date_des'}>
                   release descending
                 </option>
                 <option value='vote_average_asc' id={'vote_average_asc'}>
-                  rating Ascending
+                  rating ascending
                 </option>
                 <option value='vote_average_desc' id={'vote_average_desc'}>
                   rating descending

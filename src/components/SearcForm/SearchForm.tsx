@@ -1,14 +1,20 @@
 import style from './Searchform.module.scss'
 import Button from '../Button/Button'
 import { Link, useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
 
-const SearchForm = () => {
+interface SearchFormProps{
+  
+  onSubmit: (param: any) => void
+}
+const SearchForm = ({onSubmit}:SearchFormProps) => {
+  const [inputText, setInputText] = useState('')
   const [search, setSearch] = useSearchParams('');
 
   let searchTitle = '';
 
   const handlerOnChange = (e: React.FormEvent<HTMLInputElement>) => {
-    searchTitle = e.currentTarget.value;
+    setInputText(e.currentTarget.value);
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +26,7 @@ const SearchForm = () => {
   }
 
   return (
-    <form className={style.search_form} onSubmit={handleSubmit}>
+    <form className={style.search_form} onSubmit={handleSubmit} aria-label="form" >
       <input
         type={'search'}
         name={'search'}
@@ -29,7 +35,7 @@ const SearchForm = () => {
         onChange={handlerOnChange}
       />
       <Link to={`/search/${searchTitle}`}>
-      <Button title={'search'} classname={'search_button'}type={'submit'} />
+      <Button title={'search'} classname={'search_button'}type={'submit'} onClick={()=>onSubmit()}/>
       </Link>
       
     </form>
