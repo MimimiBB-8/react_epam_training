@@ -1,8 +1,7 @@
-import { ReservingIdActionTypes } from '../redusers/types'
+import { ReservingIdActionTypes } from '../reducers/types'
 
 
 export const receivingId = (param: number) => {
-  console.log(param)
   return {
     type: ReservingIdActionTypes.RESERVING_ID,
     payload: param,

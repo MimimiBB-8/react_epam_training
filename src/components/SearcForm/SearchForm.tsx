@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 interface SearchFormProps{
   
-  onSubmit: (param: any) => void
+  onSubmit: (param: any) => void 
 }
 const SearchForm = ({onSubmit}:SearchFormProps) => {
   const [inputText, setInputText] = useState('')
@@ -35,7 +35,7 @@ const SearchForm = ({onSubmit}:SearchFormProps) => {
         onChange={handlerOnChange}
       />
       <Link to={`/search/${searchTitle}`}>
-      <Button title={'search'} classname={'search_button'}type={'submit'} onClick={()=>onSubmit()}/>
+      <Button title={'search'} classname={'search_button'}type={'submit'} onClick={()=>onSubmit(inputText)}/>
       </Link>
       
     </form>

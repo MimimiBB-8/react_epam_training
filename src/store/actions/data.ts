@@ -1,5 +1,4 @@
-import { DataActionTypes } from '../redusers/types'
-
+import { DataActionTypes } from '../reducers/types'
 import axios from 'axios';
 
 export const fetchDataRequest = () => {
@@ -8,7 +7,7 @@ export const fetchDataRequest = () => {
   };
 };
 
-export const fetchDataSucess = (data: any) => {
+export const fetchDataSuccess = (data: any) => {
   return {
     type: DataActionTypes.FETCH_DATA_SUCCESS,
     payload: data
@@ -50,7 +49,7 @@ export const fetchData = (param: any) => {
       .get(`http://localhost:4000/movies?limit=9?${param}`)
       .then((response) => {
         const data = response.data;
-        dispatch(fetchDataSucess(data.data));
+        dispatch(fetchDataSuccess(data.data));
       })
       .catch((error) => {
         const errorMsg = error.message;

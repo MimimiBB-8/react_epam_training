@@ -1,4 +1,4 @@
-import { DescriptionAction, DescriptionActionTypes } from '../redusers/types'
+import { DescriptionAction, DescriptionActionTypes } from '../reducers/types'
 import { Dispatch } from 'redux'
 
 export const fetchDescription = (param: any) => {

@@ -31,7 +31,7 @@ const Header = () => {
             </div>
             <div className={style.search_content}>
               <h2>FIND YOUR MOVIE</h2>
-              <SearchForm />
+              <SearchForm onSubmit={()=>console.log('searchInput')}/>
             </div>
           </div>
         )}

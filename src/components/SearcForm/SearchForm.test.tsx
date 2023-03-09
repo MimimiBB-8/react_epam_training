@@ -4,13 +4,13 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
-const onChange = jest.fn()
+const onSubmit = jest.fn()
 
 describe("Search component", () => {
   it("renders search component", () => {
     render(
       <Router>
-        <SearchForm />
+        <SearchForm onSubmit={onSubmit}/>
       </Router>,
     );
     expect(screen.getByRole('form')).toBeInTheDocument;
@@ -20,7 +20,7 @@ describe("Search component", () => {
   beforeEach(() => {
     render(
       <Router>
-        <SearchForm />
+        <SearchForm onSubmit={onSubmit}/>
       </Router>);
   });
   it("search placeholder ", () => {
