@@ -11,7 +11,9 @@ describe('Receiving Id Reducer', () => {
         payload : 313369,
         type:  ReservingIdActionTypes.RESERVING_ID })).toEqual({'itemId': 313369});
   });
+  
   it('empty RESERVING_ID', () => {
+    // @ts-ignore
     expect(receivingIdReducer(undefined, { 
         })).toEqual({'itemId': 0});
   });

@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import SearchForm from "./SearchForm";
 import userEvent from "@testing-library/user-event";
+import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -10,7 +11,7 @@ describe("Search component", () => {
   it("renders search component", () => {
     render(
       <Router>
-        <SearchForm onSubmit={onSubmit}/>
+        <SearchForm/>
       </Router>,
     );
     expect(screen.getByRole('form')).toBeInTheDocument;
@@ -20,7 +21,7 @@ describe("Search component", () => {
   beforeEach(() => {
     render(
       <Router>
-        <SearchForm onSubmit={onSubmit}/>
+        <SearchForm/>
       </Router>);
   });
   it("search placeholder ", () => {

@@ -13,12 +13,12 @@ const MainComponent = () => {
   }, [])
 
   return (
-    <div className={style.wrapper_component}>
+    <main className={style.wrapper_component}>
       <SortingChangesContextProvider>
         <SortMovie />
         <MovieGallery />
       </SortingChangesContextProvider>
-    </div>
+    </main>
   )
 }
 

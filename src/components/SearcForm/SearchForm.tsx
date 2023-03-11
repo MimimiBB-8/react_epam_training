@@ -7,7 +7,8 @@ interface SearchFormProps{
   
   onSubmit: (param: any) => void 
 }
-const SearchForm = ({onSubmit}:SearchFormProps) => {
+
+const SearchForm = () => {
   const [inputText, setInputText] = useState('')
   const [search, setSearch] = useSearchParams('');
 
@@ -33,11 +34,9 @@ const SearchForm = ({onSubmit}:SearchFormProps) => {
         placeholder={'What do you want to watch?'}
         className={style.search_form_input}
         onChange={handlerOnChange}
+        title='search'
       />
-      <Link to={`/search/${searchTitle}`}>
-      <Button title={'search'} classname={'search_button'}type={'submit'} onClick={()=>onSubmit(inputText)}/>
-      </Link>
-      
+      <Button title={'search'} classname={'search_button'} type={'submit'}/>      
     </form>
   )
 }

@@ -36,11 +36,11 @@ const SortMovie = () => {
       <div className={style.sort} >
         <nav>
           <ul className={style.sort_genre} onClick={handleOnClickFilter} >
-          <li id={'all'}>ALL</li>
-            <li id={'action'}>Action</li>
-            <li id={'comedy'}>COMEDY</li>
-            <li id={'horror'}>HORROR</li>
-            <li id={'crime'}>CRIME</li>
+          <li id={'all'}>all</li>
+            <li id={'action'}>action</li>
+            <li id={'comedy'}>comedy</li>
+            <li id={'horror'}>horror</li>
+            <li id={'crime'}>crime</li>
           </ul>
         </nav>
         <nav>

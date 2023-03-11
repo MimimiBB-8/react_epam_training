@@ -15,27 +15,27 @@ Object {
             <li
               id="all"
             >
-              ALL
+              all
             </li>
             <li
               id="action"
             >
-              Action
+              action
             </li>
             <li
               id="comedy"
             >
-              COMEDY
+              comedy
             </li>
             <li
               id="horror"
             >
-              HORROR
+              horror
             </li>
             <li
               id="crime"
             >
-              CRIME
+              crime
             </li>
           </ul>
         </nav>
@@ -105,27 +105,27 @@ Object {
             <li
               id="all"
             >
-              ALL
+              all
             </li>
             <li
               id="action"
             >
-              Action
+              action
             </li>
             <li
               id="comedy"
             >
-              COMEDY
+              comedy
             </li>
             <li
               id="horror"
             >
-              HORROR
+              horror
             </li>
             <li
               id="crime"
             >
-              CRIME
+              crime
             </li>
           </ul>
         </nav>
@@ -196,27 +196,27 @@ Object {
           <li
             id="all"
           >
-            ALL
+            all
           </li>
           <li
             id="action"
           >
-            Action
+            action
           </li>
           <li
             id="comedy"
           >
-            COMEDY
+            comedy
           </li>
           <li
             id="horror"
           >
-            HORROR
+            horror
           </li>
           <li
             id="crime"
           >
-            CRIME
+            crime
           </li>
         </ul>
       </nav>
