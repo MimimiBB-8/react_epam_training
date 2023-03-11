@@ -14,6 +14,7 @@ export const fetchDataSuccess = (data: any) => {
   };
 };
 
+
 export const fetchDataFailure = (errors: any) => {
   return {
     type: DataActionTypes.FETCH_DATA_ERROR,
@@ -41,23 +42,7 @@ export const addNewData = (data: any) => {
   };
 };
 
-  // export const fetchData = (param: any): DataActionTypes => {
-  //   return  (dispatch:any) =>  {
-  //     dispatch(fetchDataRequest);
-      
-  //      axios.get(`http://localhost:4000/movies?limit=9?${param}`)
-  //       .then((response) => {
-  //         const data = response.data;
-  //         return dispatch(fetchDataSuccess(data.data));
-  //       })
-  //       .catch((error) => {
-  //         const errorMsg = error.message;
-  //         return dispatch(fetchDataFailure(errorMsg));
-  //       }) 
-  //     }
-  // }
-
-export const fetchData = (param: any) => {
+export const fetchData = (param: string) => {
   return (dispatch: any) =>  {
     dispatch(fetchDataRequest);
     return axios.get(`http://localhost:4000/movies?limit=9?${param}`)
