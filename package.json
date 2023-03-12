@@ -36,8 +36,8 @@
     "yup": "^1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start --scripts-version react-scripts",
+    "build": "react-app-rewired build --scripts-version react-scripts",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --testTimeout=10000",
     "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
     "cypress": "cypress open",
@@ -77,6 +77,7 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "cypress": "^12.7.0",
     "eslint": "^8.32.0",
@@ -87,6 +88,7 @@
     "jest": "^27.5.1",
     "nock": "^13.3.0",
     "prettier": "^2.8.3",
+    "react-app-rewired": "^2.2.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "start-server-and-test": "^2.0.0",

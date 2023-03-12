@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import style from './Sortmovie.module.scss'
 import { useSearchParams } from 'react-router-dom'
 
@@ -6,6 +7,7 @@ const SortMovie = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const elementCarriage = document.querySelector('.sort_carriage')
+
 
   const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
     const filter = (e.target as Element).id

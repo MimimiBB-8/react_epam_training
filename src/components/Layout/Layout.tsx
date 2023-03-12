@@ -17,7 +17,7 @@ const Layout = () => {
     <>
       <div className={style.app_wrapper}>
         <div className={style.page_wrapper}>
-          <ErrorBoundary>
+          {/* <ErrorBoundary> */}
             <div className={style.main_wrapper}>
               <StateVisibleContextProvider>
                 <Header />
@@ -25,7 +25,7 @@ const Layout = () => {
               </StateVisibleContextProvider>
               <Footer />
             </div>
-          </ErrorBoundary>
+          {/* </ErrorBoundary> */}
         </div>
       </div>
     </>

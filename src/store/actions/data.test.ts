@@ -26,7 +26,6 @@ export const MOVIE = {
 jest.mock('axios');
 
 describe('Redemption Async', ()=>{
-    jest.useFakeTimers()
     const middlewares = [thunk]
     const mockStore = configureStore(middlewares)
 
@@ -35,7 +34,8 @@ describe('Redemption Async', ()=>{
     })
 
     it('should fire successful action', async () => {
-        axios.get.mockImplementationOnce(() => Promise.resolve({data: {"data":MOVIE}}));
+        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        mockedAxios.get.mockImplementationOnce(() => Promise.resolve({data: {"data":MOVIE}}));
         const expectedActions = [
             {type: DataActionTypes.FETCH_DATA_SUCCESS, payload: MOVIE},
         ];
@@ -46,7 +46,8 @@ describe('Redemption Async', ()=>{
 
 
     it('should fire failure action', async () => {
-        axios.get.mockImplementationOnce(() => Promise.resolve({data: null}));
+        const mockedAxios = axios as jest.Mocked<typeof axios>;
+        mockedAxios.get.mockImplementationOnce(() => Promise.resolve({data: null}));
         const expectedActions = [
             {type: DataActionTypes.FETCH_DATA_ERROR, payload: "Cannot read properties of null (reading 'data')"},
         ];
@@ -60,14 +61,30 @@ describe('Redemption Async', ()=>{
 
     describe('should fire an action to fetch movies', () => {
         it('should fire successful action', async () => {
-            axios.get.mockImplementationOnce(() => Promise.resolve({data: {"data":[MOVIE]}}));
+            const mockedAxios = axios as jest.Mocked<typeof axios>;
+            mockedAxios.get.mockImplementationOnce(() => Promise.resolve({data: {"data":[MOVIE]}}));
             const expectedActions = [
                 {type:  DataActionTypes.FETCH_DATA_SUCCESS, payload: [MOVIE]},
             ];
-            const store = mockStore({
-            });
+            const store = mockStore({ });
             await store.dispatch(fetchData(""));
             expect(await store.getActions()).toEqual(expectedActions)
         })
+        it('should fire failure action', async () => {
+            const mockedAxios = axios as jest.Mocked<typeof axios>;
+            mockedAxios.get.mockImplementationOnce(() => Promise.reject({message: 'ERROR'}));
+            const expectedActions = [
+                {type: DataActionTypes.FETCH_DATA_ERROR, payload: 'ERROR'},
+            ];
+            const store = mockStore({
+               
+            });
+            try {
+                await store.dispatch(fetchData(""));
+            } finally {
+                expect(await store.getActions()).toEqual(expectedActions)
+            }
+        })
     })
+    
 })
