@@ -6,10 +6,10 @@ import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 const MainComponent = () => {
-  const [searchParams, setsearchParam] = useSearchParams()
+  const [searchParams, setSearchParam] = useSearchParams()
   useEffect(() => {
       searchParams.delete('movie')
-      setsearchParam(searchParams)
+      setSearchParam(searchParams)
   }, [])
 
   return (

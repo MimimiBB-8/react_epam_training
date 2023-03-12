@@ -1,0 +1,87 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>MovieCard.tsx</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="positive"><td class="">src\components\MovieCard\MovieCard.tsx</td><td class="">87.16%</td><td class="">80%</td><td class="">109</td><td class="">95</td><td class="">14</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import style from &#x27;./MovieCard.module.scss&#x27;
+import ImgSource from &#x27;../ImgSource/ImgSource&#x27;
+import Additions from &#x27;./Additions&#x27;
+import React, { useCallback, useContext } from &#x27;react&#x27;
+import { StateVisibleContext } from &#x27;../../context/StateVisibleContext&#x27;
+import { useDispatch } from &#x27;react-redux&#x27;
+import { receivingId } from &#x27;../../store/actions/reservingId&#x27;
+import styles from &#x27;../MovieCard/MovieCard.module.scss&#x27;
+import { useSearchParams } from &#x27;react-router-dom&#x27;
+
+interface MovieProps {
+  keyID: any
+  title: string
+  year: string
+  genres: string
+  urlImg: string
+}
+
+const MovieCard = ({ keyID, title, year, genres, urlImg }: MovieProps) =&gt; {
+  
+  const stateVisibleValue = useContext(StateVisibleContext)
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleOnClick = (e: React.MouseEvent&lt;HTMLElement&gt;) =&gt; {
+    e.preventDefault()
+    if ((e.target as Element).classList.contains(&#x27;img_source&#x27;)) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: &#x27;smooth&#x27;,
+      })
+      if (stateVisibleValue.toggleVisible) {
+        stateVisibleValue.toggleVisible(true)
+      }
+    }
+  }
+
+  const dispatch = useDispatch()
+
+  const setMovieIdLocation = () =&gt;{
+    setSearchParams({&#x27;movie&#x27; : keyID});
+    setItemId()
+  }
+
+  const setItemId = useCallback(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    () =&gt;  dispatch(receivingId(keyID)),
+    [dispatch]
+  )
+
+  return (
+
+    &lt;div className={`${style.movie_card} movie_card`} id={keyID} &gt;
+      &lt;div  onClick={handleOnClick} className={`${styles.poster}`}&gt;
+      &lt;ImgSource alt={title} urlProp={urlImg} onclick={setMovieIdLocation} /&gt;
+      &lt;/div&gt;
+      &lt;Additions onClick={setItemId}/&gt;
+      &lt;div className={style.movie_name}&gt;
+        &lt;h4&gt;{title}&lt;/h4&gt;
+        &lt;p className={style.movie_year}&gt;{year.slice(0, 4)}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;p className={style.movie_genre}&gt;{genres}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default MovieCard
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:0,&quot;character&quot;:7,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:7,&quot;character&quot;:7,&quot;text&quot;:&quot;styles&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:11,&quot;character&quot;:2,&quot;text&quot;:&quot;keyID&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:18,&quot;character&quot;:21,&quot;text&quot;:&quot;keyID&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:54,&quot;character&quot;:23,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:54,&quot;character&quot;:29,&quot;text&quot;:&quot;movie_card&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:55,&quot;character&quot;:50,&quot;text&quot;:&quot;styles&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:55,&quot;character&quot;:57,&quot;text&quot;:&quot;poster&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:59,&quot;character&quot;:22,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:59,&quot;character&quot;:28,&quot;text&quot;:&quot;movie_name&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:61,&quot;character&quot;:22,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:61,&quot;character&quot;:28,&quot;text&quot;:&quot;movie_year&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:63,&quot;character&quot;:20,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieCard\\MovieCard.tsx&quot;,&quot;line&quot;:63,&quot;character&quot;:26,&quot;text&quot;:&quot;movie_genre&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:31 GMT</p>
+    </body>
+  </html>
+  
