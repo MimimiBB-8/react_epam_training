@@ -1,6 +1,6 @@
 import Button from '../Button/Button'
 import style from './Deletionconfirmation.module.scss'
-import { useCallback, useContext, useEffect, useState } from 'react'
+import { useCallback} from 'react'
 import { useAppSelector } from '../../hooks/useTypeRedux'
 import { deleteData } from '../../store/actions/data'
 import { useDispatch } from 'react-redux'

@@ -47,7 +47,7 @@ export const fetchData = (param: any) => {
   return (dispatch: any) => {
     dispatch(fetchDataRequest);
     axios
-      .get(`http://localhost:4000/movies?limit=9?${param.parametr}`)
+      .get(`http://localhost:4000/movies?limit=9?${param}`)
       .then((response) => {
         const data = response.data;
         dispatch(fetchDataSucess(data.data));
@@ -61,6 +61,7 @@ export const fetchData = (param: any) => {
 
 export const deleteData = (id: string) => {
   return (dispatch:any) => {
+    dispatch(fetchDataRequest);
     axios
       .delete(`http://localhost:4000/movies/${id}`)
       .then((response) => {

@@ -1,13 +1,22 @@
 import style from './Sortmovie.module.scss'
-import { useDispatch } from 'react-redux'
-import { changeFilterParam, changeSortParam } from '../../store/actions/sort'
+import { useSearchParams } from 'react-router-dom'
 
 const SortMovie = () => {
-  const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const elementCarriage = document.querySelector('.sort_carriage')
 
   const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
-    if ((e.target as Element).id !== '') {
-      dispatch(changeFilterParam(`&filter=${(e.target as Element).id}`))
+    const filter = (e.target as Element).id
+    filter === 'all' ?
+      searchParams.delete('genre') :
+      searchParams.set('genre', filter)
+    setSearchParams(searchParams);
+    if (elementCarriage) {
+      if (elementCarriage.classList.length > 2) {
+        elementCarriage.classList.remove(`${elementCarriage.classList[elementCarriage.classList.length - 1]}`)
+      }
+      elementCarriage.classList.add(`${style[filter]}`)
     }
   }
 
@@ -15,17 +24,18 @@ const SortMovie = () => {
     const sortParam = e.target.value.split('_')
     const sortBy = sortParam.slice(0, 2).join('_')
     const sortOrder = sortParam.slice(-1).join()
-    if (sortParam.length !== 0) {
-      dispatch(changeSortParam(`&sortBy=${sortBy}&sortOrder=${sortOrder}`))
-    }
+    searchParams.set('sortBy', sortBy);
+    searchParams.set('sortOrder', sortOrder);
+    setSearchParams(searchParams);
   }
+
 
   return (
     <>
-      <div className={style.sort}>
+      <div className={style.sort} >
         <nav>
-          <ul className={style.sort_genre} onClick={handleOnClickFilter}>
-            <li id={'all'}>ALL</li>
+          <ul className={style.sort_genre} onClick={handleOnClickFilter} >
+          <li id={'all'}>ALL</li>
             <li id={'action'}>Action</li>
             <li id={'comedy'}>COMEDY</li>
             <li id={'horror'}>HORROR</li>
@@ -58,7 +68,7 @@ const SortMovie = () => {
         </nav>
       </div>
       <div className={style.sort_identifier}>
-        <div className={style.sort_carriage}></div>
+        <div className={`sort_carriage ${style.sort_carriage} `}></div>
       </div>
     </>
   )
