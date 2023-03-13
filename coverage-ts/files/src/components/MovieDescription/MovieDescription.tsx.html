@@ -1,0 +1,108 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>MovieDescription.tsx</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="positive"><td class="">src\components\MovieDescription\MovieDescription.tsx</td><td class="">83.73%</td><td class="">80%</td><td class="">166</td><td class="">139</td><td class="">27</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { useContext, useEffect } from &#x27;react&#x27;
+import style from &#x27;./Moviedescription.module.scss&#x27;
+import Button from &#x27;../Button/Button&#x27;
+import ImgSource from &#x27;../ImgSource/ImgSource&#x27;
+import { StateVisibleContext } from &#x27;../../context/StateVisibleContext&#x27;
+import { useAppSelector } from &#x27;../../hooks/useTypeRedux&#x27;
+import { useDispatch } from &#x27;react-redux&#x27;
+import { fetchDescription } from &#x27;../../store/actions/description&#x27;
+
+type MovieDitales = {
+  id?: number
+  title: string
+  poster_path: string
+  vote_average: number
+  genres: []
+  release_date: string
+  runtime: number
+  overview: string
+}
+
+const MovieDescription = () =&gt; {
+  const stateVisibleValue = useContext(StateVisibleContext)
+
+  const { data, loading, error } = useAppSelector((state) =&gt; state.description)
+
+  const { itemId } = useAppSelector((state) =&gt; state.recervingId)
+
+  const obj: MovieDitales = data as unknown as MovieDitales
+
+  const dispatch = useDispatch()
+
+  useEffect(() =&gt; {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    dispatch(fetchDescription(itemId))
+  }, [itemId])
+
+  if (loading) {
+    return &lt;h1&gt;Loading...&lt;/h1&gt;
+  }
+  if (error) {
+    return &lt;h1&gt;{error}&lt;/h1&gt;
+  }
+
+  function getTimeFromMins(mins: number) {
+    const hours = Math.trunc(mins / 60)
+    const minutes = mins % 60
+    return `${hours} h   ${minutes} min`
+  }
+
+  const handleOnClick = () =&gt; {
+    if (stateVisibleValue.toggleVisible) {
+      stateVisibleValue.toggleVisible(false)
+    }
+  }
+
+  return (
+    &lt;div className={style.header_description}&gt;
+      &lt;div className={style.logo_line}&gt;
+        &lt;label className={style.logo}&gt;
+          &lt;span&gt;netflix&lt;/span&gt;roulette
+        &lt;/label&gt;
+        &lt;Button classname={&#x27;return_search&#x27;} onClick={handleOnClick} /&gt;
+      &lt;/div&gt;
+      &lt;div className={style.description_wrapper}&gt;
+        &lt;ImgSource urlProp={obj.poster_path} /&gt;
+        &lt;div className={style.description_movie}&gt;
+          &lt;div className={style.group_name_rating}&gt;
+            &lt;h2&gt;{obj.title}&lt;/h2&gt;
+            &lt;div className={style.circle_paragraph}&gt;
+              &lt;p className={style.rating}&gt;{obj.vote_average}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p className={style.description_genre}&gt;
+            {obj.genres !== undefined ? obj.genres.join(&#x27;, &#x27;) : &#x27;&#x27;}
+          &lt;/p&gt;
+          &lt;div className={style.group_year_time}&gt;
+            &lt;h5 className={style.description_year}&gt;
+              {obj.release_date !== undefined ? obj.release_date.slice(0, 4) : &#x27;&#x27;}
+            &lt;/h5&gt;
+            &lt;h5 className={style.description_time}&gt;{getTimeFromMins(obj.runtime)}&lt;/h5&gt;
+          &lt;/div&gt;
+          &lt;p className={style.description}&gt;{obj.overview}&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default MovieDescription
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:1,&quot;character&quot;:7,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:57,&quot;character&quot;:20,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:57,&quot;character&quot;:26,&quot;text&quot;:&quot;header_description&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:58,&quot;character&quot;:22,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:58,&quot;character&quot;:28,&quot;text&quot;:&quot;logo_line&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:59,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:59,&quot;character&quot;:32,&quot;text&quot;:&quot;logo&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:64,&quot;character&quot;:22,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:64,&quot;character&quot;:28,&quot;text&quot;:&quot;description_wrapper&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:66,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:66,&quot;character&quot;:30,&quot;text&quot;:&quot;description_movie&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:67,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:67,&quot;character&quot;:32,&quot;text&quot;:&quot;group_name_rating&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:69,&quot;character&quot;:28,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:69,&quot;character&quot;:34,&quot;text&quot;:&quot;circle_paragraph&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:70,&quot;character&quot;:28,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:70,&quot;character&quot;:34,&quot;text&quot;:&quot;rating&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:73,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:73,&quot;character&quot;:30,&quot;text&quot;:&quot;description_genre&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:76,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:76,&quot;character&quot;:32,&quot;text&quot;:&quot;group_year_time&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:77,&quot;character&quot;:27,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:77,&quot;character&quot;:33,&quot;text&quot;:&quot;description_year&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:80,&quot;character&quot;:27,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:80,&quot;character&quot;:33,&quot;text&quot;:&quot;description_time&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:82,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieDescription\\MovieDescription.tsx&quot;,&quot;line&quot;:82,&quot;character&quot;:30,&quot;text&quot;:&quot;description&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:31 GMT</p>
+    </body>
+  </html>
+  

@@ -6,7 +6,6 @@ import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
 import MovieDescription from '../MovieDescription/MovieDescription'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
-import { Routes, Route } from 'react-router-dom'
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false)
@@ -14,7 +13,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={style.header}>
+      <header className={style.header}>
         {stateVisibleValue.visible ? (
           <MovieDescription/>
         ) : (
@@ -31,11 +30,11 @@ const Header = () => {
             </div>
             <div className={style.search_content}>
               <h2>FIND YOUR MOVIE</h2>
-              <SearchForm />
+              <SearchForm/>
             </div>
           </div>
         )}
-      </div>
+      </header>
       {showModal && (
         <Portal>
           <AddMovie onClick={() => setShowModal(false)} />

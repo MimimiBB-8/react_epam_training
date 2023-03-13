@@ -1,0 +1,107 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>data.test.ts</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="positive"><td class="">src\store\actions\data.test.ts</td><td class="">100.00%</td><td class="">80%</td><td class="">133</td><td class="">133</td><td class="">0</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { fetchData } from &#x27;./data&#x27;;
+import axios from &#x27;axios&#x27;
+import nock from &#x27;nock&#x27;
+import configureStore from &#x27;redux-mock-store&#x27;
+import thunk from &#x27;redux-thunk&#x27;
+import {DataActionTypes} from &#x27;../reducers/types&#x27;
+
+export const MOVIE = {
+    &#x27;id&#x27;: 337167,
+    &#x27;title&#x27;: &#x27;Fifty Shades Freed&#x27;,
+    &#x27;tagline&#x27;: &quot;Don&#x27;t miss the climax&quot;,
+    &#x27;vote_average&#x27;: 6.1,
+    &#x27;vote_count&#x27;: 1195,
+    &#x27;release_date&#x27;: &#x27;2018-02-07&#x27;,
+    &#x27;poster_path&#x27;: &#x27;https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg&#x27;,
+    &#x27;overview&#x27;: &#x27;Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.&#x27;,
+    &#x27;budget&#x27;: 55000000,
+    &#x27;revenue&#x27;: 136906000,
+    &#x27;genres&#x27;: [
+        &#x27;Drama&#x27;,
+        &#x27;Romance&#x27;
+    ],
+    &#x27;runtime&#x27;: 106
+}
+
+jest.mock(&#x27;axios&#x27;);
+
+describe(&#x27;Redemption Async&#x27;, ()=&gt;{
+    const middlewares = [thunk]
+    const mockStore = configureStore(middlewares)
+
+    afterEach(() =&gt; {
+        nock.cleanAll()
+    })
+
+    it(&#x27;should fire successful action&#x27;, async () =&gt; {
+        const mockedAxios = axios as jest.Mocked&lt;typeof axios&gt;;
+        mockedAxios.get.mockImplementationOnce(() =&gt; Promise.resolve({data: {&quot;data&quot;:MOVIE}}));
+        const expectedActions = [
+            {type: DataActionTypes.FETCH_DATA_SUCCESS, payload: MOVIE},
+        ];
+        const store = mockStore({});
+        await store.dispatch(fetchData(&quot;&amp;filter=comedy&quot;));
+        expect(await store.getActions()).toEqual(expectedActions)
+    })
+
+
+    it(&#x27;should fire failure action&#x27;, async () =&gt; {
+        const mockedAxios = axios as jest.Mocked&lt;typeof axios&gt;;
+        mockedAxios.get.mockImplementationOnce(() =&gt; Promise.resolve({data: null}));
+        const expectedActions = [
+            {type: DataActionTypes.FETCH_DATA_ERROR, payload: &quot;Cannot read properties of null (reading &#x27;data&#x27;)&quot;},
+        ];
+        const store = mockStore({});
+        try {
+            await store.dispatch(fetchData(MOVIE.id));
+        } finally {
+            expect(await store.getActions()).toEqual(expectedActions)
+        }
+    })
+
+    describe(&#x27;should fire an action to fetch movies&#x27;, () =&gt; {
+        it(&#x27;should fire successful action&#x27;, async () =&gt; {
+            const mockedAxios = axios as jest.Mocked&lt;typeof axios&gt;;
+            mockedAxios.get.mockImplementationOnce(() =&gt; Promise.resolve({data: {&quot;data&quot;:[MOVIE]}}));
+            const expectedActions = [
+                {type:  DataActionTypes.FETCH_DATA_SUCCESS, payload: [MOVIE]},
+            ];
+            const store = mockStore({ });
+            await store.dispatch(fetchData(&quot;&quot;));
+            expect(await store.getActions()).toEqual(expectedActions)
+        })
+        it(&#x27;should fire failure action&#x27;, async () =&gt; {
+            const mockedAxios = axios as jest.Mocked&lt;typeof axios&gt;;
+            mockedAxios.get.mockImplementationOnce(() =&gt; Promise.reject({message: &#x27;ERROR&#x27;}));
+            const expectedActions = [
+                {type: DataActionTypes.FETCH_DATA_ERROR, payload: &#x27;ERROR&#x27;},
+            ];
+            const store = mockStore({
+               
+            });
+            try {
+                await store.dispatch(fetchData(&quot;&quot;));
+            } finally {
+                expect(await store.getActions()).toEqual(expectedActions)
+            }
+        })
+    })
+    
+})</textarea><pre id="annotations" style="display:none">[]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:32 GMT</p>
+    </body>
+  </html>
+  

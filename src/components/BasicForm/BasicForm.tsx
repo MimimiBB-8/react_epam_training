@@ -79,9 +79,6 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
     onSubmit: (data) => {
       console.log(data)
       addSelectOption(data)
-      // if(data.genres.length !== 0){
-        
-      // }
       if (editForm === true) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -182,7 +179,7 @@ const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) => {
               onchange={formik.handleChange}
               name={'vote_average'}
             />
-            <div className='invalid-feedzback'>
+            <div className='invalid-feedback'>
               {formik.errors.vote_average && formik.touched.vote_average ? formik.errors.vote_average : null}
             </div>
             <FormItem

@@ -1,6 +1,6 @@
 import { ReservingIdAction, ReservingIdActionTypes, ReservingIdState } from './types'
 
-const initialState: ReservingIdState = {
+export const initialState: ReservingIdState = {
   itemId: 0,
 }
 

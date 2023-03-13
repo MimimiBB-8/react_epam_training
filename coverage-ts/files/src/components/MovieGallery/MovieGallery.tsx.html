@@ -1,0 +1,78 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>MovieGallery.tsx</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="negative"><td class="">src\components\MovieGallery\MovieGallery.tsx</td><td class="">79.31%</td><td class="">80%</td><td class="">87</td><td class="">69</td><td class="">18</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { useEffect } from &#x27;react&#x27;
+import style from &#x27;./Moviegallery.module.scss&#x27;
+import MovieCard from &#x27;../MovieCard/MovieCard&#x27;
+import { useAppSelector } from &#x27;../../hooks/useTypeRedux&#x27;
+import { useDispatch } from &#x27;react-redux&#x27;
+import { fetchData} from &#x27;../../store/actions/data&#x27;
+import { useSearchParams } from &#x27;react-router-dom&#x27;
+import { useLocation } from &#x27;react-router&#x27;
+
+
+function MovieGallery() {
+  const { data, loading, error } = useAppSelector((state) =&gt; state.data)
+
+  const dispatch = useDispatch()  
+  const idDelete = useAppSelector((state) =&gt; state.recervingId)
+
+  const [searchParams, setsearchParam] = useSearchParams()
+
+  const {search} = useLocation()
+  const query = searchParams.get(&#x27;genre&#x27;);
+  const newSearchParam = search.replace(/\?/gi, &#x27;&amp;&#x27;).replace(/genre/i, &#x27;filter&#x27;);
+  
+  useEffect(() =&gt; {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    dispatch(fetchData(newSearchParam))
+  }, [idDelete, searchParams])
+
+  if (loading) {
+    return &lt;h1&gt;Loading...&lt;/h1&gt;
+  }
+  if (error) {
+    return &lt;h1&gt;{error}&lt;/h1&gt;
+  }
+
+  const newMovieItems = data.map((item: any) =&gt; (
+    &lt;MovieCard
+      key={item.id}
+      keyID={item.id}
+      title={item.title}
+      year={item.release_date}
+      genres={item.genres.join(&#x27;, &#x27;)}
+      urlImg={item.poster_path}
+    /&gt;
+  ))
+
+  return (
+    &lt;&gt;
+      {Object.keys(newMovieItems).length !== 0 ? (
+        &lt;div className={style.movie_gallery}&gt;{newMovieItems} &lt;/div&gt;
+      ) : (
+        &lt;div&gt;
+          &lt;h1&gt;Movie not found&lt;/h1&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/&gt;
+  )
+}
+
+export default MovieGallery
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:1,&quot;character&quot;:7,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:35,&quot;character&quot;:34,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:37,&quot;character&quot;:11,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:37,&quot;character&quot;:16,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:38,&quot;character&quot;:6,&quot;text&quot;:&quot;keyID&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:38,&quot;character&quot;:13,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:38,&quot;character&quot;:18,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:39,&quot;character&quot;:13,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:39,&quot;character&quot;:18,&quot;text&quot;:&quot;title&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:40,&quot;character&quot;:12,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:40,&quot;character&quot;:17,&quot;text&quot;:&quot;release_date&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:41,&quot;character&quot;:14,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:41,&quot;character&quot;:19,&quot;text&quot;:&quot;genres&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:41,&quot;character&quot;:26,&quot;text&quot;:&quot;join&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:42,&quot;character&quot;:14,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:42,&quot;character&quot;:19,&quot;text&quot;:&quot;poster_path&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:49,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\MovieGallery\\MovieGallery.tsx&quot;,&quot;line&quot;:49,&quot;character&quot;:30,&quot;text&quot;:&quot;movie_gallery&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:31 GMT</p>
+    </body>
+  </html>
+  

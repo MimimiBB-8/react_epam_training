@@ -1,0 +1,2403 @@
+{
+  "fileCounts": {},
+  "anys": [
+    {
+      "file": "src\\components\\ImgSource\\ImgSource.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\ImgSource\\ImgSource.tsx",
+      "line": 10,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\ImgSource\\ImgSource.tsx",
+      "line": 10,
+      "character": 26,
+      "text": "poster",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Button\\Button.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Button\\Button.tsx",
+      "line": 5,
+      "character": 13,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Button\\Button.tsx",
+      "line": 6,
+      "character": 2,
+      "text": "type",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Button\\Button.tsx",
+      "line": 9,
+      "character": 61,
+      "text": "type",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Button\\Button.tsx",
+      "line": 12,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Portal\\Portal.tsx",
+      "line": 2,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Portal\\Portal.tsx",
+      "line": 16,
+      "character": 47,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Portal\\Portal.tsx",
+      "line": 16,
+      "character": 53,
+      "text": "window_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 8,
+      "character": 2,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 9,
+      "character": 14,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 12,
+      "character": 46,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 15,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 15,
+      "character": 30,
+      "text": "input_title",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 18,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\FormItem.tsx",
+      "line": 18,
+      "character": 27,
+      "text": "input_item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 59,
+      "character": 17,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 59,
+      "character": 24,
+      "text": "container",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 61,
+      "character": 23,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 61,
+      "character": 30,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 70,
+      "character": 27,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 73,
+      "character": 33,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 78,
+      "character": 22,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 78,
+      "character": 29,
+      "text": "divider",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 79,
+      "character": 22,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 79,
+      "character": 29,
+      "text": "caret",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 81,
+      "character": 24,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 81,
+      "character": 31,
+      "text": "options",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 81,
+      "character": 51,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 81,
+      "character": 58,
+      "text": "show",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 91,
+      "character": 26,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 91,
+      "character": 33,
+      "text": "option",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 91,
+      "character": 70,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 91,
+      "character": 77,
+      "text": "selected",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 92,
+      "character": 43,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\Select.tsx",
+      "line": 92,
+      "character": 50,
+      "text": "highlighted",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 40,
+      "character": 33,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 40,
+      "character": 42,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 40,
+      "character": 47,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 45,
+      "character": 30,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 46,
+      "character": 10,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 46,
+      "character": 15,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 48,
+      "character": 17,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 49,
+      "character": 24,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 49,
+      "character": 29,
+      "text": "editing",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.ts",
+      "line": 51,
+      "character": 14,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 9,
+      "character": 33,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 12,
+      "character": 4,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 12,
+      "character": 13,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 17,
+      "character": 33,
+      "text": "errors",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 20,
+      "character": 4,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 20,
+      "character": 13,
+      "text": "errors",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 31,
+      "character": 25,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 34,
+      "character": 4,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 34,
+      "character": 13,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 37,
+      "character": 27,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 40,
+      "character": 4,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 40,
+      "character": 13,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 45,
+      "character": 10,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 46,
+      "character": 4,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 49,
+      "character": 14,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 49,
+      "character": 30,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 50,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 50,
+      "character": 34,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 50,
+      "character": 39,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 52,
+      "character": 14,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 53,
+      "character": 14,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 53,
+      "character": 25,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 53,
+      "character": 31,
+      "text": "message",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 54,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 54,
+      "character": 34,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 60,
+      "character": 10,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 61,
+      "character": 4,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 65,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 67,
+      "character": 14,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 68,
+      "character": 14,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 68,
+      "character": 25,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 68,
+      "character": 31,
+      "text": "message",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 69,
+      "character": 20,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 70,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 70,
+      "character": 34,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 75,
+      "character": 27,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 76,
+      "character": 10,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 77,
+      "character": 4,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 79,
+      "character": 43,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 86,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 86,
+      "character": 26,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 86,
+      "character": 32,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 89,
+      "character": 14,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 90,
+      "character": 14,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 90,
+      "character": 25,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 90,
+      "character": 31,
+      "text": "message",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 91,
+      "character": 20,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 92,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 92,
+      "character": 34,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 97,
+      "character": 24,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 98,
+      "character": 10,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 99,
+      "character": 49,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 106,
+      "character": 14,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 106,
+      "character": 43,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 108,
+      "character": 18,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 109,
+      "character": 18,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 109,
+      "character": 29,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 109,
+      "character": 35,
+      "text": "message",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 110,
+      "character": 24,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 111,
+      "character": 12,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\data.ts",
+      "line": 111,
+      "character": 38,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 4,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 26,
+      "character": 2,
+      "text": "showModalWindow",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 55,
+      "character": 35,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 55,
+      "character": 43,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 55,
+      "character": 48,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 60,
+      "character": 21,
+      "text": "elem",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 61,
+      "character": 68,
+      "text": "elem",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 97,
+      "character": 27,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 99,
+      "character": 21,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 100,
+      "character": 16,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 100,
+      "character": 21,
+      "text": "label",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 102,
+      "character": 4,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 102,
+      "character": 9,
+      "text": "genres",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 105,
+      "character": 31,
+      "text": "elem",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 108,
+      "character": 4,
+      "text": "elem",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 108,
+      "character": 9,
+      "text": "map",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 108,
+      "character": 14,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 109,
+      "character": 29,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 109,
+      "character": 34,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 119,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 119,
+      "character": 30,
+      "text": "colon_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 120,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 120,
+      "character": 32,
+      "text": "first_colon",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 145,
+      "character": 30,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 145,
+      "character": 36,
+      "text": "input_title",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 159,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 159,
+      "character": 32,
+      "text": "second_colon",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 198,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 198,
+      "character": 32,
+      "text": "input_title",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 202,
+      "character": 23,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 202,
+      "character": 29,
+      "text": "textarea",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 214,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\BasicForm\\BasicForm.tsx",
+      "line": 214,
+      "character": 30,
+      "text": "group_button",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\StateVisibleContext.tsx",
+      "line": 24,
+      "character": 25,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\StateVisibleContext.tsx",
+      "line": 27,
+      "character": 24,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 5,
+      "character": 55,
+      "text": "default",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 13,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 13,
+      "character": 26,
+      "text": "success_notification",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 15,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 15,
+      "character": 28,
+      "text": "done",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 16,
+      "character": 48,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SuccessNotification\\SuccessNotification.tsx",
+      "line": 16,
+      "character": 54,
+      "text": "tick",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\EdditMovie\\EditMovie.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\EdditMovie\\EditMovie.tsx",
+      "line": 20,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\EdditMovie\\EditMovie.tsx",
+      "line": 20,
+      "character": 26,
+      "text": "edit_movie",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\EdditMovie\\EditMovie.tsx",
+      "line": 22,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\EdditMovie\\EditMovie.tsx",
+      "line": 22,
+      "character": 27,
+      "text": "topic",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\DeletionConfirmation\\DeletionConfirmation.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\DeletionConfirmation\\DeletionConfirmation.tsx",
+      "line": 25,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\DeletionConfirmation\\DeletionConfirmation.tsx",
+      "line": 25,
+      "character": 26,
+      "text": "deletion_confirmation",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\DeletionConfirmation\\DeletionConfirmation.tsx",
+      "line": 29,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\DeletionConfirmation\\DeletionConfirmation.tsx",
+      "line": 29,
+      "character": 28,
+      "text": "div_button",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 2,
+      "character": 7,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 22,
+      "character": 23,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 22,
+      "character": 29,
+      "text": "additions_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 24,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 24,
+      "character": 28,
+      "text": "additions_menu",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 24,
+      "character": 46,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 24,
+      "character": 53,
+      "text": "additions_menu",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 27,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 27,
+      "character": 28,
+      "text": "point",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 28,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 28,
+      "character": 28,
+      "text": "point",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 29,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 29,
+      "character": 28,
+      "text": "point",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 32,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 32,
+      "character": 30,
+      "text": "additions_choose",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 33,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 33,
+      "character": 30,
+      "text": "additions_choose_item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 37,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 37,
+      "character": 32,
+      "text": "additions_choose_item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 43,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\Additions.tsx",
+      "line": 43,
+      "character": 32,
+      "text": "additions_choose_item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 7,
+      "character": 7,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 11,
+      "character": 2,
+      "text": "keyID",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 18,
+      "character": 21,
+      "text": "keyID",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 54,
+      "character": 23,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 54,
+      "character": 29,
+      "text": "movie_card",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 55,
+      "character": 50,
+      "text": "styles",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 55,
+      "character": 57,
+      "text": "poster",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 59,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 59,
+      "character": 28,
+      "text": "movie_name",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 61,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 61,
+      "character": 28,
+      "text": "movie_year",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 63,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.tsx",
+      "line": 63,
+      "character": 26,
+      "text": "movie_genre",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 35,
+      "character": 34,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 37,
+      "character": 11,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 37,
+      "character": 16,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 38,
+      "character": 6,
+      "text": "keyID",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 38,
+      "character": 13,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 38,
+      "character": 18,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 39,
+      "character": 13,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 39,
+      "character": 18,
+      "text": "title",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 40,
+      "character": 12,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 40,
+      "character": 17,
+      "text": "release_date",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 41,
+      "character": 14,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 41,
+      "character": 19,
+      "text": "genres",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 41,
+      "character": 26,
+      "text": "join",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 42,
+      "character": 14,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 42,
+      "character": 19,
+      "text": "poster_path",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 49,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieGallery\\MovieGallery.tsx",
+      "line": 49,
+      "character": 30,
+      "text": "movie_gallery",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 21,
+      "character": 39,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 37,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 37,
+      "character": 28,
+      "text": "sort",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 39,
+      "character": 25,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 39,
+      "character": 31,
+      "text": "sort_genre",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 48,
+      "character": 25,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 48,
+      "character": 31,
+      "text": "sort_param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 49,
+      "character": 27,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 49,
+      "character": 33,
+      "text": "sort_by",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 51,
+      "character": 33,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 51,
+      "character": 39,
+      "text": "select_date_release",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 72,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 72,
+      "character": 28,
+      "text": "sort_identifier",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 73,
+      "character": 41,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SortMovie\\SortMovie.tsx",
+      "line": 73,
+      "character": 47,
+      "text": "sort_carriage",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\SortingChangesContext.tsx",
+      "line": 3,
+      "character": 23,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\SortingChangesContext.tsx",
+      "line": 5,
+      "character": 19,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\SortingChangesContext.tsx",
+      "line": 22,
+      "character": 29,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\context\\SortingChangesContext.tsx",
+      "line": 25,
+      "character": 25,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MainComponent\\MainComponent.tsx",
+      "line": 2,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MainComponent\\MainComponent.tsx",
+      "line": 15,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MainComponent\\MainComponent.tsx",
+      "line": 15,
+      "character": 27,
+      "text": "wrapper_component",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Footer\\Footer.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Footer\\Footer.tsx",
+      "line": 3,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Footer\\Footer.tsx",
+      "line": 3,
+      "character": 27,
+      "text": "footer",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 7,
+      "character": 13,
+      "text": "param",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 23,
+      "character": 46,
+      "text": "search",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 23,
+      "character": 53,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 25,
+      "character": 32,
+      "text": "search",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 25,
+      "character": 39,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 29,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 29,
+      "character": 27,
+      "text": "search_form",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 34,
+      "character": 19,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\SearcForm\\SearchForm.tsx",
+      "line": 34,
+      "character": 25,
+      "text": "search_form_input",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\AddMovie\\AddMovie.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\AddMovie\\AddMovie.tsx",
+      "line": 19,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\AddMovie\\AddMovie.tsx",
+      "line": 19,
+      "character": 26,
+      "text": "add_movie",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\AddMovie\\AddMovie.tsx",
+      "line": 21,
+      "character": 21,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\AddMovie\\AddMovie.tsx",
+      "line": 21,
+      "character": 27,
+      "text": "topic",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 5,
+      "character": 10,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 6,
+      "character": 4,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 9,
+      "character": 14,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 9,
+      "character": 30,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 10,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 10,
+      "character": 75,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 10,
+      "character": 84,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 12,
+      "character": 14,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 13,
+      "character": 14,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 13,
+      "character": 25,
+      "text": "error",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 13,
+      "character": 31,
+      "text": "message",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 14,
+      "character": 8,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 14,
+      "character": 73,
+      "text": "payload",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\actions\\description.ts",
+      "line": 14,
+      "character": 82,
+      "text": "errorMsg",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 1,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 57,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 57,
+      "character": 26,
+      "text": "header_description",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 58,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 58,
+      "character": 28,
+      "text": "logo_line",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 59,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 59,
+      "character": 32,
+      "text": "logo",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 64,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 64,
+      "character": 28,
+      "text": "description_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 66,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 66,
+      "character": 30,
+      "text": "description_movie",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 67,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 67,
+      "character": 32,
+      "text": "group_name_rating",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 69,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 69,
+      "character": 34,
+      "text": "circle_paragraph",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 70,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 70,
+      "character": 34,
+      "text": "rating",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 73,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 73,
+      "character": 30,
+      "text": "description_genre",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 76,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 76,
+      "character": 32,
+      "text": "group_year_time",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 77,
+      "character": 27,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 77,
+      "character": 33,
+      "text": "description_year",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 80,
+      "character": 27,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 80,
+      "character": 33,
+      "text": "description_time",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 82,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieDescription\\MovieDescription.tsx",
+      "line": 82,
+      "character": 30,
+      "text": "description",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 0,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 15,
+      "character": 25,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 15,
+      "character": 31,
+      "text": "header",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 19,
+      "character": 26,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 19,
+      "character": 32,
+      "text": "content",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 20,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 20,
+      "character": 34,
+      "text": "first_line",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 21,
+      "character": 32,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 21,
+      "character": 38,
+      "text": "logo",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 30,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Header\\Header.tsx",
+      "line": 30,
+      "character": 34,
+      "text": "search_content",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 4,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 17,
+      "character": 22,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 17,
+      "character": 28,
+      "text": "app_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 18,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 18,
+      "character": 30,
+      "text": "page_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 20,
+      "character": 28,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\Layout\\Layout.tsx",
+      "line": 20,
+      "character": 34,
+      "text": "main_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 2,
+      "character": 7,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 5,
+      "character": 18,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 5,
+      "character": 24,
+      "text": "background_wrapper",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 6,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 6,
+      "character": 26,
+      "text": "wrapper_log",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 16,
+      "character": 24,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 16,
+      "character": 30,
+      "text": "group_button",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 21,
+      "character": 20,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\LogIn\\LogIn.tsx",
+      "line": 21,
+      "character": 26,
+      "text": "note",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.test.tsx",
+      "line": 9,
+      "character": 8,
+      "text": "store",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.test.tsx",
+      "line": 12,
+      "character": 8,
+      "text": "store",
+      "kind": 1
+    },
+    {
+      "file": "src\\components\\MovieCard\\MovieCard.test.tsx",
+      "line": 27,
+      "character": 8,
+      "text": "store",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 56,
+      "character": 48,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 56,
+      "character": 57,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 56,
+      "character": 62,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 80,
+      "character": 45,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 81,
+      "character": 20,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 81,
+      "character": 25,
+      "text": "id",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 83,
+      "character": 31,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 84,
+      "character": 38,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 84,
+      "character": 43,
+      "text": "editing",
+      "kind": 1
+    },
+    {
+      "file": "src\\store\\reducers\\dataReducer.test.ts",
+      "line": 86,
+      "character": 26,
+      "text": "item",
+      "kind": 1
+    },
+    {
+      "file": "cypress\\e2e\\App.e2e.ts\\App.cy.ts",
+      "line": 11,
+      "character": 26,
+      "text": "to",
+      "kind": 1
+    },
+    {
+      "file": "cypress\\e2e\\App.e2e.ts\\App.cy.ts",
+      "line": 11,
+      "character": 29,
+      "text": "eq",
+      "kind": 1
+    }
+  ],
+  "percentage": 89.05249679897567,
+  "total": 3124,
+  "covered": 2782,
+  "uncovered": 342
+}

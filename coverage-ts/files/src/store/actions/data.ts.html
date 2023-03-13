@@ -1,0 +1,132 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>data.ts</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="negative"><td class="">src\store\actions\data.ts</td><td class="">57.04%</td><td class="">80%</td><td class="">142</td><td class="">81</td><td class="">61</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { DataActionTypes } from &#x27;../reducers/types&#x27;
+import axios from &#x27;axios&#x27;;
+
+export const fetchDataRequest = () =&gt; {
+  return {
+    type: DataActionTypes.FETCH_DATA
+  };
+};
+
+export const fetchDataSuccess = (data: any) =&gt; {
+  return {
+    type: DataActionTypes.FETCH_DATA_SUCCESS,
+    payload: data
+  };
+};
+
+
+export const fetchDataFailure = (errors: any) =&gt; {
+  return {
+    type: DataActionTypes.FETCH_DATA_ERROR,
+    payload: errors
+  };
+};
+
+export const removeData = (id: string) =&gt; {
+  return {
+    type: DataActionTypes.FETCH_DELETE_SUCCESS,
+    payload: id
+  };
+};
+
+export const editData = (data: any) =&gt; {
+  return {
+    type: DataActionTypes.FETCH_UPDATE_SUCCESS,
+    payload: data
+  };
+};
+export const addNewData = (data: any) =&gt; {
+  return {
+    type: DataActionTypes.FETCH_UPDATE_SUCCESS,
+    payload: data
+  };
+};
+
+export const fetchData = (param: string) =&gt; {
+  return (dispatch: any) =&gt;  {
+    dispatch(fetchDataRequest);
+    return axios.get(`http://localhost:4000/movies?limit=9?${param}`)
+      .then((response) =&gt; {
+        const data = response.data;
+        dispatch(fetchDataSuccess(data.data));
+      })
+      .catch((error) =&gt; {
+        const errorMsg = error.message;
+        dispatch(fetchDataFailure(errorMsg));
+      })  
+  }
+}
+
+export const deleteData = (id: string) =&gt; {
+  return (dispatch:any) =&gt; {
+    dispatch(fetchDataRequest);
+    axios
+      .delete(`http://localhost:4000/movies/${id}`)
+      .then((response) =&gt; {
+        dispatch(removeData(id))
+      })
+      .catch((error) =&gt; {
+        const errorMsg = error.message;
+        console.log(errorMsg);  
+        dispatch(fetchDataFailure(errorMsg));
+      });
+  };
+};
+
+export const updateData = (param: any) =&gt; {
+  return (dispatch: any) =&gt; {
+    dispatch(fetchDataRequest);
+    axios
+      .put(&#x27;http://localhost:4000/movies&#x27;, param, {
+        headers: {
+          &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+          Accept: &#x27;application/json&#x27;,
+        },
+      },)
+      .then((response) =&gt; {
+        dispatch(editData(param.id))
+        
+      })
+      .catch((error) =&gt; {
+        const errorMsg = error.message;
+        console.log(errorMsg);  
+        dispatch(fetchDataFailure(errorMsg));
+      });
+    }
+};
+
+export const addData = (data: any) =&gt; {
+  return (dispatch: any) =&gt; {
+      axios.post(&#x27;http://localhost:4000/movies&#x27;, data, {
+        headers: {
+          &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+          Accept: &#x27;application/json&#x27;,
+        },
+      },)
+          .then(response =&gt; {
+              dispatch(addNewData(response.data))
+          })
+          .catch((error) =&gt; {
+            const errorMsg = error.message;
+            console.log(errorMsg);  
+            dispatch(fetchDataFailure(errorMsg));
+          });
+  }
+}</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:9,&quot;character&quot;:33,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:12,&quot;character&quot;:4,&quot;text&quot;:&quot;payload&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:12,&quot;character&quot;:13,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:17,&quot;character&quot;:33,&quot;text&quot;:&quot;errors&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:20,&quot;character&quot;:4,&quot;text&quot;:&quot;payload&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:20,&quot;character&quot;:13,&quot;text&quot;:&quot;errors&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:31,&quot;character&quot;:25,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:34,&quot;character&quot;:4,&quot;text&quot;:&quot;payload&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:34,&quot;character&quot;:13,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:37,&quot;character&quot;:27,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:40,&quot;character&quot;:4,&quot;text&quot;:&quot;payload&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:40,&quot;character&quot;:13,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:45,&quot;character&quot;:10,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:46,&quot;character&quot;:4,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:49,&quot;character&quot;:14,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:49,&quot;character&quot;:30,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:50,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:50,&quot;character&quot;:34,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:50,&quot;character&quot;:39,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:52,&quot;character&quot;:14,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:53,&quot;character&quot;:14,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:53,&quot;character&quot;:25,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:53,&quot;character&quot;:31,&quot;text&quot;:&quot;message&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:54,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:54,&quot;character&quot;:34,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:60,&quot;character&quot;:10,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:61,&quot;character&quot;:4,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:65,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:67,&quot;character&quot;:14,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:68,&quot;character&quot;:14,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:68,&quot;character&quot;:25,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:68,&quot;character&quot;:31,&quot;text&quot;:&quot;message&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:69,&quot;character&quot;:20,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:70,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:70,&quot;character&quot;:34,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:75,&quot;character&quot;:27,&quot;text&quot;:&quot;param&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:76,&quot;character&quot;:10,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:77,&quot;character&quot;:4,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:79,&quot;character&quot;:43,&quot;text&quot;:&quot;param&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:86,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:86,&quot;character&quot;:26,&quot;text&quot;:&quot;param&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:86,&quot;character&quot;:32,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:89,&quot;character&quot;:14,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:90,&quot;character&quot;:14,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:90,&quot;character&quot;:25,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:90,&quot;character&quot;:31,&quot;text&quot;:&quot;message&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:91,&quot;character&quot;:20,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:92,&quot;character&quot;:8,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:92,&quot;character&quot;:34,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:97,&quot;character&quot;:24,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:98,&quot;character&quot;:10,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:99,&quot;character&quot;:49,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:106,&quot;character&quot;:14,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:106,&quot;character&quot;:43,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:108,&quot;character&quot;:18,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:109,&quot;character&quot;:18,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:109,&quot;character&quot;:29,&quot;text&quot;:&quot;error&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:109,&quot;character&quot;:35,&quot;text&quot;:&quot;message&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:110,&quot;character&quot;:24,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:111,&quot;character&quot;:12,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\actions\\data.ts&quot;,&quot;line&quot;:111,&quot;character&quot;:38,&quot;text&quot;:&quot;errorMsg&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:31 GMT</p>
+    </body>
+  </html>
+  

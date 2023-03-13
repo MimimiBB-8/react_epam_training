@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component header snapshot header 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="first_line"
+      >
+        <label
+          class="logo"
+        >
+          <span>
+            netflix
+          </span>
+          roulette
+        </label>
+        <button
+          class="add_movie"
+        >
+          + ADD MOVIE
+        </button>
+      </div>
+      <div
+        class="search_content"
+      >
+        <h2>
+          FIND YOUR MOVIE
+        </h2>
+        <form
+          aria-label="form"
+          class="search_form"
+        >
+          <input
+            class="search_form_input"
+            name="search"
+            placeholder="What do you want to watch?"
+            title="search"
+            type="search"
+          />
+          <button
+            class="search_button"
+            type="submit"
+          >
+            search
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
