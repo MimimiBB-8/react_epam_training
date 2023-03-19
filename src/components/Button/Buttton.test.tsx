@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Button from './Button';
 
@@ -18,7 +18,7 @@ describe('component button', () => {
         const onClick = jest.fn()
          render(
             <Router>
-                <Button onClick={onClick} title="search" />
+                <Button onClick={onClick} title='search' />
             </Router>);
         expect(screen.getByText('search')).toBeInTheDocument
     })

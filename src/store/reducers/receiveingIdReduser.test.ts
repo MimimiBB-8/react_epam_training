@@ -1,6 +1,5 @@
 import { ReservingIdActionTypes } from '../reducers/types'
-import {receivingIdReducer} from './receivingIdReducer'
-import { initialState } from './receivingIdReducer';
+import {receivingIdReducer, initialState} from './receivingIdReducer'
 
 describe('Receiving Id Reducer', () => {
   const state: typeof initialState ={

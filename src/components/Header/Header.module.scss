@@ -1,16 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
 .header {
-  width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
   border: solid 2px #555555;
   background: url('../../img/header_background.png') 0px 0px no-repeat;
   background-size: cover;
   margin-bottom: 5px;
   z-index: 1;
-
+  padding: 20px 60px;
   &:before {
     content: '';
     display: block;
@@ -26,9 +23,7 @@
 }
 
 .content {
-  //display: none;
   width: 100%;
-  padding: 20px 60px;
   z-index: 3;
 }
 
@@ -53,14 +48,13 @@
   }
 }
 
-h2 {
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 49px;
-  letter-spacing: 1px;
-  margin-bottom: 38px;
-}
-
 .search_content {
   margin-left: 60px;
+  &h2 {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 49px;
+    letter-spacing: 1px;
+    margin-bottom: 38px;
+  }
 }

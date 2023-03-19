@@ -22,11 +22,11 @@ const EditMovie = ({ onClick }: editMovieProps) => {
       <Button classname={'close_button'} onClick={onClick} />
       <h2 className={style.topic}>Edit MOVIE</h2>
       <BasicForm editForm={true} onClick={onClick}/>
-      {showModal && (
+      {/* {showModal && (
         <Portal>
           <SuccessNotification onClick={handlerCloseAllWindows} />
         </Portal>
-      )}
+      )} */}
     </div>
     
   )

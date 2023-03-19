@@ -6,26 +6,27 @@ import { StateVisibleContext } from '../../context/StateVisibleContext'
 import { useAppSelector } from '../../hooks/useTypeRedux'
 import { useDispatch } from 'react-redux'
 import { fetchDescription } from '../../store/actions/description'
+import Link from 'next/link'
 
-type MovieDitales = {
+type MovieDetails = {
   id?: number
   title: string
   poster_path: string
   vote_average: number
-  genres: []
+  genres: string[]
   release_date: string
   runtime: number
   overview: string
 }
 
-const MovieDescription = () => {
+const MovieDescription = ({ title, poster_path, vote_average, genres, release_date, runtime, overview }: MovieDetails) => {
   const stateVisibleValue = useContext(StateVisibleContext)
 
   const { data, loading, error } = useAppSelector((state) => state.description)
 
   const { itemId } = useAppSelector((state) => state.recervingId)
 
-  const obj: MovieDitales = data as unknown as MovieDitales
+  const obj: MovieDetails = data as unknown as MovieDetails
 
   const dispatch = useDispatch()
 
@@ -60,27 +61,28 @@ const MovieDescription = () => {
         <label className={style.logo}>
           <span>netflix</span>roulette
         </label>
-        <Button classname={'return_search'} onClick={handleOnClick} />
+        <Link href={'/'}><Button classname={'return_search'} onClick={handleOnClick} /></Link>
+
       </div>
       <div className={style.description_wrapper}>
-        <ImgSource urlProp={obj.poster_path} />
+        <ImgSource urlProp={poster_path} />
         <div className={style.description_movie}>
           <div className={style.group_name_rating}>
-            <h2>{obj.title}</h2>
+            <h2>{title}</h2>
             <div className={style.circle_paragraph}>
-              <p className={style.rating}>{obj.vote_average}</p>
+              <p className={style.rating}>{vote_average}</p>
             </div>
           </div>
           <p className={style.description_genre}>
-            {obj.genres !== undefined ? obj.genres.join(', ') : ''}
+            {genres !== undefined ? genres.join(', ') : ''}
           </p>
           <div className={style.group_year_time}>
             <h5 className={style.description_year}>
-              {obj.release_date !== undefined ? obj.release_date.slice(0, 4) : ''}
+              {release_date !== undefined ? release_date.slice(0, 4) : ''}
             </h5>
-            <h5 className={style.description_time}>{getTimeFromMins(obj.runtime)}</h5>
+            <h5 className={style.description_time}>{getTimeFromMins(runtime)}</h5>
           </div>
-          <p className={style.description}>{obj.overview}</p>
+          <p className={style.description}>{overview}</p>
         </div>
       </div>
     </div>

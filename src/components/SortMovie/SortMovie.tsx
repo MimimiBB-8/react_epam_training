@@ -1,43 +1,43 @@
 import { useEffect } from 'react';
 import style from './Sortmovie.module.scss'
-import { useSearchParams } from 'react-router-dom'
+// import { useSearchParams } from 'react-router-dom'
 
 const SortMovie = () => {
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
-  const elementCarriage = document.querySelector('.sort_carriage')
+  // const elementCarriage = document.querySelector('.sort_carriage')
 
 
-  const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
-    const filter = (e.target as Element).id
-    filter === 'all' ?
-      searchParams.delete('genre') :
-      searchParams.set('genre', filter)
-    setSearchParams(searchParams);
-    if (elementCarriage) {
-      if (elementCarriage.classList.length > 2) {
-        elementCarriage.classList.remove(`${elementCarriage.classList[elementCarriage.classList.length - 1]}`)
-      }
-      elementCarriage.classList.add(`${style[filter]}`)
-    }
-  }
+  // const handleOnClickFilter = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
+  //   const filter = (e.target as Element).id
+  //   filter === 'all' ?
+  //     searchParams.delete('genre') :
+  //     searchParams.set('genre', filter)
+  //   setSearchParams(searchParams);
+  //   if (elementCarriage) {
+  //     if (elementCarriage.classList.length > 2) {
+  //       elementCarriage.classList.remove(`${elementCarriage.classList[elementCarriage.classList.length - 1]}`)
+  //     }
+  //     elementCarriage.classList.add(`${style[filter]}`)
+  //   }
+  // }
 
-  const handleOnClickSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const sortParam = e.target.value.split('_')
-    const sortBy = sortParam.slice(0, 2).join('_')
-    const sortOrder = sortParam.slice(-1).join()
-    searchParams.set('sortBy', sortBy);
-    searchParams.set('sortOrder', sortOrder);
-    setSearchParams(searchParams);
-  }
+  // const handleOnClickSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const sortParam = e.target.value.split('_')
+  //   const sortBy = sortParam.slice(0, 2).join('_')
+  //   const sortOrder = sortParam.slice(-1).join()
+  //   searchParams.set('sortBy', sortBy);
+  //   searchParams.set('sortOrder', sortOrder);
+  //   setSearchParams(searchParams);
+  // }
 
 
   return (
     <>
       <div className={style.sort} >
         <nav>
-          <ul className={style.sort_genre} onClick={handleOnClickFilter} >
+          <ul className={style.sort_genre} >
           <li id={'all'}>all</li>
             <li id={'action'}>action</li>
             <li id={'comedy'}>comedy</li>
@@ -49,7 +49,7 @@ const SortMovie = () => {
           <ul className={style.sort_param}>
             <li className={style.sort_by}>SORT BY</li>
             <li>
-              <select className={style.select_date_release} onChange={handleOnClickSort}>
+              <select className={style.select_date_release} >
                 <option defaultValue='release_date' id={'release_date'}>
                   Choose...
                 </option>

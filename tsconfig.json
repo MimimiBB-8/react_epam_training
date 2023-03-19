@@ -8,7 +8,7 @@
       "es5",
       "dom"
     ],
-    "isolatedModules": false,
+    "isolatedModules": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,15 +20,17 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "types": [
       "cypress",
       "node",
       "jest",
       "@testing-library/jest-dom"
-    ]
+    ],
+    "incremental": true
   },
   "include": [
+    "**/*.tsx",
     "src",
     "**/*.ts",
     "**/*.spec.ts",
@@ -36,7 +38,12 @@
     "../node_modules/api-ai-javascript/index.ts",
     "./main.ts",
     "./polyfills.ts",
-    "./cypress.d.ts"
+    "./cypress.d.ts",
+    "server",
+    "tsconfig.server.json",
+    "./declaration.d.ts"
   ],
-
+  "exclude": [
+    "node_modules"
+  ]
 }
