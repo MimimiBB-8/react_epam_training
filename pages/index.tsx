@@ -1,1 +1,1 @@
-export {default, getServerSideProps} from '../layouts/search/index.layout';
+export {default, getServerSideProps} from '../layouts/index/index.layout';
