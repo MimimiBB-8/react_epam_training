@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { type } from '@testing-library/user-event/dist/type';
 
 interface SearchFormProps {
-
   onSubmit: (param: any) => void
 }
 

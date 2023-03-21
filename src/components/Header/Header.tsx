@@ -4,7 +4,6 @@ import SearchForm from '../SearcForm/SearchForm'
 import Button from '../Button/Button'
 import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
-import MovieDescription from '../MovieDescription/MovieDescription'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
 
 
