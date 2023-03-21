@@ -33,31 +33,17 @@ interface FetchDeleteSuccessAction {
   payload: string
 }
 
-interface FetchUpdateSuccessAction {
-  type: typeof DataActionTypes.FETCH_UPDATE_SUCCESS
-  payload: string
-}
-
 interface FetchAddSuccessAction {
   type: typeof DataActionTypes.FETCH_ADD_SUCCESS
   payload: any[]
 }
 
-export type DataAction = FetchDataAction | FetchDataSuccessAction | FetchDataErrorAction | FetchDeleteSuccessAction | FetchUpdateSuccessAction | FetchAddSuccessAction
-
-export interface SortState {
-  parametr: string
-}
-
-export enum SortActionTypes {
-  FILTER_BY_GENRE = 'FILTER_BY_GENREA',
-  SORT_BY = 'SORT_BY',
-}
-
-interface FilterAction {
-  type: typeof SortActionTypes.FILTER_BY_GENRE
+interface FetchUpdateSuccessAction {
+  type: typeof DataActionTypes.FETCH_UPDATE_SUCCESS
   payload: string
 }
+
+export type DataAction = FetchDataAction | FetchDataSuccessAction | FetchDataErrorAction | FetchDeleteSuccessAction | FetchUpdateSuccessAction | FetchAddSuccessAction
 
 export interface DescriptionState {
   data: any[]
@@ -99,8 +85,8 @@ export enum ReservingIdActionTypes {
 }
 
 interface ReservingAction {
-  type: typeof ReservingIdActionTypes.RESERVING_ID
   payload: number
+  type: typeof ReservingIdActionTypes.RESERVING_ID
 }
 
 export type ReservingIdAction = ReservingAction

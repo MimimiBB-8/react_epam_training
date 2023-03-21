@@ -1,0 +1,243 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>BasicForm.tsx</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="positive"><td class="">src\components\BasicForm\BasicForm.tsx</td><td class="">91.87%</td><td class="">80%</td><td class="">406</td><td class="">373</td><td class="">33</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">/* eslint-disable camelcase */
+import { useState } from &#x27;react&#x27;
+import FormItem from &#x27;../BasicForm/FormItem&#x27;
+import Button from &#x27;../Button/Button&#x27;
+import style from &#x27;./Basicform.module.scss&#x27;
+import { Select, SelectOption } from &#x27;./Select&#x27;
+import { useFormik } from &#x27;formik&#x27;
+import * as Yup from &#x27;yup&#x27;
+import { useAppSelector } from &#x27;../../hooks/useTypeRedux&#x27;
+import { useDispatch } from &#x27;react-redux&#x27;
+import { updateData, addData } from &#x27;../../store/actions/data&#x27;
+
+const options = [
+  { label: &#x27;Crime&#x27;, value: &#x27;crime&#x27; },
+  { label: &#x27;Drama&#x27;, value: &#x27;drama&#x27; },
+  { label: &#x27;Adventure&#x27;, value: &#x27;adventure&#x27; },
+  { label: &#x27;Music&#x27;, value: &#x27;music&#x27; },
+  { label: &#x27;Thriller&#x27;, value: &#x27;thriller&#x27; },
+  { label: &#x27;Biography&#x27;, value: &#x27;biography&#x27; },
+  { label: &#x27;Action&#x27;, value: &#x27;action&#x27; },
+  { label: &#x27;Sci-Fi&#x27;, value: &#x27;sci-fi&#x27; },
+]
+
+interface BasicFormProps {
+  editForm?: boolean
+  onClick: () =&gt; void
+  showModalWindow?: any
+}
+
+const BasicForm = ({ editForm: editForm = false, onClick }: BasicFormProps) =&gt; {
+
+  const [selectValue, setSelectValue] = useState&lt;SelectOption[]&gt;([options[0]])
+  const idItem = useAppSelector((state) =&gt; state.recervingId)
+
+  const { data } = useAppSelector((state) =&gt; state.data)
+
+  const validationSchema = Yup.object().shape({
+    title: Yup.string().required(&#x27;Title is required&#x27;),
+    poster_path: Yup.string().required(&#x27;Url is required&#x27;),
+    release_date: Yup.date().required(&#x27;Date is required&#x27;),
+    vote_average: Yup.number()
+      .positive(&#x27;Rating must be greater than zero&#x27;)
+      .max(10)
+      .required(&#x27;Rating is required&#x27;),
+    runtime: Yup.number()
+      .integer()
+      .positive(&#x27;Runtime must be greater than zero&#x27;)
+      .required(&#x27;Runtime is required&#x27;),
+    overview: Yup.string().required(&#x27;Overview is required&#x27;),
+    genres: Yup.array().min(1)
+  })
+
+  let movieDescription: string | any[] = []
+
+  if (editForm) {
+    movieDescription = data.filter(item =&gt; item.id === idItem.itemId);
+  }
+
+  const dispatch = useDispatch();
+
+  const fillValue = (elem: any) =&gt; {
+    return movieDescription.length === 0 ? &#x27;&#x27; : movieDescription[0][elem]
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      id: movieDescription.length === 0 ? null : idItem.itemId,
+      title: `${fillValue(&#x27;title&#x27;)}`,
+      poster_path: `${fillValue(&#x27;poster_path&#x27;)}`,
+      release_date: `${fillValue(&#x27;release_date&#x27;)}`,
+      vote_average: Number(`${fillValue(&#x27;vote_average&#x27;)}`),
+      runtime: Number(`${parseInt(fillValue(&#x27;runtime&#x27;))}`),
+      overview: `${fillValue(&#x27;overview&#x27;)}`,
+      genres: `${selectValue}`.split(&#x27;,&#x27;),
+    },
+
+    validationSchema,
+    validateOnChange: true,
+    onSubmit: (data) =&gt; {
+      console.log(data)
+      addSelectOption(data)
+      if (editForm === true) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        dispatch(updateData(data))
+      }
+      else {
+        const { id, ...newData } = data;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        dispatch(addData(newData))
+      }
+    onClick()
+    },
+  })
+
+  
+  const addSelectOption = (data: any) =&gt; {
+    const elem: any[] = [];
+    selectValue.map((item: any) =&gt; {
+      elem.push(item.label)
+    })
+    data.genres = elem
+  }
+
+  const handlerChangeSelect = (elem: any) =&gt; {
+    setSelectValue(elem)
+    const stringSelectValue: any[] = []
+    elem.map((item: any) =&gt; {
+      stringSelectValue.push(item.value)
+    })
+    formik.values.genres = stringSelectValue;
+    formik.handleChange
+  }
+
+
+  return (
+    &lt;&gt;
+      &lt;form onSubmit={formik.handleSubmit} onReset={formik.handleReset}&gt;
+        &lt;div className={style.colon_wrapper}&gt;
+          &lt;div className={style.first_colon}&gt;
+            &lt;FormItem
+              id={&#x27;title&#x27;}
+              title={&#x27;title&#x27;}
+              type={&#x27;text&#x27;}
+              placeholder={&#x27;Enter title&#x27;}
+              onchange={formik.handleChange}
+              value={formik.values.title}
+              name={&#x27;title&#x27;}
+            /&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.title &amp;&amp; formik.touched.title ? formik.errors.title : null}
+            &lt;/div&gt;
+            &lt;FormItem
+              id={&#x27;urlMovie&#x27;}
+              name={&#x27;poster_path&#x27;}
+              title={&#x27;movie_url&#x27;}
+              type={&#x27;url&#x27;}
+              placeholder={&#x27;https://&#x27;}
+              onchange={formik.handleChange}
+              value={formik.values.poster_path}
+            /&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.poster_path &amp;&amp; formik.touched.poster_path ? formik.errors.poster_path : null}
+            &lt;/div&gt;
+            &lt;label className={style.input_title}&gt;
+              Genre
+              &lt;Select
+                multiple
+                options={options}
+                value={selectValue}
+                onChange={(elem) =&gt; handlerChangeSelect(elem)}
+              /&gt;
+            &lt;/label&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.genres &amp;&amp; formik.touched.genres ? formik.errors.genres : null}
+            &lt;/div&gt;
+            &lt;br /&gt;
+          &lt;/div&gt;
+          &lt;div className={style.second_colon}&gt;
+            &lt;FormItem
+              id={&#x27;year&#x27;}
+              title={&#x27;RELEASE DATE&#x27;}
+              type={&#x27;date&#x27;}
+              placeholder={&#x27;Select Date&#x27;}
+              value={formik.values.release_date}
+              onchange={formik.handleChange}
+              name=&#x27;release_date&#x27;
+            /&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.release_date &amp;&amp; formik.touched.release_date ? formik.errors.release_date : null}
+            &lt;/div&gt;
+            &lt;FormItem
+              id={&#x27;rating&#x27;}
+              title={&#x27;RATING&#x27;}
+              type={&#x27;number&#x27;}
+              placeholder={&#x27;Enter rating&#x27;}
+              value={formik.values.vote_average}
+              onchange={formik.handleChange}
+              name={&#x27;vote_average&#x27;}
+            /&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.vote_average &amp;&amp; formik.touched.vote_average ? formik.errors.vote_average : null}
+            &lt;/div&gt;
+            &lt;FormItem
+              id={&#x27;time&#x27;}
+              title={&#x27;RUNTIME&#x27;}
+              type={&#x27;number&#x27;}
+              placeholder={&#x27;minutes&#x27;}
+              value={formik.values.runtime}
+              onchange={formik.handleChange}
+              name={&#x27;runtime&#x27;}
+            /&gt;
+            &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+              {formik.errors.runtime &amp;&amp; formik.touched.runtime ? formik.errors.runtime : null}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;label className={style.input_title}&gt;
+          OVERVIEW
+          &lt;textarea
+            id=&#x27;description&#x27;
+            className={style.textarea}
+            title={&#x27;OVERVIEW&#x27;}
+            placeholder={&#x27;Movie description&#x27;}
+            defaultValue={formik.values.overview}
+            onChange={formik.handleChange}
+            name=&#x27;overview&#x27;
+          &gt;&lt;/textarea&gt;
+
+        &lt;/label&gt;
+        &lt;div className=&#x27;invalid-feedback&#x27;&gt;
+          {formik.errors.overview &amp;&amp; formik.touched.overview ? formik.errors.overview : null}
+        &lt;/div&gt;
+        &lt;div className={style.group_button}&gt;
+          &lt;Button title={&#x27;reset&#x27;} classname={&#x27;reset_button&#x27;} type=&quot;reset&quot; /&gt;
+          &lt;Button title={&#x27;submit&#x27;} type={&#x27;submit&#x27;} /&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/&gt;
+  )
+}
+
+export default BasicForm
+
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:4,&quot;character&quot;:7,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:26,&quot;character&quot;:2,&quot;text&quot;:&quot;showModalWindow&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:55,&quot;character&quot;:35,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:55,&quot;character&quot;:43,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:55,&quot;character&quot;:48,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:60,&quot;character&quot;:21,&quot;text&quot;:&quot;elem&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:61,&quot;character&quot;:68,&quot;text&quot;:&quot;elem&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:97,&quot;character&quot;:27,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:99,&quot;character&quot;:21,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:100,&quot;character&quot;:16,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:100,&quot;character&quot;:21,&quot;text&quot;:&quot;label&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:102,&quot;character&quot;:4,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:102,&quot;character&quot;:9,&quot;text&quot;:&quot;genres&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:105,&quot;character&quot;:31,&quot;text&quot;:&quot;elem&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:108,&quot;character&quot;:4,&quot;text&quot;:&quot;elem&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:108,&quot;character&quot;:9,&quot;text&quot;:&quot;map&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:108,&quot;character&quot;:14,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:109,&quot;character&quot;:29,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:109,&quot;character&quot;:34,&quot;text&quot;:&quot;value&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:119,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:119,&quot;character&quot;:30,&quot;text&quot;:&quot;colon_wrapper&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:120,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:120,&quot;character&quot;:32,&quot;text&quot;:&quot;first_colon&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:145,&quot;character&quot;:30,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:145,&quot;character&quot;:36,&quot;text&quot;:&quot;input_title&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:159,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:159,&quot;character&quot;:32,&quot;text&quot;:&quot;second_colon&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:198,&quot;character&quot;:26,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:198,&quot;character&quot;:32,&quot;text&quot;:&quot;input_title&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:202,&quot;character&quot;:23,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:202,&quot;character&quot;:29,&quot;text&quot;:&quot;textarea&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:214,&quot;character&quot;:24,&quot;text&quot;:&quot;style&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\components\\BasicForm\\BasicForm.tsx&quot;,&quot;line&quot;:214,&quot;character&quot;:30,&quot;text&quot;:&quot;group_button&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:31 GMT</p>
+    </body>
+  </html>
+  

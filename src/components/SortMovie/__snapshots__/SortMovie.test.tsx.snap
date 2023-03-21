@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When rendering dropdown select snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sort"
+      >
+        <nav>
+          <ul
+            class="sort_genre"
+          >
+            <li
+              id="all"
+            >
+              all
+            </li>
+            <li
+              id="action"
+            >
+              action
+            </li>
+            <li
+              id="comedy"
+            >
+              comedy
+            </li>
+            <li
+              id="horror"
+            >
+              horror
+            </li>
+            <li
+              id="crime"
+            >
+              crime
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul
+            class="sort_param"
+          >
+            <li
+              class="sort_by"
+            >
+              SORT BY
+            </li>
+            <li>
+              <select
+                class="select_date_release"
+              >
+                <option
+                  id="release_date"
+                >
+                  Choose...
+                </option>
+                <option
+                  id="release_date_asc"
+                  value="release_date_asc"
+                >
+                  release ascending
+                </option>
+                <option
+                  id="release_date_des"
+                  value="release_date_des"
+                >
+                  release descending
+                </option>
+                <option
+                  id="vote_average_asc"
+                  value="vote_average_asc"
+                >
+                  rating ascending
+                </option>
+                <option
+                  id="vote_average_desc"
+                  value="vote_average_desc"
+                >
+                  rating descending
+                </option>
+              </select>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="sort_identifier"
+      >
+        <div
+          class="sort_carriage sort_carriage "
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        class="sort"
+      >
+        <nav>
+          <ul
+            class="sort_genre"
+          >
+            <li
+              id="all"
+            >
+              all
+            </li>
+            <li
+              id="action"
+            >
+              action
+            </li>
+            <li
+              id="comedy"
+            >
+              comedy
+            </li>
+            <li
+              id="horror"
+            >
+              horror
+            </li>
+            <li
+              id="crime"
+            >
+              crime
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul
+            class="sort_param"
+          >
+            <li
+              class="sort_by"
+            >
+              SORT BY
+            </li>
+            <li>
+              <select
+                class="select_date_release"
+              >
+                <option
+                  id="release_date"
+                >
+                  Choose...
+                </option>
+                <option
+                  id="release_date_asc"
+                  value="release_date_asc"
+                >
+                  release ascending
+                </option>
+                <option
+                  id="release_date_des"
+                  value="release_date_des"
+                >
+                  release descending
+                </option>
+                <option
+                  id="vote_average_asc"
+                  value="vote_average_asc"
+                >
+                  rating ascending
+                </option>
+                <option
+                  id="vote_average_desc"
+                  value="vote_average_desc"
+                >
+                  rating descending
+                </option>
+              </select>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="sort_identifier"
+      >
+        <div
+          class="sort_carriage sort_carriage "
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sort"
+    >
+      <nav>
+        <ul
+          class="sort_genre"
+        >
+          <li
+            id="all"
+          >
+            all
+          </li>
+          <li
+            id="action"
+          >
+            action
+          </li>
+          <li
+            id="comedy"
+          >
+            comedy
+          </li>
+          <li
+            id="horror"
+          >
+            horror
+          </li>
+          <li
+            id="crime"
+          >
+            crime
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <ul
+          class="sort_param"
+        >
+          <li
+            class="sort_by"
+          >
+            SORT BY
+          </li>
+          <li>
+            <select
+              class="select_date_release"
+            >
+              <option
+                id="release_date"
+              >
+                Choose...
+              </option>
+              <option
+                id="release_date_asc"
+                value="release_date_asc"
+              >
+                release ascending
+              </option>
+              <option
+                id="release_date_des"
+                value="release_date_des"
+              >
+                release descending
+              </option>
+              <option
+                id="vote_average_asc"
+                value="vote_average_asc"
+              >
+                rating ascending
+              </option>
+              <option
+                id="vote_average_desc"
+                value="vote_average_desc"
+              >
+                rating descending
+              </option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="sort_identifier"
+    >
+      <div
+        class="sort_carriage sort_carriage "
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

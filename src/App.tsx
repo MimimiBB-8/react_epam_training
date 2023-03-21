@@ -8,8 +8,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout />} >
         <Route path='search' element={<MainComponent />} />
-        <Route path='*' element={<NotFoundPage />} />
       </Route>
+      <Route path='*' element={<NotFoundPage />} />
     </Routes>
   )
 }

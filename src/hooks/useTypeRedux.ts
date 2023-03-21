@@ -1,7 +1,7 @@
 import { TypedUseSelectorHook, useSelector , useDispatch} from 'react-redux'
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { RootState } from '../store/redusers/rootReduser'
+import { RootState } from '../store/reducers/rootReducer'
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 

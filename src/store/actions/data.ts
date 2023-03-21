@@ -1,5 +1,4 @@
-import { DataActionTypes } from '../redusers/types'
-
+import { DataActionTypes } from '../reducers/types'
 import axios from 'axios';
 
 export const fetchDataRequest = () => {
@@ -8,12 +7,13 @@ export const fetchDataRequest = () => {
   };
 };
 
-export const fetchDataSucess = (data: any) => {
+export const fetchDataSuccess = (data: any) => {
   return {
     type: DataActionTypes.FETCH_DATA_SUCCESS,
     payload: data
   };
 };
+
 
 export const fetchDataFailure = (errors: any) => {
   return {
@@ -42,21 +42,19 @@ export const addNewData = (data: any) => {
   };
 };
 
-
-export const fetchData = (param: any) => {
-  return (dispatch: any) => {
+export const fetchData = (param: string) => {
+  return (dispatch: any) =>  {
     dispatch(fetchDataRequest);
-    axios
-      .get(`http://localhost:4000/movies?limit=9?${param}`)
+    return axios.get(`http://localhost:4000/movies?limit=9?${param}`)
       .then((response) => {
         const data = response.data;
-        dispatch(fetchDataSucess(data.data));
+        dispatch(fetchDataSuccess(data.data));
       })
       .catch((error) => {
         const errorMsg = error.message;
         dispatch(fetchDataFailure(errorMsg));
-      });
-  };
+      })  
+  }
 }
 
 export const deleteData = (id: string) => {

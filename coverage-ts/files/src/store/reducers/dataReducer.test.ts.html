@@ -1,0 +1,110 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>dataReducer.test.ts</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="..\..\..\..\assets\source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="..\..\..\..\assets\source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="..\..\..\..\index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="positive"><td class="">src\store\reducers\dataReducer.test.ts</td><td class="">92.19%</td><td class="">80%</td><td class="">128</td><td class="">118</td><td class="">10</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { string } from &#x27;yup&#x27;;
+import { DataActionTypes } from &#x27;./../reducers/types&#x27;;
+import { dataReducer, initialState } from &quot;./dataReducer&quot;;
+import &#x27;@testing-library/jest-dom&#x27;;
+import { DataAction } from &quot;./types&quot;;
+
+
+describe(&quot;data reducer&quot;, () =&gt; {
+    describe(&quot;selectedSubreddit&quot;, () =&gt; {
+        it(&quot;should return the default state&quot;, () =&gt; {
+            // @ts-ignore
+            expect(dataReducer(undefined, {})).toBe(initialState);
+        });
+
+        it(&quot;FETCH_DATA&quot;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_DATA,
+                payload: undefined
+            };
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({ ...initialState, loading: true });
+        });
+        it(&#x27;FETCH_DATA_SUCCESS&#x27;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_DATA_SUCCESS,
+                payload: []
+            }
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({
+                ...initialState,
+                loading: false,
+                error: null,
+                data: action.payload,
+            })
+        });
+        it(&#x27;FETCH_DATA_ERROR&#x27;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_DATA_ERROR,
+                payload: string
+            }
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({
+                ...initialState,
+                loading: false,
+                data: [],
+                error: action.payload
+            })
+        });
+        it(&#x27;FETCH_DELETE_SUCCESS&#x27;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_DELETE_SUCCESS,
+                payload: string
+            }
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({
+                ...initialState,
+                data: initialState.data.filter((item) =&gt; item.id !== action.payload)
+            })
+        });
+        it(&#x27;FETCH_ADD_SUCCESS&#x27;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_ADD_SUCCESS,
+                payload: []
+            }
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({
+                ...initialState,
+                loading: false,
+                data: action.payload,
+                error: null
+            })
+        });
+        it(&#x27;FETCH_UPDATE_SUCCESS&#x27;, () =&gt; {
+            const action = {
+                type: DataActionTypes.FETCH_UPDATE_SUCCESS,
+                payload: string
+            }
+            // @ts-ignore
+            expect(dataReducer(initialState, action)).toEqual({
+                ...initialState,
+                data: initialState.data.map((item) =&gt;
+                    item.id === action.payload
+                        ? {
+                            ...item,
+                            editing: !item.editing
+                        }
+                        : item
+            )})
+        });
+    });
+
+});
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:56,&quot;character&quot;:48,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:56,&quot;character&quot;:57,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:56,&quot;character&quot;:62,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:80,&quot;character&quot;:45,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:81,&quot;character&quot;:20,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:81,&quot;character&quot;:25,&quot;text&quot;:&quot;id&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:83,&quot;character&quot;:31,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:84,&quot;character&quot;:38,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:84,&quot;character&quot;:43,&quot;text&quot;:&quot;editing&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src\\store\\reducers\\dataReducer.test.ts&quot;,&quot;line&quot;:86,&quot;character&quot;:26,&quot;text&quot;:&quot;item&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Sun, 12 Mar 2023 16:12:32 GMT</p>
+    </body>
+  </html>
+  
