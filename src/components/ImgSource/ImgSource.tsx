@@ -1,17 +1,20 @@
 import style from './Imgsource.module.scss'
+import Image from 'next/image';
 interface ImgProps {
   alt?: string
-  urlProp?: string
-  onclick?: () => void
+  urlProp: string
+  onclick?: (param:any) => void
 }
 
-const ImgSource = ({ alt, urlProp, onclick }: ImgProps) => (
+const ImgSource = ({ alt = 'photo', urlProp, onclick }: ImgProps) => (
   <>
-    <img
+    <Image
       className={`${style.poster} img_source`}
       src={urlProp}
       alt={alt}
       onClick={onclick}
+      width={455}
+      height={322}
     />
   </>
 )

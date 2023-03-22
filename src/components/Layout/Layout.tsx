@@ -3,31 +3,30 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import style from '../../App.module.scss'
-import { Outlet, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import MainComponent from '../MainComponent/MainComponent';
+import { Provider } from 'react-redux';
+import { store } from '../../store';
 
 const Layout = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/search');
-  }, []);
 
   return (
     <>
-      <div className={style.app_wrapper}>
-        <div className={style.page_wrapper}>
-          {/* <ErrorBoundary> */}
-            <div className={style.main_wrapper}>
-              <StateVisibleContextProvider>
-                <Header />
-                <Outlet />
-              </StateVisibleContextProvider>
-              <Footer />
+      <Provider store={store}>
+        <ErrorBoundary>
+          <div className={style.app_wrapper}>
+            <div className={style.page_wrapper}>
+              <div className={style.main_wrapper}>
+                <StateVisibleContextProvider>
+                  <Header />
+                  <MainComponent />
+                </StateVisibleContextProvider>
+                <Footer />
+              </div>
             </div>
-          {/* </ErrorBoundary> */}
-        </div>
-      </div>
+          </div>
+        </ErrorBoundary>
+      </Provider>
+
     </>
   )
 }

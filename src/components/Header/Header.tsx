@@ -1,13 +1,17 @@
 import style from './Header.module.scss'
-import { useState, useContext } from 'react'
+import { useState, useContext, Fragment } from 'react'
 import SearchForm from '../SearcForm/SearchForm'
 import Button from '../Button/Button'
 import Portal from '../Portal/Portal'
 import AddMovie from '../AddMovie/AddMovie'
-import MovieDescription from '../MovieDescription/MovieDescription'
 import { StateVisibleContext } from '../../context/StateVisibleContext'
 
-const Header = () => {
+
+type HeaderProps = {
+  children?: React.ReactNode
+};
+
+const Header = ({ children }: HeaderProps) => {
   const [showModal, setShowModal] = useState(false)
   const stateVisibleValue = useContext(StateVisibleContext)
 
@@ -15,7 +19,8 @@ const Header = () => {
     <>
       <header className={style.header}>
         {stateVisibleValue.visible ? (
-          <MovieDescription/>
+          <Fragment>
+            {children}</Fragment>
         ) : (
           <div className={style.content}>
             <div className={style.first_line}>
@@ -30,16 +35,16 @@ const Header = () => {
             </div>
             <div className={style.search_content}>
               <h2>FIND YOUR MOVIE</h2>
-              <SearchForm/>
+              <SearchForm />
             </div>
           </div>
         )}
       </header>
-      {showModal && (
-        <Portal>
-          <AddMovie onClick={() => setShowModal(false)} />
-        </Portal>
-      )}
+      {/* {showModal && (
+        // <Portal>
+        //   <AddMovie onClick={() => setShowModal(false)} />
+        // </Portal>
+      )} */}
     </>
   )
 }

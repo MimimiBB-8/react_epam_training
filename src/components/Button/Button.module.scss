@@ -1,5 +1,6 @@
 @use 'variables';
-button {
+
+.button {
   height: 57px;
   width: 180px;
   border-radius: 4px;
@@ -28,11 +29,11 @@ button {
   width: 233px;
   background-color: variables.$addedButton;
 }
+
 .add_movie {
   background: rgba(96, 96, 96, 0.68);
   font-weight: 600;
   font-size: 20px;
-  text-transform: uppercase;
   color: variables.$addedButton;
   padding: 11px 18px;
   height: 46px;

@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from "./Header";
+import Header from './Header';
 
 
 describe('component header', () => {
-    it("render header component", () => {
+    it('render header component', () => {
         render(
             <Router>
                 <Header />
