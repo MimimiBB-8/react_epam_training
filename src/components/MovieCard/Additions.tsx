@@ -46,7 +46,7 @@ function Additions({onClick}:AdditionsProps) {
           >
             Delete
           </p>
-          {showModal && (
+          {/* {showModal && (
             <Portal>
               <EditMovie onClick={() => setShowModal(false)} />
             </Portal>
@@ -55,7 +55,7 @@ function Additions({onClick}:AdditionsProps) {
             <Portal>
               <DeletionConfirmation onClick={() => setShowModalDelete(false)} />
             </Portal>
-          )}
+          )} */}
         </div>
       ) : null}
     </div>

@@ -7,10 +7,10 @@ interface ButtonProps {
   type?: any
 }
 
-function Button({ classname = 'base_button', title, onClick, type}: ButtonProps) {
+function Button({ classname = '', title, onClick, type}: ButtonProps) {
   return (
     <>
-      <button className={`${style[classname]}`} onClick={onClick} type={type}>
+      <button className={`${style.button} ${style[classname]}`} onClick={onClick} type={type}>
         {title}
       </button>
     </>

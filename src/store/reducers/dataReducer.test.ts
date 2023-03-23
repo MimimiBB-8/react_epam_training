@@ -1,18 +1,17 @@
 import { string } from 'yup';
 import { DataActionTypes } from './../reducers/types';
-import { dataReducer, initialState } from "./dataReducer";
+import { dataReducer, initialState } from './dataReducer';
 import '@testing-library/jest-dom';
-import { DataAction } from "./types";
 
 
-describe("data reducer", () => {
-    describe("selectedSubreddit", () => {
-        it("should return the default state", () => {
+describe('data reducer', () => {
+    describe('selectedSubreddit', () => {
+        it('should return the default state', () => {
             // @ts-ignore
             expect(dataReducer(undefined, {})).toBe(initialState);
         });
 
-        it("FETCH_DATA", () => {
+        it('FETCH_DATA', () => {
             const action = {
                 type: DataActionTypes.FETCH_DATA,
                 payload: undefined

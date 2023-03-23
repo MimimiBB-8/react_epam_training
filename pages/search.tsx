@@ -1,0 +1,1 @@
+export {default, getServerSideProps} from '../layouts/search/search.layout';

@@ -7,14 +7,14 @@ interface portalProps {
   children?: React.ReactNode
 }
 const Portal = ({ children }: portalProps) => {
-  const elem = useMemo(() => document.createElement('div'), [])
-  useEffect(() => {
-    modalRootElement?.appendChild(elem)
-    return () => {
-      modalRootElement?.removeChild(elem)
-    }
-  })
-  return ReactDOM.createPortal(<div className={style.window_wrapper}>{children} </div>, elem)
+  // const elem = useMemo(() => document.createElement('div'), [])
+  // useEffect(() => {
+  //   modalRootElement?.appendChild(elem)
+  //   return () => {
+  //     modalRootElement?.removeChild(elem)
+  //   }
+  // })
+  // return ReactDOM.createPortal(<div className={style.window_wrapper}>{children} </div>, elem)
 }
 
 export default Portal

@@ -1,11 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import SortMovie from "./SortMovie";
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import SortMovie from './SortMovie';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
 
-describe("When rendering dropdown", () => {
+describe('When rendering dropdown', () => {
     beforeEach(() => {
         render(
             <Router>

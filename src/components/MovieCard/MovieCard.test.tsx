@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import MovieCard from "./MovieCard";
+import MovieCard from './MovieCard';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 

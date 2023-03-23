@@ -398,3 +398,7 @@ yarn-error.log*
 .idea
 
 /dist
+
+coverage
+__snapshots__
+.next
